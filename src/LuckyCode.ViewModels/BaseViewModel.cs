@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LuckyCode.Entity
+namespace LiteCode.ViewModels
 {
-    public class Class1
+    public class BaseViewModel
     {
-        public Class1()
-        {
-        }
+        public string Id { get; set; }
     }
 }

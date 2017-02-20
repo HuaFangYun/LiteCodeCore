@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using LiteCode.Entity;
+using LiteCode.Entity.OauthBase;
+using LiteCode.ViewModels.SiteManager;
+
+namespace LiteCode.ViewModels.Mapper
+{
+    public class AutoMapperConfiguration
+    {
+        private static MapperConfiguration _mapperConfiguration;
+        private static IMapper _mapper;
+
+        public static void Init()
+        {
+            _mapperConfiguration = new MapperConfiguration(cfg =>
+            {
+                //用户
+                cfg.CreateMap<SysUsers, SysUsersCreateViewModel>();
+                cfg.CreateMap<SysUsersCreateViewModel, SysUsers>();
+                cfg.CreateMap<SysDepartment, SysDepartmentViewModel>().ForMember(vm => vm.Id, en => en.MapFrom(a => a.DepartmentId));
+                cfg.CreateMap<SysDepartmentViewModel, SysDepartment>();
+
+                cfg.CreateMap<SysModules, SysModuleViewModel>().ForMember(vm => vm.ModuleType, en => en.MapFrom(a => (ModuleType)a.ModuleType));
+                cfg.CreateMap<SysModuleViewModel, SysModules>();
+
+               
+
+                cfg.CreateMap<SysRoles, SysRoleViewModel>().ForMember(vm => vm.RoleType, en => en.MapFrom(a => (RoleType)a.RoleType));
+                cfg.CreateMap<SysRoleViewModel, SysRoles>();
+
+                cfg.CreateMap<SysApplication, SysApplicationViewModel>();
+                cfg.CreateMap<SysApplicationViewModel, SysApplication>();
+
+            });
+            _mapper = _mapperConfiguration.CreateMapper();
+        }
+
+        /// <summary>
+        /// Mapper
+        /// </summary>
+        public static IMapper Mapper
+        {
+            get
+            {
+                return _mapper;
+            }
+        }
+        /// <summary>
+        /// Mapper configuration
+        /// </summary>
+        public static MapperConfiguration MapperConfiguration
+        {
+            get
+            {
+                return _mapperConfiguration;
+            }
+        }
+    }
+}
