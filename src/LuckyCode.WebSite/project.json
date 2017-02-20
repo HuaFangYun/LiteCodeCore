@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "LuckyCode.Core": "1.0.0-*",
+    "LuckyCode.Data": "1.0.0-*",
+    "LuckyCode.Entity": "1.0.0-*",
+    "LuckyCode.IService": "1.0.0-*",
+    "LuckyCode.Service": "1.0.0-*",
+    "LuckyCode.ViewModels": "1.0.0-*",
+    "LuckyCode.WebFrameWork": "1.0.0-*",
+    "Microsoft.AspNetCore.Authentication.Cookies": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Mvc": "1.1.1",
     "Microsoft.AspNetCore.Razor.Tools": {
@@ -10,6 +18,7 @@
     "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
     "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.EntityFrameworkCore": "1.1.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
     "Microsoft.Extensions.Logging": "1.1.0",
@@ -20,7 +29,9 @@
       "version": "1.1.0",
       "type": "platform"
     },
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "Pomelo.Data.MySql": "1.0.0",
+    "Pomelo.EntityFrameworkCore.MySql": "1.1.0"
   },
 
   "tools": {
@@ -30,7 +41,7 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
+    "netcoreapp1.1": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
