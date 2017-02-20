@@ -32,7 +32,7 @@ namespace LiteCode.Data
         //}
         public LiteCodeContext(DbContextOptions<LiteCodeContext> options):base(options)
         {
-            
+             
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

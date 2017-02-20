@@ -26,6 +26,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LuckyCode.ViewModels", "src
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LuckyCode.WebFrameWork", "src\LuckyCode.WebFrameWork\LuckyCode.WebFrameWork.xproj", "{D604A2B6-50C4-45B8-88AE-4611FD89B58A}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LuckyCode.Test", "src\LuckyCode.Test\LuckyCode.Test.xproj", "{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{D604A2B6-50C4-45B8-88AE-4611FD89B58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D604A2B6-50C4-45B8-88AE-4611FD89B58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D604A2B6-50C4-45B8-88AE-4611FD89B58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +83,6 @@ Global
 		{E2AED620-69B3-42A2-9BA8-B68A60089685} = {C57889D2-F3DB-48E7-B605-A262AB11508A}
 		{CBDFB347-B848-479D-A4C1-7B886F04D548} = {C57889D2-F3DB-48E7-B605-A262AB11508A}
 		{D604A2B6-50C4-45B8-88AE-4611FD89B58A} = {C57889D2-F3DB-48E7-B605-A262AB11508A}
+		{FDFB0C53-56B7-4F60-B850-DCA7B5BF129B} = {C57889D2-F3DB-48E7-B605-A262AB11508A}
 	EndGlobalSection
 EndGlobal

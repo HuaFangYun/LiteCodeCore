@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LiteCode.Core.Data;
 using LiteCode.Core.Filtes;
 using LiteCode.Data;
@@ -13,8 +10,9 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using LiteCode.Service;
 using Microsoft.EntityFrameworkCore;
+using LiteCode.Service;
+using LiteCode.ViewModels.Mapper;
 
 namespace LuckyCode.WebSite
 {
@@ -59,7 +57,7 @@ namespace LuckyCode.WebSite
             services.AddScoped<IMainContext>(x => x.GetService<ILiteCodeContext>());
 
 
-           // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
+            // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
 
             services.AddAuthorization(options =>
             {
@@ -72,13 +70,14 @@ namespace LuckyCode.WebSite
 
 
             services.AddService();
-           
+
 
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
             });
-            services.AddMvc();
+           
+            AutoMapperConfiguration.Init();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,8 +85,19 @@ namespace LuckyCode.WebSite
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            List<string> a=new List<string>();
-            var c=a.Select(b => Convert.ToInt32(b)).ToList();
+            app.UseCookieAuthentication(new CookieAuthenticationOptions()
+            {
+                AuthenticationScheme = "WeiXinSysManager",
+                LoginPath = "/SysManager/Account/Login",
+                LogoutPath = "/SysManager/Account/LoginOut",
+                AccessDeniedPath = "/SysManager/Account/Login",
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                CookieHttpOnly = true,
+
+                ExpireTimeSpan = new TimeSpan(0, 0, 30, 0),
+                CookiePath = "/"
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -102,6 +112,7 @@ namespace LuckyCode.WebSite
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

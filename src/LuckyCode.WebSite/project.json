@@ -59,12 +59,7 @@
       "System.GC.Server": true
     }
   },
-  "runtimes": {
-    "win10-x64": {},
-    
-    "win7-x64": {}
-    
-  },
+  
   "publishOptions": {
     "include": [
       "wwwroot",
