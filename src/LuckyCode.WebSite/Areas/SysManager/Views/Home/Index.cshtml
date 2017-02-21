@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "基础权限管理";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            首页
+            
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">CPU Traffic</span>
+                        <span class="info-box-number">90<small>%</small></span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Likes</span>
+                        <span class="info-box-number">41,410</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Sales</span>
+                        <span class="info-box-number">760</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">New Members</span>
+                        <span class="info-box-number">2,000</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">订单列表</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>订单号</th>
+                                        <th>商品名称</th>
+                                        <th>订单状态</th>
+                                        <th>下单时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="box box-warning">
+                    <div class="box-header">
+                        <h3 class="box-title">最新资讯</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>订单号</th>
+                                        <th>商品名称</th>
+                                        <th>订单状态</th>
+                                        <th>下单时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FT001</td>
+                                        <td>苹果手机6Plus</td>
+                                        <td>发货</td>
+                                        <td>2016-12-6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        <!-- Your Page Content Here -->
+        <div class="row">
+            <div class="col-md-12">
+               
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+@section scripts{
+<script src="~/lib/kindeditor/kindeditor-all-min.js"></script>
+    
+@*<script type="text/javascript">
+    var editor;
+    KindEditor.ready(function (K) {
+        editor = K.create('textarea[name="ArticleText"]', {
+            width: '690px',
+            height: '400px',
+            allowFileManager: true,
+            uploadJson: 'UploadImages',
+            fileManagerJson: 'ProcessRequest'
+        });
+    });
+</script>*@
+}

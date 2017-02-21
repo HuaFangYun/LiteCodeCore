@@ -55,7 +55,7 @@ namespace LuckyCode.WebSite
             // services.AddScoped<ILiteCodeContext>(x => new LiteCodeContext(new DbContextOptionsBuilder<LiteCodeContext>().UseSqlServer(Configuration.GetConnectionString("mySqlConnection")).Options));
             services.AddScoped<ILiteCodeContext>(x => x.GetService<LiteCodeContext>());
             services.AddScoped<IMainContext>(x => x.GetService<ILiteCodeContext>());
-
+            services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
 
             // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
 
@@ -87,7 +87,7 @@ namespace LuckyCode.WebSite
             loggerFactory.AddDebug();
             app.UseCookieAuthentication(new CookieAuthenticationOptions()
             {
-                AuthenticationScheme = "WeiXinSysManager",
+                AuthenticationScheme = "SysManager",
                 LoginPath = "/SysManager/Account/Login",
                 LogoutPath = "/SysManager/Account/LoginOut",
                 AccessDeniedPath = "/SysManager/Account/Login",

@@ -32,7 +32,7 @@ namespace LiteCode.Service
 
         public async Task DeleteSysModule(string id)
         {
-            await Task.Run(()=> _repository.Delete(id));
+            await Task.Run(() => _repository.Delete(id));
         }
 
         public async Task<List<string>> GetControllerNameList()
@@ -48,10 +48,10 @@ namespace LiteCode.Service
                 Id = a.Id,
                 ModuleName = a.ModuleName,
                 ParentId = a.ParentId,
-                
+
                 ActionName = a.ActionName,
                 ModuleType = a.ModuleType,
-                
+
 
             }).ToListAsync();
         }
@@ -69,7 +69,7 @@ namespace LiteCode.Service
 
         public async Task<List<ListItemEntity>> ModuleItemEntities()
         {
-            return await _repository.Query().Where(a => a.ModuleType == 0 && a.ControllerName == "").Select(a => new ListItemEntity() { ID = a.Id, ParentID = "0", Title = a.ModuleName }).ToListAsync();
+            return await _repository.Query().Where(a => a.ModuleType == 0 && a.ControllerName == "").Select(a => new ListItemEntity() {ID = a.Id, ParentID = "0", Title = a.ModuleName}).ToListAsync();
         }
 
         public async Task<SysModuleViewModel> SaveSysModule(SysModuleViewModel model)
@@ -88,7 +88,7 @@ namespace LiteCode.Service
             entity.PurviewSum = model.ControllerName == "" ? 0 : 2L << pnum;
             try
             {
-               await _repository.AddAsync(entity);
+                await _repository.AddAsync(entity);
             }
             catch (Exception ex)
             {
@@ -100,28 +100,40 @@ namespace LiteCode.Service
 
         public async Task<List<SysModuleViewModel>> GetSysModuleViewModels(string roleId)
         {
-            var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
-            var rolePurviewlist =await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
-            List<SysModuleViewModel> tem = new List<SysModuleViewModel>();
-            foreach (var module in list)
+            try
             {
-                if (module.ParentId != "0")
+                //var _l = _repository.Query().ToList();
+                var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
+               // var list = _l.Select(a => new SysModuleViewModel() {Id = a.Id,ActionName = a.ActionName,ParentId = a.ParentId,PurviewSum = a.PurviewSum,ControllerName = a.ControllerName}).ToList();
+               // var l = _roleModulesRepository.Query().ToList();
+                var rolePurviewlist = await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
+                List<SysModuleViewModel> tem = new List<SysModuleViewModel>();
+                foreach (var module in list)
                 {
-                    var p = rolePurviewlist.FirstOrDefault(a => a.ControllerName == module.ControllerName);
-                    if ((module.PurviewSum & p?.PurviewSum) == module.PurviewSum)
+                    if (module.ParentId != "0")
                     {
-                        tem.Add(module);
-                        if (tem.All(a => a.Id != module.ParentId))
+                        var p = rolePurviewlist.FirstOrDefault(a => a.ControllerName == module.ControllerName);
+                        if ((module.PurviewSum & p?.PurviewSum) == module.PurviewSum)
                         {
-                            tem.Add(list.FirstOrDefault(a => a.Id == module.ParentId));
+                            tem.Add(module);
+                            if (tem.All(a => a.Id != module.ParentId))
+                            {
+                                tem.Add(list.FirstOrDefault(a => a.Id == module.ParentId));
+                            }
                         }
                     }
+
                 }
 
+
+                return tem.OrderBy(a => a.Sort).ToList();
             }
-
-
-            return tem.OrderBy(a => a.Sort).ToList();
+            catch (Exception ex)
+            {
+                
+                
+            }
+            return await Task.FromResult(new List<SysModuleViewModel>());
         }
         public async Task<SysModuleViewModel> UpdateSysModule(SysModuleViewModel model)
         {

@@ -12,6 +12,10 @@ namespace LiteCode.Service
         public static IServiceCollection AddService(this IServiceCollection services)
         {
             services.AddScoped<ISysUserService, SysUserService>();
+            services.AddScoped<ISysModulesService, SysModulesService>();
+            services.AddScoped<ISysApplicationService, SysApplicationService>();
+            services.AddScoped<ISysDepartmentService, SysDepartmentService>();
+            services.AddScoped<ISysRolesService, SysRolesService>();
             return services;
         }
     }
