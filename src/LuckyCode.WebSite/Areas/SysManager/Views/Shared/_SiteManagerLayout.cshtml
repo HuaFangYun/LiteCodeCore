@@ -26,8 +26,8 @@
    
     <!-- Left side column. contains the logo and sidebar -->
         
-       
-    @Html.RenderAction("LeftNav", "Home")
+       @await Component.InvokeAsync("LeftNav")
+    @*@Html.RenderAction("LeftNav", "Home")*@
     <!-- Content Wrapper. Contains page content -->
 
 

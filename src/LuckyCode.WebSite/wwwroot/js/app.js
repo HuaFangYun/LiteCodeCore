@@ -210,7 +210,11 @@ $(function () {
       box.toggleClass('direct-chat-contacts-open');
     });
   }
-
+  $("#ChangePassword_0").click(function () {
+      var userid = $(this).data("userid");
+      console.log(userid);
+      AppUI.ShowModal("/SysManager/SysUsers/ChangePassword/" + userid);
+  });
   /*
    * INITIALIZE BUTTON TOGGLE
    * ------------------------
