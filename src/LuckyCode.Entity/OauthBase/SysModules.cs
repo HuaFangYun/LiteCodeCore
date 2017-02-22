@@ -23,6 +23,7 @@ namespace LiteCode.Entity.OauthBase
         public virtual long PurviewSum { get; set; }
         public virtual bool IsDelete { get; set; }
         public virtual int Sort { get; set; }
+        public virtual bool IsValidPurView { get; set; } = true;
         public virtual DateTime CreateTime { get; set; }
         public virtual SysApplication Application { get; set; }=new SysApplication();
     }

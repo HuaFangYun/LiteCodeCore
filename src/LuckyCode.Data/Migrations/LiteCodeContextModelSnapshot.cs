@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using LiteCode.Data;
 
-namespace LiteCode.Data.Migrations
+namespace LuckyCode.Data.Migrations
 {
     [DbContext(typeof(LiteCodeContext))]
     partial class LiteCodeContextModelSnapshot : ModelSnapshot
@@ -72,6 +72,8 @@ namespace LiteCode.Data.Migrations
                     b.Property<bool>("IsDelete");
 
                     b.Property<bool>("IsExpand");
+
+                    b.Property<bool>("IsValidPurView");
 
                     b.Property<string>("ModuleDescription");
 

@@ -48,10 +48,11 @@ namespace LiteCode.Service
                 Id = a.Id,
                 ModuleName = a.ModuleName,
                 ParentId = a.ParentId,
-
+                
+                PurviewSum = a.PurviewSum,
                 ActionName = a.ActionName,
                 ModuleType = a.ModuleType,
-
+                IsValidPurView = a.IsValidPurView
 
             }).ToListAsync();
         }
@@ -102,10 +103,7 @@ namespace LiteCode.Service
         {
             try
             {
-                //var _l = _repository.Query().ToList();
                 var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
-               // var list = _l.Select(a => new SysModuleViewModel() {Id = a.Id,ActionName = a.ActionName,ParentId = a.ParentId,PurviewSum = a.PurviewSum,ControllerName = a.ControllerName}).ToList();
-               // var l = _roleModulesRepository.Query().ToList();
                 var rolePurviewlist = await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
                 List<SysModuleViewModel> tem = new List<SysModuleViewModel>();
                 foreach (var module in list)

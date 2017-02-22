@@ -2,18 +2,45 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace LiteCode.Data.Migrations
+namespace LuckyCode.Data.Migrations
 {
     public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Department",
+                columns: table => new
+                {
+                    DepartmentId = table.Column<string>(maxLength: 50, nullable: false)
+                        .Annotation("MySql:ValueGeneratedOnAdd", true),
+                    DepartmentName = table.Column<string>(maxLength: 50, nullable: false),
+                    Description = table.Column<string>(maxLength: 500, nullable: false),
+                    DistributorId = table.Column<int>(nullable: false),
+                    ParentId = table.Column<string>(maxLength: 50, nullable: false),
+                    Sort = table.Column<int>(nullable: false),
+                    State = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Department", x => x.DepartmentId);
+                    table.ForeignKey(
+                        name: "FK_Department_Department_ParentId",
+                        column: x => x.ParentId,
+                        principalTable: "Department",
+                        principalColumn: "DepartmentId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Sys_RoleModules",
                 columns: table => new
                 {
                     ModuleId = table.Column<string>(nullable: false),
-                    RoleId = table.Column<string>(nullable: false)
+                    RoleId = table.Column<string>(nullable: false),
+                    ApplicationId = table.Column<string>(nullable: true),
+                    ControllerName = table.Column<string>(nullable: true),
+                    PurviewSum = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,8 +69,15 @@ namespace LiteCode.Data.Migrations
                     Id = table.Column<string>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
+                    CreateTime = table.Column<DateTime>(nullable: false),
+                    IsAllowDelete = table.Column<bool>(nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(maxLength: 256, nullable: true)
+                    NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
+                    RoleDescription = table.Column<string>(nullable: true),
+                    RoleName = table.Column<string>(nullable: true),
+                    RoleType = table.Column<int>(nullable: false),
+                    Sort = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,8 +92,12 @@ namespace LiteCode.Data.Migrations
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
+                    CreateTime = table.Column<DateTime>(nullable: false),
+                    DepartmentId = table.Column<string>(nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
+                    FullName = table.Column<string>(nullable: true),
+                    IsLock = table.Column<bool>(nullable: false),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
@@ -91,7 +129,7 @@ namespace LiteCode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SysModuleses",
+                name: "Sys_Modules",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false)
@@ -99,23 +137,26 @@ namespace LiteCode.Data.Migrations
                     ActionName = table.Column<string>(nullable: true),
                     ApplicationId = table.Column<string>(nullable: true),
                     AreaName = table.Column<string>(nullable: true),
-                    ControleName = table.Column<string>(nullable: true),
+                    ControllerName = table.Column<string>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
                     Icon = table.Column<string>(nullable: true),
                     IsDelete = table.Column<bool>(nullable: false),
                     IsExpand = table.Column<bool>(nullable: false),
+                    IsValidPurView = table.Column<bool>(nullable: false),
                     ModuleDescription = table.Column<string>(nullable: true),
                     ModuleLayer = table.Column<short>(nullable: false),
                     ModuleName = table.Column<string>(nullable: true),
                     ModuleType = table.Column<int>(nullable: false),
-                    PrentId = table.Column<string>(nullable: true),
+                    ParentId = table.Column<string>(nullable: true),
+                    PurviewNum = table.Column<int>(nullable: false),
+                    PurviewSum = table.Column<long>(nullable: false),
                     Sort = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SysModuleses", x => x.Id);
+                    table.PrimaryKey("PK_Sys_Modules", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SysModuleses_Sys_Application_ApplicationId",
+                        name: "FK_Sys_Modules_Sys_Application_ApplicationId",
                         column: x => x.ApplicationId,
                         principalTable: "Sys_Application",
                         principalColumn: "Id",
@@ -209,8 +250,13 @@ namespace LiteCode.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SysModuleses_ApplicationId",
-                table: "SysModuleses",
+                name: "IX_Department_ParentId",
+                table: "Department",
+                column: "ParentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sys_Modules_ApplicationId",
+                table: "Sys_Modules",
                 column: "ApplicationId");
 
             migrationBuilder.CreateIndex(
@@ -254,7 +300,10 @@ namespace LiteCode.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SysModuleses");
+                name: "Department");
+
+            migrationBuilder.DropTable(
+                name: "Sys_Modules");
 
             migrationBuilder.DropTable(
                 name: "Sys_RoleModules");

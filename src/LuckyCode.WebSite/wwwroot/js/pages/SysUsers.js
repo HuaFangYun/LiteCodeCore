@@ -18,7 +18,7 @@
                     {
                         checkbox: true
                     }, {
-                        field: 'UserName',
+                        field: 'Username',
                         title: '登陆名'
                     }, {
                         field: 'FullName',
@@ -30,10 +30,6 @@
                             console.log(value);
                             return value == true ? '<i class=\"fa  fa-lock\"></i>' : '<i class=\"fa  fa-unlock\"></i>';
                         }
-                    }, {
-                        field: 'LastLoginDate',
-                        title: '上次登陆',
-                        formatter: AppUI.dateTimeFormat
                     }, {
                         field: 'CreateTime', 
                         title: '添加时间',

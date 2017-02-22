@@ -41,5 +41,10 @@ namespace LiteCode.Service
             var entity =await _repository.SingleAsync(a => a.Id == id);
             return entity?.ToModel();
         }
+
+        public async Task<bool> Exits(string id, string userName)
+        {
+            return await _repository.ExistsAsync(a => a.Id != id && a.UserName == userName);
+        }
     }
 }

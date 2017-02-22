@@ -12,7 +12,7 @@
     t.Init = function () {
         var tableindex = $('#Sys_DataGrid')
             .dataGrid({
-                url: '/SiteManager/SysDepartment/GetListViewModel', //请求后台的URL（*）
+                url: '/SysManager/SysDepartment/GetListViewModel', //请求后台的URL（*）
                 queryParams: t.queryParams, //传递参数（*）
                 columns: [
                     {
@@ -49,7 +49,7 @@ $(document).ready(function () {
             btn: ['确定', '取消'] //按钮
         }, function (index, layero) {
 
-            $.get("/SysApplication/Delete/", { Id: id }, function () {
+            $.get("/SysDepartment/Delete/", { Id: id }, function () {
                 $("#SysApplicationTable").bootstrapTable('refresh');
             });
 

@@ -1,17 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "用户管理";
+    ViewBag.Title = "部门管理";
 }
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            用户管理
+            部门管理
+           
         </h1>
         <ol class="breadcrumb">
             <li><a href="/SysManager/Home"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">用户管理</li>
+            <li class="active">部门管理</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -19,17 +20,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-success">
-                    <div class="box-header" >
-                        <a href="/SysManager/SysUsers/Create" class="btn bg-maroon btn-sm btn-flat "><i class="glyphicon glyphicon-plus"></i>添加</a>
+                    <div class="box-header">
+                        <a href="/SysManager/SysDepartment/Create" class="btn bg-maroon btn-sm btn-flat "><i class="glyphicon glyphicon-plus"></i>添加</a>
                         <div class="form-inline pull-right">
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="登陆名">
-
-                            </div>
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="真实姓名">
-
-                            </div>
                             <div class="input-group">
                                 <input type="text" name="q" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -41,6 +34,7 @@
                         </div>
                     </div>
                     <div class="box-body">
+                       
                         <table id="Sys_DataGrid"></table>
                     </div>
                 </div>
@@ -50,5 +44,6 @@
     <!-- /.content -->
 </div>
 @section scripts{
-<script src="~/js/pages/SysUsers.js"></script>
+    
+<script src="~/js/pages/SysDepartment.js"></script>
 }

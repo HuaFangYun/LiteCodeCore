@@ -1,18 +1,19 @@
 ﻿@using System.Threading.Tasks
-@using LiteCode.ViewModels
-@model LiteCode.ViewModels.SysUsersCreateViewModel
+@using LiteCode.ViewModels.SiteManager
+@model LiteCode.ViewModels.SiteManager.SysRoleViewModel
+
 @{
-    ViewBag.Title = "添加用户";
+    ViewBag.Title = "编辑角色";
 }
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            添加用户
+            编辑角色
         </h1>
         <ol class="breadcrumb">
             <li><a href="/SysManager/Home"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">添加用户</li>
+            <li class="active">编辑角色</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -21,12 +22,20 @@
             <div class="col-md-12">
                 <div class="box box-success">
                     <div class="box-header"></div>
-                    <form class="form-horizontal" method="post" action="/SysManager/SysUsers/Create">
+                    <form class="form-horizontal" method="post" action="">
                         <div class="box-body">
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true)
+                            @Html.HiddenFor(a=>a.Id)
 
-                           @Html.Partial("_CreateOrEdit")
+                            @Html.Partial("_CreateOrEdit")
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IsDelete, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10 rule-multi-checkbox">
+                                    @Html.CheckBoxFor(model => model.IsDelete)
+                                    @Html.ValidationMessageFor(model => model.IsDelete, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
                         <div class="box-footer">
                             <div class="col-md-offset-3">
@@ -40,3 +49,9 @@
     </section>
     <!-- /.content -->
 </div>
+@section scripts{
+    <script type="text/javascript">
+        $('.rule-multi-checkbox').singleCheckbox();
+        $('.rule-multi-redio').multiRadio();
+    </script>
+}

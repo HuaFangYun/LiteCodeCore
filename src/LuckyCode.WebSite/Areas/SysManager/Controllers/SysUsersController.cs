@@ -103,17 +103,18 @@ namespace Lucky.SiteManager.Controllers
             
             return View();
         }
-        /*
+        
         public async Task<IActionResult> Edit(string id)
         {
-            var entity = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(id);
+            var entity =await _userManager.FindByIdAsync(id);
             
-            var model = _usersService.GetSysUsersViewModel(id);
-            model.RoleItemEntities = _rolesService.GetRoleItemEntities();
-            var firstOrDefault = HttpContext.GetOwinContext().GetUserManager<LuckyCoreContext>().DbSet<SysUserRole>().FirstOrDefault(a=>a.UserId==id);
-            if (firstOrDefault != null) model.RoleId= firstOrDefault.RoleId;
+            var model =await _usersService.GetSysUsersViewModel(id);
+           // model.RoleItemEntities = _rolesService.GetRoleItemEntities();
+           // var firstOrDefault = HttpContext.GetOwinContext().GetUserManager<LuckyCoreContext>().DbSet<SysUserRole>().FirstOrDefault(a=>a.UserId==id);
+           // if (firstOrDefault != null) model.RoleId= firstOrDefault.RoleId;
             return View(model);
         }
+        /*
         [HttpPost]
         public async Task<IActionResult> Edit(SysUsersViewModel model)
         {
@@ -166,13 +167,13 @@ namespace Lucky.SiteManager.Controllers
                 }
             }
             return View(model);
-        }
+        }*/
         public async Task<IActionResult> ValidateUserName(string id, string userName)
         {
-            bool user = _usersService.Exits(id,userName);//_navRepository.Single(a => a.NavId != navId && a.NavName == navName);
+            bool user =await _usersService.Exits(id,userName);//_navRepository.Single(a => a.NavId != navId && a.NavName == navName);
             if (!user)
-                return Json(true, JsonRequestBehavior.AllowGet);
-            return Json("用户名称已经存在！", JsonRequestBehavior.AllowGet);
-        }*/
+                return Json(true);
+            return Json("用户名称已经存在！");
+        }
     }
 }

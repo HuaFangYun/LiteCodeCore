@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 
 using LiteCode.Entity;
+using LiteCode.ViewModels;
 using LiteCode.WebSite.Areas.SysManager;
 
 using Microsoft.AspNetCore.Authorization;
@@ -34,16 +35,18 @@ namespace Lucky.SiteManager.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl = null)
         {
-            return View();
+            var model=new SysLoginViewModel();
+            ViewData["ReturnUrl"] = returnUrl;
+            return View(model);
         }
 
         
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<ActionResult> Login(string username, string password, bool rememberme, string returnUrl)
+        public async Task<ActionResult> Login(SysLoginViewModel model, string returnUrl = null)
         {
             try
             {
@@ -51,21 +54,23 @@ namespace Lucky.SiteManager.Controllers
                 {
                     return View();
                 }
-                SysUsers manager = await _userManager.FindByNameAsync(username);
-                var result =await _userManager.CheckPasswordAsync(manager, password);
+               
+                SysUsers manager = await _userManager.FindByNameAsync(model.UserName);
+                
+                var result =await _userManager.CheckPasswordAsync(manager,model.Password);
                 switch (result)
                 {
                     case true:
                         if (returnUrl != null)
                         {
                             //await _signInManager.SignInAsync(manager, true);
-                            SetCalims(username, rememberme, manager.Id);
+                            SetCalims(model.UserName, model.Rememberme, manager.Id);
                             return Redirect("~" + returnUrl);
                         }
                         else
                         {
                             //await _signInManager.SignInAsync(manager, true);
-                            SetCalims(username, rememberme, manager.Id);
+                            SetCalims(model.UserName, model.Rememberme, manager.Id);
                         }
                         return Redirect("/SysManager/Home/Index");
                     default:

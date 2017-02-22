@@ -68,7 +68,7 @@ namespace LiteCode.Service
             List<SysRoleModules> list = new List<SysRoleModules>();
             foreach (SysModuleBase moduleBase in model.ModuleBases)
             {
-                list.Add(new SysRoleModules() { PurviewSum = moduleBase.PurviewSum, ApplicationId = "",  RoleId = model.RoleId, ControllerName = moduleBase.ControllerName });
+                list.Add(new SysRoleModules() {ModuleId =SequenceQueue.NewIdString(""), PurviewSum = moduleBase.PurviewSum, ApplicationId = "",  RoleId = model.RoleId, ControllerName = moduleBase.ControllerName });
             }
             await _rolemoduleRepository.AddRangeAsync(list);
             _context.SaveChanges();

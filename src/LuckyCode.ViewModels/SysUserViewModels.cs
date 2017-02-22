@@ -13,7 +13,7 @@ namespace LiteCode.ViewModels
     {
         
         [Display(Name = "用户名")]
-        [Required]
+        [Required(ErrorMessage = "请输入登陆名")]
         [StringLength(20, ErrorMessage = "用户名不能超长")]
         [Remote("ValidateUserName", "SysUsers", "SiteManager", AdditionalFields = "Id,UserName", ErrorMessage = "用户已经被占用，请更换！")]
         public string Username { get; set; }
@@ -31,10 +31,11 @@ namespace LiteCode.ViewModels
     }
     public class SysUsersCreateViewModel : SysUserBaseViewModel
     {
+        [Display(Name = "密码")]
         [Required(ErrorMessage = "密码必填")]
         public string Password { get; set; }
         [Display(Name = "确认密码")]
-        [Required]
+        [Required(ErrorMessage = "请输入确认密码")]
         [Compare("Password",ErrorMessage = "密码必须相同")]
         public string ConfirmPassword { get; set; }
         public string Salt { get; set; }

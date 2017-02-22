@@ -5,16 +5,53 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using LiteCode.Data;
 
-namespace LiteCode.Data.Migrations
+namespace LuckyCode.Data.Migrations
 {
     [DbContext(typeof(LiteCodeContext))]
-    [Migration("20170218021811_Init")]
+    [Migration("20170222032033_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
+
+            modelBuilder.Entity("LiteCode.Entity.OauthBase.SysDepartment", b =>
+                {
+                    b.Property<string>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("DepartmentId")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired()
+                        .HasColumnName("DepartmentName")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnName("Description")
+                        .HasMaxLength(500);
+
+                    b.Property<int>("DistributorId");
+
+                    b.Property<string>("ParentId")
+                        .IsRequired()
+                        .HasColumnName("ParentId")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("Sort")
+                        .HasColumnName("Sort");
+
+                    b.Property<int>("State")
+                        .HasColumnName("State");
+
+                    b.HasKey("DepartmentId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Department");
+                });
 
             modelBuilder.Entity("LiteCode.Entity.OauthBase.SysModules", b =>
                 {
@@ -27,7 +64,7 @@ namespace LiteCode.Data.Migrations
 
                     b.Property<string>("AreaName");
 
-                    b.Property<string>("ControleName");
+                    b.Property<string>("ControllerName");
 
                     b.Property<DateTime>("CreateTime");
 
@@ -37,6 +74,8 @@ namespace LiteCode.Data.Migrations
 
                     b.Property<bool>("IsExpand");
 
+                    b.Property<bool>("IsValidPurView");
+
                     b.Property<string>("ModuleDescription");
 
                     b.Property<short>("ModuleLayer");
@@ -45,7 +84,11 @@ namespace LiteCode.Data.Migrations
 
                     b.Property<int>("ModuleType");
 
-                    b.Property<string>("PrentId");
+                    b.Property<string>("ParentId");
+
+                    b.Property<int>("PurviewNum");
+
+                    b.Property<long>("PurviewSum");
 
                     b.Property<int>("Sort");
 
@@ -53,7 +96,7 @@ namespace LiteCode.Data.Migrations
 
                     b.HasIndex("ApplicationId");
 
-                    b.ToTable("SysModuleses");
+                    b.ToTable("Sys_Modules");
                 });
 
             modelBuilder.Entity("LiteCode.Entity.OauthBase.SysRoleModules", b =>
@@ -61,6 +104,12 @@ namespace LiteCode.Data.Migrations
                     b.Property<string>("ModuleId");
 
                     b.Property<string>("RoleId");
+
+                    b.Property<string>("ApplicationId");
+
+                    b.Property<string>("ControllerName");
+
+                    b.Property<long>("PurviewSum");
 
                     b.HasKey("ModuleId", "RoleId");
 
@@ -71,7 +120,7 @@ namespace LiteCode.Data.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation("MaxLength", 128);
+                        .HasMaxLength(128);
 
                     b.Property<string>("ApplicationName")
                         .IsRequired()
@@ -81,7 +130,7 @@ namespace LiteCode.Data.Migrations
                     b.Property<string>("ApplicationUrl")
                         .HasColumnName("ApplicationUrl")
                         .HasColumnType("nvarchar(256)")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnName("CreateTime");
@@ -100,11 +149,25 @@ namespace LiteCode.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<DateTime>("CreateTime");
+
+                    b.Property<bool>("IsAllowDelete");
+
+                    b.Property<bool>("IsDelete");
+
                     b.Property<string>("Name")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
+
+                    b.Property<string>("RoleDescription");
+
+                    b.Property<string>("RoleName");
+
+                    b.Property<int>("RoleType");
+
+                    b.Property<int>("Sort");
 
                     b.HasKey("Id");
 
@@ -125,20 +188,28 @@ namespace LiteCode.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<DateTime>("CreateTime");
+
+                    b.Property<string>("DepartmentId");
+
                     b.Property<string>("Email")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<bool>("IsLock");
 
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash");
 
@@ -151,7 +222,7 @@ namespace LiteCode.Data.Migrations
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
-                        .HasAnnotation("MaxLength", 256);
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
@@ -247,6 +318,14 @@ namespace LiteCode.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("LiteCode.Entity.OauthBase.SysDepartment", b =>
+                {
+                    b.HasOne("LiteCode.Entity.OauthBase.SysDepartment", "Parent")
+                        .WithMany("Departments")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("LiteCode.Entity.OauthBase.SysModules", b =>

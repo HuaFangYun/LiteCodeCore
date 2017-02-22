@@ -12,7 +12,7 @@
     t.Init = function () {
         var tableindex = $('#SysApplicationTable')
             .dataGrid({
-                url: '/SiteManager/SysApplication/GetListViewModel', //请求后台的URL（*）
+                url: '/SysManager/SysApplication/GetListViewModel', //请求后台的URL（*）
                 queryParams: t.queryParams, //传递参数（*）
                 columns: [
                     {
