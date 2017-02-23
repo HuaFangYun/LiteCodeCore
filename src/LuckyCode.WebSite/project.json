@@ -48,7 +48,9 @@
       ]
     }
   },
-
+  "runtimes": {
+    "win10-x64": {} 
+  },
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
@@ -62,6 +64,7 @@
   
   "publishOptions": {
     "include": [
+      "Areas/**/*.cshtml",
       "wwwroot",
       "**/*.cshtml",
       "appsettings.json",

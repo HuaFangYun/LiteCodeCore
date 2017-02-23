@@ -2,16 +2,40 @@
 // More info at https://go.microsoft.com/fwlink/?LinkId=808241
 [
   {
-    "outputFileName": "wwwroot/css/site.min.css",
+    "outputFileName": "wwwroot/css/LuckySite.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/site.css"
+
+      "wwwroot/font-awesome/css/font-awesome.min.css",
+      "wwwroot/bootstrap/css/bootstrap.min.css",
+      "wwwroot/css/ionicons.min.css",
+      "wwwroot/css/AdminLTE.min.css",
+      "wwwroot/lib/bootstraptable/dist/bootstrap-table.min.css",
+      "wwwroot/css/skins/skin-blue.min.css",
+      "wwwroot/fonts/iconfont.css",
+      
+      "wwwroot/css/LuckyStyle.css",
+      "wwwroot/css/fine-uploader.css"
+      
     ]
   },
   {
-    "outputFileName": "wwwroot/js/site.min.js",
+    "outputFileName": "wwwroot/js/Lucky.Site.min.js",
     "inputFiles": [
-      "wwwroot/js/site.js"
+      
+      "wwwroot/bootstrap/js/bootstrap.js",
+      "wwwroot/js/jquery-dateFormat.js",
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "wwwroot/lib/jquery-validation/dist/localization/messages_zh.js",
+      "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "wwwroot/lib/jquery.unobtrusive-ajax.js",
+      "wwwroot/lib/bootstraptable/dist/bootstrap-table.js",
+      "wwwroot/lib/bootstraptable/dist/locale/bootstrap-table-zh-CN.js",
+      "wwwroot/lib/jquery.radioButtonList.js",
+      
+      "wwwroot/lib/slimScroll/jquery.slimscroll.min.js",
+      "wwwroot/lib/iCheck/icheck.min.js"
+      
     ],
     // Optionally specify minification options
     "minify": {

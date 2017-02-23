@@ -7,6 +7,7 @@
 /// <reference path="js/demo.js" />
 /// <reference path="js/jquery.js" />
 /// <reference path="js/jquery-dateformat.js" />
+/// <reference path="js/lucky.site.min.js" />
 /// <reference path="js/modernizr-2.8.3.js" />
 /// <reference path="js/pages/dashboard.js" />
 /// <reference path="js/pages/dashboard2.js" />
