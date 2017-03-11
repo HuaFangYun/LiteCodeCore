@@ -13,6 +13,7 @@ using LiteCode.IService;
 using LiteCode.WebFrameWork;
 using LiteCode.WebSite.Areas.SysManager;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -23,9 +24,10 @@ namespace Lucky.SiteManager.Controllers
     {
         private IHostingEnvironment _environment;
         private ISysModulesService _modulesService;
-        public HomeController(ISysModulesService modulesService)
+        public HomeController(ISysModulesService modulesService,IHostingEnvironment environment)
         {
             _modulesService = modulesService;
+            _environment = environment;
         }
         // GET: Home
         public ActionResult Index()
@@ -50,7 +52,7 @@ namespace Lucky.SiteManager.Controllers
             
             return PartialView("_SiteManagerLeft",model);
         }
-        /*
+       
        /// <summary>
        /// FineUpload 文件上传
        /// </summary>
@@ -60,7 +62,7 @@ namespace Lucky.SiteManager.Controllers
        public ActionResult ProcessUpload(FineUpload upload)
        {
            string saveUrl = "/Uploads/";
-           string dirPath = Server.MapPath(saveUrl);
+           string dirPath = _environment.ContentRootPath+saveUrl;
            string fileExt = Path.GetExtension(upload.Filename).ToLower();
            string newFileName = Guid.NewGuid().ToString("N") + fileExt;
            var filePath = Path.Combine(dirPath, newFileName);
@@ -75,17 +77,17 @@ namespace Lucky.SiteManager.Controllers
 
            return Json(new { success=true, Url = "/Uploads/" + newFileName, isUploaded = true, message = "上传成功" });
        }
-
+ 
        public ActionResult UploadImages()
        {
-           string savePath = "../Content/Images/";
+           string savePath = "/Content/Images/";
            string saveUrl = "/SiteManager/Content/Images/";
            string fileTypes = "gif,jpg,jpeg,png,bmp";
            int maxSize = 20000000;//20 M
 
            Hashtable hash = new Hashtable();
 
-           HttpPostedFileBase file = Request.Files["imgFile"];
+           var file = Request.Form.Files[0];
            if (file == null)
            {
                hash = new Hashtable();
@@ -94,7 +96,7 @@ namespace Lucky.SiteManager.Controllers
                return Json(hash);
            }
 
-           string dirPath = Server.MapPath(savePath);
+           string dirPath = _environment.ContentRootPath+savePath;
            if(!Directory.Exists(dirPath))
            {
                Directory.CreateDirectory(dirPath);
@@ -112,7 +114,7 @@ namespace Lucky.SiteManager.Controllers
 
            ArrayList fileTypeList = ArrayList.Adapter(fileTypes.Split(','));
 
-           if (file.InputStream == null || file.InputStream.Length > maxSize)
+           if (file == null || file.Length > maxSize)
            {
                hash = new Hashtable();
                hash["error"] = 0;
@@ -130,7 +132,9 @@ namespace Lucky.SiteManager.Controllers
 
            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmss_ffff", DateTimeFormatInfo.InvariantInfo) + fileExt;
            string filePath = dirPath + newFileName;
-           file.SaveAs(filePath);
+            using (var files = new FileStream(newFileName, false ? FileMode.Create : FileMode.CreateNew))
+                file.OpenReadStream().CopyTo(files);
+            //file.CopyTo(filePath);
            string fileUrl = saveUrl+ newFileName;
 
            hash = new Hashtable();
@@ -139,14 +143,14 @@ namespace Lucky.SiteManager.Controllers
 
            return Json(hash); ;
        }
-
+       
        #region 浏览
        public ActionResult ProcessRequest()
        {
            //String aspxUrl = context.Request.Path.Substring(0, context.Request.Path.LastIndexOf("/") + 1);
 
            //根目录路径，相对路径
-           String rootPath = "/SiteManager/Content/Images/";
+           String rootPath =_environment.ContentRootPath+ "/SiteManager/Content/Images/";
            //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
            String rootUrl = "/SiteManager/Content/Images/";
            //图片扩展名
@@ -158,44 +162,44 @@ namespace Lucky.SiteManager.Controllers
            String moveupDirPath = "";
 
            //根据path参数，设置各路径和URL
-           String path = Request.QueryString["path"];
+           String path = Request.Query["path"];
            path = String.IsNullOrEmpty(path) ? "" : path;
            if (path == "")
            {
-               currentPath = Server.MapPath(rootPath);
+               currentPath = (rootPath);
                currentUrl = rootUrl;
                currentDirPath = "";
                moveupDirPath = "";
            }
            else
            {
-               currentPath = Server.MapPath(rootPath) + path;
+               currentPath = (rootPath);
                currentUrl = rootUrl + path;
                currentDirPath = path;
                moveupDirPath = Regex.Replace(currentDirPath, @"(.*?)[^\/]+\/$", "$1");
            }
 
            //排序形式，name or size or type
-           String order = Request.QueryString["order"];
+           String order = Request.Query["order"];
            order = String.IsNullOrEmpty(order) ? "" : order.ToLower();
 
            //不允许使用..移动到上一级目录
            if (Regex.IsMatch(path, @"\.\."))
            {
-               Response.Write("Access is not allowed.");
-               Response.End();
+               Response.WriteAsync("Access is not allowed.");
+               
            }
            //最后一个字符不是/
            if (path != "" && !path.EndsWith("/"))
            {
-               Response.Write("Parameter is not valid.");
-               Response.End();
+               Response.WriteAsync("Parameter is not valid.");
+               
            }
            //目录不存在或不是目录
            if (!Directory.Exists(currentPath))
            {
-               Response.Write("Directory does not exist.");
-               Response.End();
+               Response.WriteAsync("Directory does not exist.");
+               
            }
 
            //遍历目录取得文件信息
@@ -335,6 +339,6 @@ namespace Lucky.SiteManager.Controllers
            }
        }
        #endregion
-       */
+       
     }
 }
