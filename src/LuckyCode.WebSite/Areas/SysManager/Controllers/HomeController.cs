@@ -131,11 +131,11 @@ namespace Lucky.SiteManager.Controllers
            }
 
            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmss_ffff", DateTimeFormatInfo.InvariantInfo) + fileExt;
-           
-            using (var files = new FileStream(newFileName, FileMode.CreateNew))
+            string fileUrl = saveUrl + newFileName;
+            using (var files = new FileStream(dirPath+newFileName, FileMode.CreateNew))
                 file.OpenReadStream().CopyTo(files);
             
-           string fileUrl = saveUrl+ newFileName;
+          
 
            hash = new Hashtable();
            hash["error"] = 0;
@@ -150,9 +150,9 @@ namespace Lucky.SiteManager.Controllers
            //String aspxUrl = context.Request.Path.Substring(0, context.Request.Path.LastIndexOf("/") + 1);
 
            //根目录路径，相对路径
-           String rootPath =_environment.ContentRootPath+ "/SiteManager/Content/Images/";
+           String rootPath =_environment.WebRootPath+ "/Uploads/Images/";
            //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-           String rootUrl = "/SiteManager/Content/Images/";
+           String rootUrl = "/Uploads/Images/";
            //图片扩展名
            String fileTypes = "gif,jpg,jpeg,png,bmp";
 
