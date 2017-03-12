@@ -80,8 +80,8 @@ namespace Lucky.SiteManager.Controllers
  
        public ActionResult UploadImages()
        {
-           string savePath = "/Content/Images/";
-           string saveUrl = "/SiteManager/Content/Images/";
+           string savePath = "/Uploads/Images/";
+           string saveUrl = "/Uploads/Images/";
            string fileTypes = "gif,jpg,jpeg,png,bmp";
            int maxSize = 20000000;//20 M
 
@@ -96,7 +96,7 @@ namespace Lucky.SiteManager.Controllers
                return Json(hash);
            }
 
-           string dirPath = _environment.ContentRootPath+savePath;
+           string dirPath = _environment.WebRootPath+savePath;
            if(!Directory.Exists(dirPath))
            {
                Directory.CreateDirectory(dirPath);
@@ -131,10 +131,10 @@ namespace Lucky.SiteManager.Controllers
            }
 
            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmss_ffff", DateTimeFormatInfo.InvariantInfo) + fileExt;
-           string filePath = dirPath + newFileName;
-            using (var files = new FileStream(newFileName, false ? FileMode.Create : FileMode.CreateNew))
+           
+            using (var files = new FileStream(newFileName, FileMode.CreateNew))
                 file.OpenReadStream().CopyTo(files);
-            //file.CopyTo(filePath);
+            
            string fileUrl = saveUrl+ newFileName;
 
            hash = new Hashtable();

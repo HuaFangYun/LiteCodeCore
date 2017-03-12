@@ -162,7 +162,7 @@
         <!-- Your Page Content Here -->
         <div class="row">
             <div class="col-md-12">
-               
+               <textarea name="ArticleText"></textarea>
             </div>
         </div>
     </section>
@@ -171,16 +171,16 @@
 @section scripts{
 <script src="~/lib/kindeditor/kindeditor-all-min.js"></script>
     
-@*<script type="text/javascript">
+<script type="text/javascript">
     var editor;
     KindEditor.ready(function (K) {
         editor = K.create('textarea[name="ArticleText"]', {
             width: '690px',
             height: '400px',
             allowFileManager: true,
-            uploadJson: 'UploadImages',
+            uploadJson: 'Home/UploadImages',
             fileManagerJson: 'ProcessRequest'
         });
     });
-</script>*@
+</script>
 }
