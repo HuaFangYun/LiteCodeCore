@@ -1,0 +1,34 @@
+﻿<%@ CodeTemplate Src="..\CommonSqlCode.cs" Inherits="Shoucao.Templates.CommonSqlCode" Language="C#" TargetLanguage="C#" Description="The interface that each business object of the domain implements." ResponseEncoding="UTF-8"%>
+<%@ CodeTemplate Language="C#" TargetLanguage="C#"  ResponseEncoding="UTF-8" Description="Generates a very simple business object." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the object is based on." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Property Name="EntityNameSpace" Default="LiteCode" Optional="False" Type="System.String" Category="Style" Description="Object Namespace." %>
+<%@ Property Name="ProjectManager" Type="System.String" Default="丁富升" Optional="True" Category="项目说明" Description="项目负责人" %>
+<%@ Property Name="ProjectDescription" Type="System.String" Default="" Optional="True" Category="项目说明" Description="项目说明" %>
+<%@ Property Name="ProjectCopyRight" Type="System.String" Default="幸运草工作室 @ CopyRight 2006-2010" Optional="True" Category="项目说明" Description="版权信息" %>
+// =================================================================== 
+// 项目说明
+//====================================================================
+// <%=ProjectCopyRight%>。
+// 文件： I<%=SourceTable.Name%>Repository.cs
+// 项目名称：<%=ProjectDescription%> 
+// 创建时间：<%=DateTime.Now.ToShortDateString()%>
+// 负责人：<%=ProjectManager%>
+// ===================================================================
+using System;
+using System.Collections.Generic;
+using System.Text;
+using LiteCode.Core.Repository;
+using <%=EntityNameSpace%>.Entity;
+using LiteCode.Core.Repository;
+
+namespace <%=EntityNameSpace%>.Infrastructure.Data
+{
+    public interface I<%=SourceTable.Name%>Repository : IRepository< <%=SourceTable.Name%>>
+    {
+        
+    }
+}
