@@ -25,25 +25,25 @@ namespace <%= EntityNameSpace %>.Entity
 {
 	
     
-    Mapper.CreateMap<<%= GetClassName(SourceTable)%>, <%= GetClassName(SourceTable)%>ViewModel>();
+    cfg.CreateMap<<%= GetClassName(SourceTable)%>, <%= GetClassName(SourceTable)%>ViewModel>();
     
-    Mapper.CreateMap<<%= GetClassName(SourceTable)%>ViewModel, <%= GetClassName(SourceTable)%>>();
+    cfg.CreateMap<<%= GetClassName(SourceTable)%>ViewModel, <%= GetClassName(SourceTable)%>>();
     
     #region <%= GetClassName(SourceTable)%>
 
         public static <%= GetClassName(SourceTable)%> ToEntity(this <%= GetClassName(SourceTable)%>ViewModel model)
         {
-            return Mapper.Map<<%= GetClassName(SourceTable)%>ViewModel, <%= GetClassName(SourceTable)%>>(model);
+            return model.MapTo<<%= GetClassName(SourceTable)%>ViewModel, <%= GetClassName(SourceTable)%>>();
         }
 
         public static <%= GetClassName(SourceTable)%> ToEntity(this <%= GetClassName(SourceTable)%>ViewModel model, <%= GetClassName(SourceTable)%> entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static <%= GetClassName(SourceTable)%>ViewModel ToModel(this <%= GetClassName(SourceTable)%> entity)
         {
-            return Mapper.Map<<%= GetClassName(SourceTable)%>, <%= GetClassName(SourceTable)%>ViewModel>(entity);
+            return entity.MapTo<<%= GetClassName(SourceTable)%>, <%= GetClassName(SourceTable)%>ViewModel>();
         }
         #endregion
 }

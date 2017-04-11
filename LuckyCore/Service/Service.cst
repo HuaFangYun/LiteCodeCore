@@ -21,10 +21,10 @@
     public interface I<%=GetClassName(Tables[i])%>Service
     {
         void Delete<%=GetClassName(Tables[i])%>(string id);
-        <%=GetClassName(Tables[i])%>ViewModel Save<%=GetClassName(Tables[i])%>(<%=GetClassName(Tables[i])%>ViewModel model);
+        Task< <%=GetClassName(Tables[i])%>ViewModel> AddAsync(<%=GetClassName(Tables[i])%>ViewModel model);
         <%=GetClassName(Tables[i])%>ViewModel Update<%=GetClassName(Tables[i])%>(<%=GetClassName(Tables[i])%>ViewModel model);
-        PagedList<<%=GetClassName(Tables[i])%>ViewModel> GetPagedList(int pageIndex, int pageSize);
-        <%=GetClassName(Tables[i])%>ViewModel Get<%=GetClassName(Tables[i])%>ViewModel(string id);
+        Task<PagedList<<%=GetClassName(Tables[i])%>ViewModel>> GetPagedListAsync(int pageIndex, int pageSize);
+        Task<<%=GetClassName(Tables[i])%>ViewModel> Get<%=GetClassName(Tables[i])%>ViewModelAsync(string id);
        // List<ListItemEntity> AppItemEntities();
     }
      public class <%=GetClassName(Tables[i])%>Service : I<%=GetClassName(Tables[i])%>Service
@@ -32,7 +32,7 @@
         private ILuckyContext _context;
         private IRepository<<%=GetClassName(Tables[i])%>> _repository;
         private ILogger _logger;
-        public <%=GetClassName(Tables[i])%>Service(IRepository<<%=GetClassName(Tables[i])%>> repository,ILuckyContext context,ILogger logger )
+        public <%=GetClassName(Tables[i])%>Service(IRepository<<%=GetClassName(Tables[i])%>> repository,ILuckyContext context,ILogger<<%=GetClassName(Tables[i])%>Service> logger )
         {
             _repository = repository;
              _context = context;
@@ -40,28 +40,29 @@
         }
         public void Delete<%=GetClassName(Tables[i])%>(string id)
         {
-           _repository.Delete(a=>a.Id==id);
+           _repository.Delete(id);
         }
 
-        public <%=GetClassName(Tables[i])%>ViewModel Get<%=GetClassName(Tables[i])%>ViewModel(string id)
+        public async Task<<%=GetClassName(Tables[i])%>ViewModel> Get<%=GetClassName(Tables[i])%>ViewModelAsync(string id)
         {
-            var entity = _repository.Single(a => a.CategoryId == id);
+            var entity =await _repository.SingleAsync(a => a.Id == id);
             return entity.ToModel();
         }
-        public PagedList< <%=GetClassName(Tables[i])%>ViewModel> GetPagedList(int pageIndex, int pageSize)
+        public async Task<PagedList< <%=GetClassName(Tables[i])%>ViewModel>> GetPagedListAsync(int pageIndex, int pageSize)
         {
-            return _repository.GetQuery()
+            return await _repository.Query()
                     .ProjectTo<<%=GetClassName(Tables[i])%>ViewModel>(AutoMapperConfiguration.MapperConfiguration)
                     .OrderByDescending(a => a.CreateTime)
-                    .ToPagedList(pageIndex, pageSize);
+                    .ToPagedListAsync(pageIndex, pageSize);
                
         }
-        public <%=GetClassName(Tables[i])%>ViewModel Save<%=GetClassName(Tables[i])%>(<%=GetClassName(Tables[i])%>ViewModel model)
+        public async Task<<%=GetClassName(Tables[i])%>ViewModel> AddAsync(<%=GetClassName(Tables[i])%>ViewModel model)
         {
             var entity = model.ToEntity();
-            entity.CategoryId = SequenceQueue.NewIdString("");
+            entity.Id = SequenceQueue.NewIdString("");
             entity.CreateTime=DateTime.Now;
-            _repository.Add(entity);
+            await _repository.AddAsync(entity);
+            await _context.SaveChangesAsync();
             return model;
         }
 
@@ -76,7 +77,6 @@
 <%} %>
 
 <%for(int i=0;i<Tables.Count;i++){ %>
-
-builder.RegisterType<<%=GetClassName(Tables[i])%>Service>().As<I<%=GetClassName(Tables[i])%>Service>().InstancePerLifetimeScope();
+ services.AddScoped<I<%=GetClassName(Tables[i])%>Service, <%=GetClassName(Tables[i])%>Service>();
 
 <%} %>
