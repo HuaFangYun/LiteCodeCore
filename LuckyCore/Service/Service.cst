@@ -22,7 +22,7 @@
     {
         void Delete<%=GetClassName(Tables[i])%>(string id);
         Task< <%=GetClassName(Tables[i])%>ViewModel> AddAsync(<%=GetClassName(Tables[i])%>ViewModel model);
-        <%=GetClassName(Tables[i])%>ViewModel Update<%=GetClassName(Tables[i])%>(<%=GetClassName(Tables[i])%>ViewModel model);
+        <%=GetClassName(Tables[i])%>ViewModel Update(<%=GetClassName(Tables[i])%>ViewModel model);
         Task<PagedList<<%=GetClassName(Tables[i])%>ViewModel>> GetPagedListAsync(int pageIndex, int pageSize);
         Task<<%=GetClassName(Tables[i])%>ViewModel> Get<%=GetClassName(Tables[i])%>ViewModelAsync(string id);
        // List<ListItemEntity> AppItemEntities();
@@ -66,7 +66,7 @@
             return model;
         }
 
-        public <%=GetClassName(Tables[i])%>ViewModel Update<%=GetClassName(Tables[i])%>(<%=GetClassName(Tables[i])%>ViewModel model)
+        public <%=GetClassName(Tables[i])%>ViewModel Update(<%=GetClassName(Tables[i])%>ViewModel model)
         {
             var entity = model.ToEntity();
             _repository.Update(entity);
