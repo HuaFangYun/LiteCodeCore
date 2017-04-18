@@ -170,7 +170,6 @@ namespace LiteCode.Core.Data.DapperExtensions
                     {
                         bulkCopy.BatchSize = 5000;
                         bulkCopy.DestinationTableName = tablename;
-
                         try
                         {
                             bulkCopy.WriteToServer(reader);
@@ -184,7 +183,6 @@ namespace LiteCode.Core.Data.DapperExtensions
                             bulkCopy.Close();
                             conn.Close();
                         }
-
                     }
                 }
                 return true;

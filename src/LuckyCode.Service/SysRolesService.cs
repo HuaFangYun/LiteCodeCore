@@ -92,7 +92,7 @@ namespace LiteCode.Service
             entity.Id = model.Id;
             entity.RoleName = model.Name;
             entity.IsDelete = model.IsDelete;
-           await Task.Run(()=> _repository.Update(entity, new List<Expression<Func<SysRoles, object>>>() { a => a.IsDelete, a => a.RoleType, a => a.RoleName, a => a.Name, a => a.RoleDescription }));
+           await Task.Run(()=> _repository.Update(entity,  a => a.IsDelete, a => a.RoleType, a => a.RoleName, a => a.Name, a => a.RoleDescription ));
             return model;
         }
     }

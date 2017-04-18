@@ -113,7 +113,7 @@ namespace LiteCode.Core.Data
 
         public async Task<TEntity> SingleAsync(Expression<Func<TEntity, bool>> predicate) => await Entities.SingleOrDefaultAsync(predicate);
 
-        public TEntity Update(TEntity entity, IEnumerable<Expression<Func<TEntity, object>>> expressions)
+        public TEntity Update(TEntity entity, params Expression<Func<TEntity, object>>[] expressions)
         {
             Entities.Attach(entity);
             var dbContext = _context as DbContext;

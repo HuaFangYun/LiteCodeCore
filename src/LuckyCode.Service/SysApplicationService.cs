@@ -71,7 +71,7 @@ namespace LiteCode.Service
             entity.ApplicationName = model.ApplicationName;
             entity.ApplicationUrl = model.ApplicationUrl;
             entity.Id = model.Id;
-            _repository.Update(entity, new List<Expression<Func<SysApplication, object>>>() { a => a.ApplicationName, a => a.ApplicationUrl });
+            _repository.Update(entity,  a => a.ApplicationName, a => a.ApplicationUrl);
             await _context.SaveChangesAsync();
             return model;
         }

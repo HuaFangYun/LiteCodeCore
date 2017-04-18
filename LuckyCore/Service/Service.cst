@@ -20,7 +20,7 @@
 
     public interface I<%=GetClassName(Tables[i])%>Service
     {
-        void Delete<%=GetClassName(Tables[i])%>(string id);
+        void Delete(string id);
         Task< <%=GetClassName(Tables[i])%>ViewModel> AddAsync(<%=GetClassName(Tables[i])%>ViewModel model);
         <%=GetClassName(Tables[i])%>ViewModel Update(<%=GetClassName(Tables[i])%>ViewModel model);
         Task<PagedList<<%=GetClassName(Tables[i])%>ViewModel>> GetPagedListAsync(int pageIndex, int pageSize);
@@ -38,7 +38,7 @@
              _context = context;
             _logger = logger;
         }
-        public void Delete<%=GetClassName(Tables[i])%>(string id)
+        public void Delete(string id)
         {
            _repository.Delete(id);
         }

@@ -107,7 +107,7 @@ namespace LiteCode.Core.Data
         /// <param name="entity"></param>
         /// <param name="expressions"></param>
         /// <returns></returns>
-        TEntity Update(TEntity entity, IEnumerable<Expression<Func<TEntity, object>>> expressions);
+        TEntity Update(TEntity entity, params Expression<Func<TEntity, object>>[] expressions);
         /// <summary>
         /// 
         /// </summary>

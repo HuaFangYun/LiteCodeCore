@@ -14,6 +14,7 @@ using LiteCode.IService;
 using LiteCode.ViewModels.Mapper;
 using LiteCode.ViewModels.SiteManager;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace LiteCode.Service
 {
@@ -22,12 +23,14 @@ namespace LiteCode.Service
         private IRepository<SysModules> _repository;
         private IRepository<SysRoleModules> _roleModulesRepository;
         private ILiteCodeContext _context;
+        private IMemoryCache _memoryCache;
 
-        public SysModulesService(IRepository<SysModules> repository, IRepository<SysRoleModules> roleModulesRepository, ILiteCodeContext context)
+        public SysModulesService(IMemoryCache memoryCache, IRepository<SysModules> repository, IRepository<SysRoleModules> roleModulesRepository, ILiteCodeContext context)
         {
             _repository = repository;
             _roleModulesRepository = roleModulesRepository;
             _context = context;
+            _memoryCache = memoryCache;
         }
 
         public async Task DeleteSysModule(string id)
@@ -103,28 +106,33 @@ namespace LiteCode.Service
         {
             try
             {
-                var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
-                var rolePurviewlist = await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
-                List<SysModuleViewModel> tem = new List<SysModuleViewModel>();
-                foreach (var module in list)
+               return await _memoryCache.GetOrCreateAsync(roleId, async entity =>
                 {
-                    if (module.ParentId != "0")
+                    entity.SlidingExpiration= TimeSpan.FromSeconds(30);
+                    var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
+                    var rolePurviewlist = await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
+                    List<SysModuleViewModel> tem = new List<SysModuleViewModel>();
+                    foreach (var module in list)
                     {
-                        var p = rolePurviewlist.FirstOrDefault(a => a.ControllerName == module.ControllerName);
-                        if ((module.PurviewSum & p?.PurviewSum) == module.PurviewSum)
+                        if (module.ParentId != "0")
                         {
-                            tem.Add(module);
-                            if (tem.All(a => a.Id != module.ParentId))
+                            var p = rolePurviewlist.FirstOrDefault(a => a.ControllerName == module.ControllerName);
+                            if ((module.PurviewSum & p?.PurviewSum) == module.PurviewSum)
                             {
-                                tem.Add(list.FirstOrDefault(a => a.Id == module.ParentId));
+                                tem.Add(module);
+                                if (tem.All(a => a.Id != module.ParentId))
+                                {
+                                    tem.Add(list.FirstOrDefault(a => a.Id == module.ParentId));
+                                }
                             }
                         }
+
                     }
 
-                }
 
+                    return tem.OrderBy(a => a.Sort).ToList();
+                });
 
-                return tem.OrderBy(a => a.Sort).ToList();
             }
             catch (Exception ex)
             {
@@ -167,7 +175,7 @@ namespace LiteCode.Service
                 entity.Sort = i + 1;
                 entity.ParentId = "0";
                 entity.ModuleName = " ";
-                await Task.Run(() =>_repository.Update(entity, new List<Expression<Func<SysModules, object>>>() { a => a.Sort }));
+                await Task.Run(() =>_repository.Update(entity,  a => a.Sort ));
             }
             _context.SaveChanges();
         }

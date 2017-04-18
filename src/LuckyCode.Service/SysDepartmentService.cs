@@ -65,6 +65,8 @@ namespace LiteCode.Service
             var entity = model.ToEntity();
             entity.DepartmentId = SequenceQueue.NewIdString("");
             entity.State = 0;
+            entity.ParentId = model.ParentId;
+            entity.DepartmentName = model.DepartmentName;
             model.Id = entity.DepartmentId;
             await _repository.AddAsync(entity);
             await _context.SaveChangesAsync();
