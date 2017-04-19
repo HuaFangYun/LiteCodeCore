@@ -42,9 +42,9 @@ namespace LiteCode.Entity.OauthBase.Mapping
 
             // Relationships
 
-            b.HasOne(t => t.Parent)
-                .WithMany(t => t.Departments)
-                .HasForeignKey(d => d.ParentId);
+            //b.HasOne(t => t.Parent)
+            //    .WithMany(t => t.Departments)
+            //    .HasForeignKey(d => d.ParentId);
         }
     }
 }

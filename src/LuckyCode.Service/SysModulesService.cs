@@ -13,6 +13,7 @@ using LiteCode.Entity.OauthBase;
 using LiteCode.IService;
 using LiteCode.ViewModels.Mapper;
 using LiteCode.ViewModels.SiteManager;
+using LuckyCode.Core.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -106,6 +107,7 @@ namespace LiteCode.Service
         {
             try
             {
+                var c = HttpContext.Current;
                return await _memoryCache.GetOrCreateAsync(roleId, async entity =>
                 {
                     entity.SlidingExpiration= TimeSpan.FromSeconds(30);
@@ -128,8 +130,6 @@ namespace LiteCode.Service
                         }
 
                     }
-
-
                     return tem.OrderBy(a => a.Sort).ToList();
                 });
 

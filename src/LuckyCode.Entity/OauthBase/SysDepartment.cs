@@ -20,8 +20,8 @@ namespace LiteCode.Entity.OauthBase
         public int State { get; set; }
         public int Sort { get; set; }
 
-        public virtual ICollection<SysDepartment> Departments { get; set; }
-        public virtual SysDepartment Parent { get; set; }
+        //public virtual ICollection<SysDepartment> Departments { get; set; }
+        //public virtual SysDepartment Parent { get; set; }
         
     }
 }

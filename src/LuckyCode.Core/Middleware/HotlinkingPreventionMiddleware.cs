@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Net.Http.Headers;
@@ -41,6 +42,18 @@ namespace LiteCode.Core.Middleware
                     await context.Response.SendFileAsync(unauthorizedImagePath);
                 }
             }
+        }
+    }
+
+    public class Hotlinking : IStartupFilter
+    {
+        public Action<IApplicationBuilder> Configure(Action<IApplicationBuilder> next)
+        {
+            return app =>
+            {
+                app.UseMiddleware<HotlinkingPreventionMiddleware>();
+                next(app);
+            };
         }
     }
 }

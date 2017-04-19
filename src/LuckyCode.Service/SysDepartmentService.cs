@@ -23,6 +23,7 @@ namespace LiteCode.Service
         public SysDepartmentService(IRepository<SysDepartment> repository, ILiteCodeContext context)
         {
             _repository = repository;
+            _context = context;
         }
 
         public async Task DeleteDepartment(string id)
@@ -68,6 +69,7 @@ namespace LiteCode.Service
             entity.ParentId = model.ParentId;
             entity.DepartmentName = model.DepartmentName;
             model.Id = entity.DepartmentId;
+            
             await _repository.AddAsync(entity);
             await _context.SaveChangesAsync();
             return model;

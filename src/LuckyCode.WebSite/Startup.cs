@@ -1,6 +1,7 @@
 ﻿using System;
 using LiteCode.Core.Data;
 using LiteCode.Core.Filtes;
+using LiteCode.Core.Middleware;
 using LiteCode.Data;
 using LiteCode.Entity;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using LiteCode.Service;
 using LiteCode.ViewModels.Mapper;
+using Microsoft.AspNetCore.Http;
+using HttpContext = LuckyCode.Core.Utility.HttpContext;
 
 namespace LuckyCode.WebSite
 {
@@ -36,6 +39,8 @@ namespace LuckyCode.WebSite
             services.AddDbContext<LiteCodeContext>(options =>
                    options.UseMySql(Configuration.GetConnectionString("mySqlConnection")));
 
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
             services.AddIdentity<SysUsers, SysRoles>()
                 .AddEntityFrameworkStores<LiteCodeContext, string>()
@@ -66,12 +71,12 @@ namespace LuckyCode.WebSite
             });
 
             services.AddSingleton<IAuthorizationHandler, ResourceHandler>();
-
+            
 
 
             services.AddService();
 
-
+           // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
@@ -85,6 +90,10 @@ namespace LuckyCode.WebSite
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            HttpContext.Configure(app.ApplicationServices.
+                GetRequiredService<Microsoft.AspNetCore.Http.IHttpContextAccessor>()
+            );
             app.UseCookieAuthentication(new CookieAuthenticationOptions()
             {
                 AuthenticationScheme = "SysManager",
