@@ -8,9 +8,7 @@ namespace LuckyCode.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Department_Department_ParentId",
-                table: "Department");
+            
 
             migrationBuilder.DropIndex(
                 name: "IX_Department_ParentId",

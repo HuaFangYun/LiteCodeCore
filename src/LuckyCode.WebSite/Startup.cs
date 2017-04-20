@@ -1,5 +1,6 @@
 ﻿using System;
 using LiteCode.Core.Data;
+using LiteCode.Core.Data.DapperExtensions;
 using LiteCode.Core.Filtes;
 using LiteCode.Core.Middleware;
 using LiteCode.Data;
@@ -61,7 +62,7 @@ namespace LuckyCode.WebSite
             services.AddScoped<ILiteCodeContext>(x => x.GetService<LiteCodeContext>());
             services.AddScoped<IMainContext>(x => x.GetService<ILiteCodeContext>());
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
-
+            services.AddScoped<IDapperContext,DapperContext>();
             // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
 
             services.AddAuthorization(options =>

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LiteCode.Entity;
+using LiteCode.Entity.News;
 using LiteCode.Entity.OauthBase;
 using LiteCode.ViewModels.SiteManager;
+using Lucky.ViewModels.Models.News;
 
 namespace LiteCode.ViewModels.Mapper
 {
@@ -78,6 +80,55 @@ namespace LiteCode.ViewModels.Mapper
         }
 
         #endregion
-        
+
+        #region NewsArticle
+
+        public static NewsArticle ToEntity(this ArticleViewModel model)
+        {
+            return model.MapTo<ArticleViewModel, NewsArticle>();
+        }
+
+        public static ArticleViewModel ToModel(this NewsArticle entity)
+        {
+            return entity.MapTo<NewsArticle, ArticleViewModel>();
+        }
+        #endregion
+
+        #region Link
+
+        public static Link ToEntity(this LinkViewModel model)
+        {
+            return model.MapTo<LinkViewModel, Link>();
+        }
+
+        public static LinkViewModel ToModel(this Link entity)
+        {
+            return entity.MapTo<Link, LinkViewModel>();
+        }
+        #endregion
+
+        #region Category
+        public static Category ToEntity(this CategoryViewModel model)
+        {
+            return model.MapTo<CategoryViewModel, Category>();
+        }
+
+        public static CategoryViewModel ToModel(this Category entity)
+        {
+            return entity.MapTo<Category, CategoryViewModel>();
+        }
+        #endregion
+
+        #region NewsBanner
+        public static NewsBanner ToEntity(this NewsBannerViewModel model)
+        {
+            return model.MapTo<NewsBannerViewModel, NewsBanner>();
+        }
+
+        public static NewsBannerViewModel ToModel(this NewsBanner entity)
+        {
+            return entity.MapTo<NewsBanner, NewsBannerViewModel>();
+        }
+        #endregion
     }
 }

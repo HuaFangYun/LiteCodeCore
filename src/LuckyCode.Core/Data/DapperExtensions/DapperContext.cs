@@ -57,7 +57,7 @@ namespace LiteCode.Core.Data.DapperExtensions
         SqlMapper.GridReader QueryMultiple(string sql, dynamic param = null, System.Data.CommandType? commandType = null, int? commandTimeout = 0);
     }
 
-    public abstract class DapperContext : IDapperContext
+    public  class DapperContext : IDapperContext
     {
         private IMainContext _context;
         private static readonly ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>> KeyProperties = new ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>>();

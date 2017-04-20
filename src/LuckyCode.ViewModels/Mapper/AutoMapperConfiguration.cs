@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using LiteCode.Entity;
+using LiteCode.Entity.News;
 using LiteCode.Entity.OauthBase;
 using LiteCode.ViewModels.SiteManager;
+using Lucky.ViewModels.Models.News;
 
 namespace LiteCode.ViewModels.Mapper
 {
@@ -34,6 +36,18 @@ namespace LiteCode.ViewModels.Mapper
 
                 cfg.CreateMap<SysApplication, SysApplicationViewModel>();
                 cfg.CreateMap<SysApplicationViewModel, SysApplication>();
+
+                cfg.CreateMap<NewsArticle, ArticleViewModel>();
+                cfg.CreateMap<ArticleViewModel, NewsArticle>();
+
+                cfg.CreateMap<Category, CategoryViewModel>();
+                cfg.CreateMap<CategoryViewModel, Category>();
+
+                cfg.CreateMap<Link, LinkViewModel>();
+                cfg.CreateMap<LinkViewModel, Link>();
+
+                cfg.CreateMap<NewsBanner, NewsBannerViewModel>();
+                cfg.CreateMap<NewsBannerViewModel, NewsBanner>();
 
             });
             _mapper = _mapperConfiguration.CreateMapper();

@@ -19,4 +19,8 @@
     <ProjectReference Include="..\LuckyCode.ViewModels\LuckyCode.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="News\" />
+  </ItemGroup>
+
 </Project>

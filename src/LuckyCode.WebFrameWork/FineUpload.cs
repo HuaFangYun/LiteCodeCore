@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace LiteCode.WebFrameWork
 {
-    [ModelBinder()]
+    [ModelBinder(BinderType = typeof(ModelBinder))]
     public class FineUpload
     {
         public string Filename { get; set; }
@@ -45,7 +45,8 @@ namespace LiteCode.WebFrameWork
                     Filename = formFilename,
                     InputStream = formUpload ? request.Form.Files[0].OpenReadStream() : request.Body
                 };
-                return Task.FromResult(upload);
+                bindingContext.Result = ModelBindingResult.Success(upload);
+                return Task.FromResult(0);
             }
         }
 

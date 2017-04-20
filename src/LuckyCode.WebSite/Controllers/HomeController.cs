@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LiteCode.Core.Utility.Sequence;
 using LiteCode.Data;
 using LiteCode.Entity;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,7 +42,8 @@ namespace LuckyCode.WebSite.Controllers
 
             return View();
         }
-
+        
+        public string Html { get; set; }
         public IActionResult Error()
         {
             return View();
