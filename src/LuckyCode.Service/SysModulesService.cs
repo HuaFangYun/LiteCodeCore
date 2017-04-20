@@ -13,6 +13,7 @@ using LiteCode.Entity.OauthBase;
 using LiteCode.IService;
 using LiteCode.ViewModels.Mapper;
 using LiteCode.ViewModels.SiteManager;
+using LuckyCode.Core.Service;
 using LuckyCode.Core.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
@@ -25,13 +26,15 @@ namespace LiteCode.Service
         private IRepository<SysRoleModules> _roleModulesRepository;
         private ILiteCodeContext _context;
         private IMemoryCache _memoryCache;
+        private ISignal _signal;
 
-        public SysModulesService(IMemoryCache memoryCache, IRepository<SysModules> repository, IRepository<SysRoleModules> roleModulesRepository, ILiteCodeContext context)
+        public SysModulesService(ISignal signal,IMemoryCache memoryCache, IRepository<SysModules> repository, IRepository<SysRoleModules> roleModulesRepository, ILiteCodeContext context)
         {
             _repository = repository;
             _roleModulesRepository = roleModulesRepository;
             _context = context;
             _memoryCache = memoryCache;
+            _signal = signal;
         }
 
         public async Task DeleteSysModule(string id)
@@ -110,7 +113,7 @@ namespace LiteCode.Service
                 var c = HttpContext.Current;
                return await _memoryCache.GetOrCreateAsync(roleId, async entity =>
                 {
-                    entity.SlidingExpiration= TimeSpan.FromSeconds(30);
+                    entity.ExpirationTokens.Add(_signal.GetToken(roleId));
                     var list = await _repository.Query().Where(a => a.IsDelete == false && a.ModuleType == 0).ProjectTo<SysModuleViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToListAsync();
                     var rolePurviewlist = await _roleModulesRepository.ListAsync(a => a.RoleId == roleId);
                     List<SysModuleViewModel> tem = new List<SysModuleViewModel>();

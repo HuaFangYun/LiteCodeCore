@@ -14,6 +14,7 @@ using LiteCode.Entity.OauthBase;
 using LiteCode.IService;
 using LiteCode.ViewModels.Mapper;
 using LiteCode.ViewModels.SiteManager;
+using LuckyCode.Core.Service;
 using Microsoft.EntityFrameworkCore;
 
 namespace LiteCode.Service
@@ -23,11 +24,13 @@ namespace LiteCode.Service
         private ILiteCodeContext _context;
         private IRepository<SysRoles> _repository;
         private IRepository<SysRoleModules> _rolemoduleRepository;
-        public SysRolesService(IRepository<SysRoles> repository, IRepository<SysRoleModules> rolemoduleRepository, ILiteCodeContext context)
+        private ISignal _signal;
+        public SysRolesService(ISignal signal, IRepository<SysRoles> repository, IRepository<SysRoleModules> rolemoduleRepository, ILiteCodeContext context)
         {
             _repository = repository;
             _rolemoduleRepository = rolemoduleRepository;
             _context = context;
+            _signal = signal;
         }
 
         public async Task DeleteSysRole(string id)
@@ -72,6 +75,7 @@ namespace LiteCode.Service
             }
             await _rolemoduleRepository.AddRangeAsync(list);
             _context.SaveChanges();
+            _signal.SignalToken(model.RoleId);//设置过期
         }
 
         public async Task<SysRoleViewModel> SaveSysRole(SysRoleViewModel model)

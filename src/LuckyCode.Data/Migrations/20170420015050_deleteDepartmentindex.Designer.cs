@@ -8,9 +8,10 @@ using LiteCode.Data;
 namespace LuckyCode.Data.Migrations
 {
     [DbContext(typeof(LiteCodeContext))]
-    partial class LiteCodeContextModelSnapshot : ModelSnapshot
+    [Migration("20170420015050_deleteDepartmentindex")]
+    partial class deleteDepartmentindex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
