@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace LiteCode.Core.Data.Extensions
+namespace LuckyCode.Core.Data.Extensions
 {
     /// <summary>
     /// 上下文基类扩展

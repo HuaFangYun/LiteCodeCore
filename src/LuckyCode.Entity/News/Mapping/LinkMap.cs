@@ -1,10 +1,8 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using LiteCode.Entity.News;
-using LiteCode.Core.Data.Extensions;
-using LiteCode.Entity;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using LuckyCode.Core.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
-namespace Lucky.Entity.Models.Mapping
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace LuckyCode.Entity.News.Mapping
 {
     public class LinkMap : EntityMappingConfiguration<Link>
     {

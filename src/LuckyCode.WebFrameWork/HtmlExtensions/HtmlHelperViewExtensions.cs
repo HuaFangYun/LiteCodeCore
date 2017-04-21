@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
 
-namespace LiteCode.WebFrameWork.HtmlExtensions
+namespace LuckyCode.WebFrameWork.HtmlExtensions
 {
     public static class HtmlHelperViewExtensions
     {

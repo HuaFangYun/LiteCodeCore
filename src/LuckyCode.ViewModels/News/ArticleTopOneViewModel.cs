@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lucky.ViewModels.Models.News
+namespace LuckyCode.ViewModels.News
 {
     /// <summary>
     /// 印度医疗类

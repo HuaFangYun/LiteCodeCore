@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using LiteCode.IService;
-using LiteCode.ViewModels;
-using LiteCode.ViewModels.SiteManager;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.IService;
+using LuckyCode.ViewModels;
+using LuckyCode.ViewModels.SiteManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
 
     public class SysRolesController : BaseController

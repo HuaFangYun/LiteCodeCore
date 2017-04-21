@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using LiteCode.Core;
-using Lucky.ViewModels.Models.News;
+﻿using System.Threading.Tasks;
+using LuckyCode.Core;
+using LuckyCode.ViewModels.News;
 
-namespace Lucky.IService.News
+namespace LuckyCode.IService.News
 {
     public interface ILinkService
     {

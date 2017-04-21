@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using Dapper;
-using LiteCode.Core.Data.Extensions;
+using LuckyCode.Core.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace LiteCode.Core.Data.DapperExtensions
+namespace LuckyCode.Core.Data.DapperExtensions
 {
     public interface IDbCommand
     {

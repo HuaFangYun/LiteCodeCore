@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LiteCode.ViewModels.Mapper
+﻿namespace LuckyCode.ViewModels.Mapper
 {
     public static class EntityMapper
     {

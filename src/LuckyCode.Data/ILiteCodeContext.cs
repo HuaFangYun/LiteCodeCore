@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Security.Claims;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using LiteCode.Core.Data;
-using LiteCode.Core.Data.Extensions;
-using LiteCode.Entity;
-using LiteCode.Entity.OauthBase;
-using Microsoft.AspNetCore.Identity;
+﻿using System.Reflection;
+using LuckyCode.Core.Data;
+using LuckyCode.Core.Data.Extensions;
+using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.Entity.OauthBase;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
-namespace LiteCode.Data
+namespace LuckyCode.Data
 {
     public interface ILiteCodeContext:IMainContext
     {

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LiteCode.Core.Data.Extensions
+namespace LuckyCode.Core.Data.Extensions
 {
     /// <summary>
     /// 实体映射配置接口

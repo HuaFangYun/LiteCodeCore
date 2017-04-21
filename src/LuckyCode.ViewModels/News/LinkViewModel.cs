@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lucky.ViewModels.Models.News
+namespace LuckyCode.ViewModels.News
 {
     public class LinkViewModel
     {

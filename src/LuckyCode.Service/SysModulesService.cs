@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using LiteCode.Core;
-using LiteCode.Core.Data;
-using LiteCode.Core.Utility;
-using LiteCode.Core.Utility.Sequence;
-using LiteCode.Data;
-using LiteCode.Entity.OauthBase;
-using LiteCode.IService;
-using LiteCode.ViewModels.Mapper;
-using LiteCode.ViewModels.SiteManager;
+using LuckyCode.Core;
+using LuckyCode.Core.Data;
 using LuckyCode.Core.Service;
 using LuckyCode.Core.Utility;
+using LuckyCode.Core.Utility.Sequence;
+using LuckyCode.Data;
+using LuckyCode.Entity.OauthBase;
+using LuckyCode.IService;
+using LuckyCode.ViewModels.Mapper;
+using LuckyCode.ViewModels.SiteManager;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace LiteCode.Service
+namespace LuckyCode.Service
 {
     public class SysModulesService : ISysModulesService
     {

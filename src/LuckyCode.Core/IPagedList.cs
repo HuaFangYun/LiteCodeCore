@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LiteCode.Core
+namespace LuckyCode.Core
 {
     /// <summary>
     /// 数据分页接口

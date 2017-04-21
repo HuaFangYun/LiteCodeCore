@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LiteCode.Core.Utility.Sequence
+namespace LuckyCode.Core.Utility.Sequence
 {
     /// <summary>
     /// A decentralized, k-ordered id generator

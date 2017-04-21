@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LiteCode.ViewModels
+﻿namespace LuckyCode.ViewModels
 {
     public class BaseViewModel
     {

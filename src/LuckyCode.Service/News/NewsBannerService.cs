@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using LiteCode.Core;
-using LiteCode.Core.Data;
-using LiteCode.Core.Utility.Sequence;
-using LiteCode.Data;
-using LiteCode.Entity.News;
-using LiteCode.ViewModels.Mapper;
-using Lucky.Entity.News;
-using Lucky.IService;
-using Lucky.IService.News;
-using Lucky.ViewModels;
-using Lucky.ViewModels.Models.News;
+using LuckyCode.Core;
+using LuckyCode.Core.Data;
+using LuckyCode.Core.Utility.Sequence;
+using LuckyCode.Data;
+using LuckyCode.Entity.News;
+using LuckyCode.IService.News;
+using LuckyCode.ViewModels.Mapper;
+using LuckyCode.ViewModels.News;
 using Microsoft.Extensions.Logging;
 
-namespace Lucky.Service
+namespace LuckyCode.Service.News
 {
     public class NewsBannerService : INewsBannerService
     {

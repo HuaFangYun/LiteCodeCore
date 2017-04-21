@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LiteCode.IService;
-using Lucky.IService.News;
-using Lucky.Service;
-using Lucky.Service.News;
-using LuckyCode.Core.Service;
+﻿using LuckyCode.Core.Service;
+using LuckyCode.IService;
+using LuckyCode.IService.News;
+using LuckyCode.Service.News;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace LiteCode.Service
+namespace LuckyCode.Service
 {
     public static class ServiceCollectionExtensions
     {

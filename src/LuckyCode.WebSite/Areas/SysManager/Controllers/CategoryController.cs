@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using LiteCode.ViewModels;
 using LiteCode.WebSite.Areas.SysManager;
-using Lucky.IService;
-using Lucky.IService.News;
-using Lucky.ViewModels.Models;
-using Lucky.ViewModels.Models.News;
+using LuckyCode.IService.News;
+using LuckyCode.ViewModels;
+using LuckyCode.ViewModels.News;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
     public class CategoryController : BaseController
     {

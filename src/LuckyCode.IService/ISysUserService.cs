@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using LiteCode.Core;
-using LiteCode.Entity;
-using LiteCode.ViewModels;
+﻿using System.Threading.Tasks;
+using LuckyCode.Core;
+using LuckyCode.ViewModels;
 
-
-namespace LiteCode.IService
+namespace LuckyCode.IService
 {
     public interface ISysUserService
     {

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LiteCode.Core.Data.DapperExtensions
+namespace LuckyCode.Core.Data.DapperExtensions
 {
     public abstract class ObjectDataReader : DbDataReader
     {

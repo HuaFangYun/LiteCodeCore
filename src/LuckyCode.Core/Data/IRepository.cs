@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using LiteCode.Core;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace LiteCode.Core.Data
+namespace LuckyCode.Core.Data
 {
     /// <summary>
     /// 仓储基础接口

@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using LiteCode.Core;
-using LiteCode.IService;
-using LiteCode.ViewModels.SiteManager;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core;
+using LuckyCode.IService;
+using LuckyCode.ViewModels.SiteManager;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
 
     public class SysApplicationController : BaseController

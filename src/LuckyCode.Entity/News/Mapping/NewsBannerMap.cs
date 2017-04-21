@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using LiteCode.Entity.News;
-using LiteCode.Core.Data.Extensions;
-using LiteCode.Entity;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using LuckyCode.Core.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lucky.Entity.News.Mapping
+namespace LuckyCode.Entity.News.Mapping
 {
     public class NewsBannerMap : EntityMappingConfiguration<NewsBanner>
     {

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using LiteCode.Core.Utility.Sequence;
-using LiteCode.Entity;
-using LiteCode.IService;
-using LiteCode.ViewModels;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core.Utility.Sequence;
+using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.IService;
+using LuckyCode.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
 
     public class SysUsersController : BaseController

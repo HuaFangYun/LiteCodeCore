@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using LiteCode.IService;
+using LuckyCode.IService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LuckyCode.WebSite.Areas.SysManager.ViewComponent

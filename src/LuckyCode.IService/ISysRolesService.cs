@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using LiteCode.Core;
-using LiteCode.Core.Utility;
-using LiteCode.ViewModels.SiteManager;
+using LuckyCode.Core;
+using LuckyCode.Core.Utility;
+using LuckyCode.ViewModels.SiteManager;
 
-namespace LiteCode.IService
+namespace LuckyCode.IService
 {
     public interface ISysRolesService
     {

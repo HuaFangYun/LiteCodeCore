@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LiteCode.Core.Utility.Sequence;
-using LiteCode.Data;
-using LiteCode.Entity;
-using Microsoft.AspNetCore.Html;
+﻿using System.Threading.Tasks;
+using LuckyCode.Data;
+using LuckyCode.Entity.IdentityEntity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

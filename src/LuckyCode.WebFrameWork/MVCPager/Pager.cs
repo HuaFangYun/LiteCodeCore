@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace LiteCode.WebFrameWork.MVCPager
+namespace LuckyCode.WebFrameWork.MVCPager
 {
 
     #region 分页扩展 PageExtend

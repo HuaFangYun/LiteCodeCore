@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using LiteCode.Core;
-using LiteCode.Core.Utility;
-using Lucky.ViewModels.Models.News;
+using LuckyCode.Core;
+using LuckyCode.Core.Utility;
+using LuckyCode.ViewModels.News;
 
-namespace Lucky.IService.News
+namespace LuckyCode.IService.News
 {
     public interface ICategoryService
     {

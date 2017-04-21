@@ -1,10 +1,5 @@
 ﻿using System;
-using LiteCode.Core.Data;
-using LiteCode.Core.Data.DapperExtensions;
 using LiteCode.Core.Filtes;
-using LiteCode.Core.Middleware;
-using LiteCode.Data;
-using LiteCode.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,8 +8,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using LiteCode.Service;
-using LiteCode.ViewModels.Mapper;
+using LuckyCode.Core.Data;
+using LuckyCode.Core.Data.DapperExtensions;
+using LuckyCode.Core.Filtes;
+using LuckyCode.Data;
+using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.Service;
+using LuckyCode.ViewModels.Mapper;
 using Microsoft.AspNetCore.Http;
 using HttpContext = LuckyCode.Core.Utility.HttpContext;
 

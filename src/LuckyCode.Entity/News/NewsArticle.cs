@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LiteCode.Entity.News
+namespace LuckyCode.Entity.News
 {
     public partial class NewsArticle
     {

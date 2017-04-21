@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-
-using LiteCode.Entity;
-using LiteCode.ViewModels;
 using LiteCode.WebSite.Areas.SysManager;
-
+using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
     public class AccountController : BaseController
     {

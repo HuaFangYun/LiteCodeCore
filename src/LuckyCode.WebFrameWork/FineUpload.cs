@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace LiteCode.WebFrameWork
+namespace LuckyCode.WebFrameWork
 {
     [ModelBinder(BinderType = typeof(ModelBinder))]
     public class FineUpload

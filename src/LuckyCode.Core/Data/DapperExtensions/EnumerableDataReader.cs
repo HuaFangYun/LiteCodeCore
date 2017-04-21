@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace LiteCode.Core.Data.DapperExtensions
+namespace LuckyCode.Core.Data.DapperExtensions
 {
     public class EnumerableDataReader : ObjectDataReader
     {

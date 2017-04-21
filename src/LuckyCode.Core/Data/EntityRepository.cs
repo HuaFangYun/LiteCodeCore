@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using LiteCode.Core;
+using LuckyCode.Core.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.Extensions.Logging;
-using LiteCode.Core.Data.Extensions;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Logging;
 
-namespace LiteCode.Core.Data
+namespace LuckyCode.Core.Data
 {
     /// <summary>
     /// 存储库基类

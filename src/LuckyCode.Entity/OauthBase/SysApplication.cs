@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LiteCode.Entity.OauthBase;
+﻿using System.Collections.Generic;
 
-namespace LiteCode.Entity
+namespace LuckyCode.Entity.OauthBase
 {
     public class SysApplication
     {

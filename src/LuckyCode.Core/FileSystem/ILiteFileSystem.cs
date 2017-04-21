@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace LiteCode.Core.FileSystem
+namespace LuckyCode.Core.FileSystem
 {
     /// <summary>
     /// 文件操作

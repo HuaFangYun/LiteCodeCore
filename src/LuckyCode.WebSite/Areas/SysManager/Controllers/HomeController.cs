@@ -4,20 +4,18 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using LiteCode.IService;
-using LiteCode.WebFrameWork;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.IService;
+using LuckyCode.WebFrameWork;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 
-namespace Lucky.SiteManager.Controllers
+namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
 
     public class HomeController : BaseController

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
-using LiteCode.Core.Utility;
+using LuckyCode.Core.Utility;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 
-namespace LiteCode.WebFrameWork
+namespace LuckyCode.WebFrameWork.HtmlExtensions
 {
     public static class HtmlHelperExtensions
     {

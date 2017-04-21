@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using LiteCode.Core;
-using LiteCode.Core.Data;
-using LiteCode.Entity;
-using LiteCode.IService;
-using LiteCode.ViewModels;
-using LiteCode.ViewModels.Mapper;
+using LuckyCode.Core;
+using LuckyCode.Core.Data;
+using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.IService;
+using LuckyCode.ViewModels;
+using LuckyCode.ViewModels.Mapper;
 
-
-namespace LiteCode.Service
+namespace LuckyCode.Service
 {
     public class SysUserService:ISysUserService
     {

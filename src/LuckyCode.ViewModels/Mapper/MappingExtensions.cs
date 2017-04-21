@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LiteCode.Entity;
-using LiteCode.Entity.News;
-using LiteCode.Entity.OauthBase;
-using LiteCode.ViewModels.SiteManager;
-using Lucky.ViewModels.Models.News;
+﻿using LuckyCode.Entity.IdentityEntity;
+using LuckyCode.Entity.News;
+using LuckyCode.Entity.OauthBase;
+using LuckyCode.ViewModels.News;
+using LuckyCode.ViewModels.SiteManager;
 
-namespace LiteCode.ViewModels.Mapper
+namespace LuckyCode.ViewModels.Mapper
 {
     public static class MappingExtensions
     {

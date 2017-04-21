@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-namespace LiteCode.Core.Data.Extensions
+
+namespace LuckyCode.Core.Data.Extensions
 {
     /// <summary>
     /// 扩展通过主键查询实体
