@@ -60,10 +60,14 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
        public ActionResult ProcessUpload(FineUpload upload)
        {
            string saveUrl = "/Uploads/";
-           string dirPath = _environment.ContentRootPath+saveUrl;
+           string dirPath = _environment.WebRootPath+saveUrl;
            string fileExt = Path.GetExtension(upload.Filename).ToLower();
            string newFileName = Guid.NewGuid().ToString("N") + fileExt;
-           var filePath = Path.Combine(dirPath, newFileName);
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+            var filePath = Path.Combine(dirPath, newFileName);
            try
            {
                upload.SaveAs(filePath);
