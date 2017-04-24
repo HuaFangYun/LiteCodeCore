@@ -13,6 +13,7 @@ namespace LuckyCode.WebSite.Controllers
         private ILiteCodeContext _context;
         public HomeController(UserManager<SysUsers> userManager, ILiteCodeContext context, SignInManager<SysUsers> signIn)
         {
+            
             _userManager = userManager;
             _context = context;
             _signIn = signIn;

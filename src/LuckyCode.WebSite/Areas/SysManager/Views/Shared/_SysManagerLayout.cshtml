@@ -8,8 +8,8 @@
     <title>幸运草工作室-权限系统</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <link href="~/font-awesome/css/font-awesome.css" rel="stylesheet" /> 
-    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="~/css/font-awesome.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
     <link href="~/lib/bootstraptable/dist/bootstrap-table.min.css" rel="stylesheet"/>
     <link href="~/css/AdminLTE.css" rel="stylesheet" />
     <link href="~/css/skins/skin-blue.css" rel="stylesheet" />
@@ -21,12 +21,8 @@
         @Html.Partial("_SiteManagerTopMenu")
         <!-- Left side column. contains the logo and sidebar -->
         @Html.Partial("_SiteManagerLeft")
-        <!-- Content Wrapper. Contains page content -->
-        
-           
+        <!-- Content Wrapper. Contains page content --> 
                 @RenderBody()
-           
-        
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 2.0
@@ -34,8 +30,8 @@
             <strong>Copyright &copy; 2016-2017 <a href="http://www.luckearth.cn">幸运草工作室</a>.</strong> All rights reserved.
         </footer>
     </div><!-- ./wrapper -->
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+   <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/lib/bootstraptable/dist/bootstrap-table.min.js"></script>
     <script src="~/lib/bootstraptable/dist/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>

@@ -1,4 +1,4 @@
-﻿/// <autosync enabled="true" />
+﻿/// <autosync enabled="false" />
 /// <reference path="bootstrap/js/bootstrap.js" />
 /// <reference path="bootstrap/js/npm.js" />
 /// <reference path="js/app.js" />

@@ -1,5 +1,4 @@
 ﻿using System;
-using LiteCode.Core.Filtes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +15,7 @@ using LuckyCode.Entity.IdentityEntity;
 using LuckyCode.Service;
 using LuckyCode.ViewModels.Mapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using HttpContext = LuckyCode.Core.Utility.HttpContext;
 
 namespace LuckyCode.WebSite
@@ -73,8 +73,6 @@ namespace LuckyCode.WebSite
 
             services.AddSingleton<IAuthorizationHandler, ResourceHandler>();
             
-
-
             services.AddService();
 
            // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
@@ -111,7 +109,10 @@ namespace LuckyCode.WebSite
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
             }
             else
             {
@@ -126,6 +127,8 @@ namespace LuckyCode.WebSite
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                  routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });
         }
     }
