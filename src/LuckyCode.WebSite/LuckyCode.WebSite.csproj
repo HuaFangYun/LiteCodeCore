@@ -12,6 +12,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\img\t_border_1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Areas\**\*.cshtml;wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>

@@ -3,10 +3,12 @@ import VueRouter from 'vue-router'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
 import App from './app.vue';
-import { routes, loginPath } from './routes'
+import routes from './routes'
 import store from './vuex/store'
 import shared from './views/shared'
+import components from './components'
 
+//批量注册组件
 
 Object.keys(shared).forEach((key) => {
     var name = key.replace(/(\w)/, (v) => v.toUpperCase()); //首字母大写
@@ -15,32 +17,13 @@ Object.keys(shared).forEach((key) => {
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
-
-
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-//axios.interceptors.request.use(config => {
-//    if (store.state.user) {
-//        config.headers.Authorization = `token ${store.state.user.token}`;
-//    }
-//    return config;
-//}, err => {
-//    return Promise.reject(err);
-//});
+Vue.use(components);
 
 let router = new VueRouter({
     mode: "history",
     routes
 });
 
-//router.beforeEach(({meta, path}, from, next) => {
-//    var { auth = true } = meta;
-//    var isLogin = store.state.user && store.state.user.id;
-//    if (auth && !isLogin && path !== loginPath) {
-//        return next({ path: loginPath });
-//    }
-//    next();
-//});
 
 var vm = new Vue({
     store,

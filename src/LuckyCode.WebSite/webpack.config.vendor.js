@@ -24,15 +24,15 @@ module.exports = (env) => {
         },
         module: {
             rules: [{
-                    test: /\.css(\?|$)/,
-                    use: extractCSS.extract({
-                        use: 'css-loader'
-                    })
-                },
-                {
-                    test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
-                    use: 'url-loader?limit=100000'
-                }
+                test: /\.css(\?|$)/,
+                use: extractCSS.extract({
+                    use: 'css-loader'
+                })
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
+                use: 'url-loader?limit=100000'
+            }
             ]
         },
         output: {

@@ -1,14 +1,6 @@
 ﻿<template>
     <div>
-        首页
+        首页123123
     </div>
 </template>
-<script>
-    module.exports = {
-        data: function () {
-            return {
-             
-            }
-        }
-    }
-</script>
+ 
