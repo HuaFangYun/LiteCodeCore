@@ -12,11 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\js\pages\SysApplicationVue.js" />
-    <Content Include="wwwroot\js\pagination.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Areas\**\*.cshtml;wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>

@@ -1,4 +1,39 @@
 // var moment = require('moment');
+Vue.component('switchCheckbox',{
+    template:
+    '<div v-on:click="onClick" style="width:80px;height:30px" >'+
+    '<div v-bind:style="!checked?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{checked?"":"否"}}</div>'+
+    '<div v-bind:style="!checked?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{checked?"是":""}}</div>'+
+    '</div></span>',
+    props:['checked'],
+
+    data:function(){
+        return {
+            uncheckedStyleLeft:{
+                backgroundColor:'#fff',
+                border: '1px solid #ddd'
+            },
+            checkedStyleLeft:{
+                backgroundColor:'#00a65a',
+                border: '1px solid #00a65a'
+            },
+            uncheckedStyleRight:{
+                backgroundColor:'#ddd',
+                border: '1px solid #ddd'
+            },
+            checkedStyleRight:{
+                backgroundColor:'#fff',
+                border: '1px solid #00a65a'
+            }
+        };
+    },
+    methods:{
+        onClick:function(){
+            this.checked = !this.checked;
+            this.$emit('change',this.checked);
+        }
+    }
+});
 
 Vue.component('pagebar', {
     template: '<div>显示第 {{startRow}} 到第 {{endRow}} 条记录，总共 {{totalRowCount}} 条记录 ' +
@@ -143,6 +178,9 @@ var vm = new Vue({
         pageChange: function (pageIndex) {
             this.currentPageIndex = pageIndex;
             this.loadBanners();
+        },
+        switchCheckboxChange:function(checked){
+            this.editOrAddObj.IsDeleted = checked;
         },
         editBannerModal: function (banner) {
             this.editOrAddObj = banner;
