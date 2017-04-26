@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\js\pages\SysApplicationVue.js" />
+    <Content Include="wwwroot\js\pagination.js" />
   </ItemGroup>
 
   <ItemGroup>

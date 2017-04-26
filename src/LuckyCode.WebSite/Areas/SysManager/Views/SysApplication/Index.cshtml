@@ -40,8 +40,9 @@
                                 </td>
                             </tr>
                         </table>
-                        <pagebar v-bind:current-page-index="currentPageIndex" v-bind:total-row-count="totalRowCount" v-bind:page-size="pageSize" v-on:paged="pageChange"></pagebar>
-
+                       @* <pagebar v-bind:current-page-index="currentPageIndex" v-bind:total-row-count="totalRowCount" v-bind:page-size="pageSize" v-on:paged="pageChange"></pagebar>*@
+                        
+                        <pagination v-bind:total="total" v-on:paged="pageChange" v-bind:current-index="currentIndex"></pagination>
                     </div>
                 </div>
             </div>
@@ -50,6 +51,24 @@
     <!-- /.content -->
 </div>
 @section scripts{
-<script src="~/js/pager.js"></script>
+<script type="text/template" id="template_pagination">
+    <nav>
+        <ul class="pagination">
+            <li :class="{'disabled': currentIndex == 1}"><a href="javascript:;" @@click="setCurrent(1)"> 首页 </a></li>
+            <li :class="{'disabled': currentIndex == 1}"><a href="javascript:;" @@click="setCurrent(currentIndex - 1)"> 上一页 </a></li>
+            <li v-for="p in grouplist" :class="{'active': currentIndex == p.val}"><a href="javascript:;" @@click="setCurrent(p.val)"> {{ p.text }} </a></li>
+            <li :class="{'disabled': currentIndex == page}"><a href="javascript:;" @@click="setCurrent(currentIndex + 1)"> 下一页</a></li>
+            <li :class="{'disabled': currentIndex == page}"><a href="javascript:;" @@click="setCurrent(page)"> 尾页 </a></li>
+        </ul>
+        <ul class="pagination pull-right">
+            <li><span> 共 {{ total }}  条数据 </span></li>
+            <li><span> 每页显示 {{ pageSize }}  条数据 </span></li>
+            <li><span> 共 {{ page }} 页 </span></li>
+            <li><span> 当前第 {{ currentIndex }} 页 </span></li>
+        </ul>
+    </nav>
+</script>
+@*<script src="~/js/pager.js"></script>*@
+<script src="~/js/pagination.js"></script>
     <script src="~/js/pages/SysApplicationVue.js" type="text/javascript"></script>
 }

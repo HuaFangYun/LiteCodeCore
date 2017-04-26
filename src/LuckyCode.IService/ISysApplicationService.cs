@@ -11,7 +11,7 @@ namespace LuckyCode.IService
         Task DeleteSysApplication(string id);
         Task<SysApplicationViewModel> SaveSysApplication(SysApplicationViewModel model);
         Task<SysApplicationViewModel> UpdateSysApplication(SysApplicationViewModel model);
-        Task<PagedList<SysApplicationViewModel>> GetPagedList();
+        Task<PagedList<SysApplicationViewModel>> GetPagedList(int pageIndex, int pageSize);
         Task<SysApplicationViewModel> GetApplicationViewModel(string id);
         Task<List<ListItemEntity>> AppItemEntities();
     }
