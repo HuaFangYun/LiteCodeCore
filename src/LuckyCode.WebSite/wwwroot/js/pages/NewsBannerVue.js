@@ -72,7 +72,7 @@ var vm = new Vue({
         banners: [],
         totalItems: 0,
         currentPageIndex: 1,
-        pageSize: 2,
+        pageSize: 10,
         totalRowCount: 0
     },
     created: function () {

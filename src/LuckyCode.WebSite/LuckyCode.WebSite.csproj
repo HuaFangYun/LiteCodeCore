@@ -12,6 +12,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\js\pages\SysApplicationVue.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Areas\**\*.cshtml;wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
@@ -55,6 +59,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\pager.js" />
   </ItemGroup>
 
 </Project>
