@@ -4,6 +4,8 @@
         applications: [],
         totalItems: 0,
         currentPageIndex: 1,
+        currentIndex: 1,
+        total:0,
         pageSize: 2,
         totalRowCount: 0
     },
@@ -30,13 +32,22 @@
                 console.log(res);
                 self.applications = res.data.rows;
                 self.totalRowCount = res.data.total;
+                self.total = res.data.total;
             }).catch((res) => {
 
             });
         },
         pageChange:function(pageIndex) {
             this.currentPageIndex = pageIndex;
+            this.currentIndex = pageIndex;
+            console.log(this.currentIndex);
             this.initTable();
         }
+    },
+    events: {
+        pagechange: function (p) {
+            console.log('pagechange', p);
+        }
     }
+   
 });
