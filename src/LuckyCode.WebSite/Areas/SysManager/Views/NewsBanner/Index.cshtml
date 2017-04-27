@@ -78,7 +78,15 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="IsDeleted">是否删除</label>
                                 <div class="col-md-9">
-                                    <switch-checkbox v-bind:checked="editOrAddObj.IsDeleted" v-on:change="editOrAddObj.IsDeleted=arguments[0]"></switch-checkbox>
+                                    <switch-checkbox v-model="editOrAddObj.IsDeleted"></switch-checkbox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="ImageUrl">图片地址</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control text-box single-line" v-model="editOrAddObj.ImageUrl" />
+                                    <upload-file></upload-file>
+
                                 </div>
                             </div>
                         </form>
@@ -95,5 +103,5 @@
     <!-- /.content -->
 </div>
 @section scripts{
-    <script src="~/js/pages/NewsBannerVue.js"></script>
+<script src="~/js/pages/NewsBannerVue.js"></script>
 }
