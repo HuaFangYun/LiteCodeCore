@@ -84,9 +84,9 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="ImageUrl">图片地址</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control text-box single-line" v-model="editOrAddObj.ImageUrl" />
-                                    <upload-file></upload-file>
-
+                                    <input type="text" class="form-control text-box single-line" style="width:79%;display:initial"
+                                     v-model="editOrAddObj.ImageUrl" />
+                                    <upload-file v-on:uploaded="fileUploaded"></upload-file>
                                 </div>
                             </div>
                         </form>

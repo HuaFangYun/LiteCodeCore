@@ -12,7 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\img\t_border_1.jpg" />
   </ItemGroup>
 
   <ItemGroup>

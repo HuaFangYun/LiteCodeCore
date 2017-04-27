@@ -1,46 +1,83 @@
 // var moment = require('moment');
-Vue.component('uploadFile',{
-    template:'<span><button type="button" class="btn btn-flat btn-xs btn-info">上传文件</button></span>',
-    data:function(){
-        return {}
+Vue.component('uploadFile', {
+    template: '<span><button type="button" class="btn btn-default" v-on:click="selectFile">{{buttonTitle}}</button><input type="file" style="display:none" v-on:change="fileChange"/></span>',
+    data: function () {
+        return {
+            buttonTitle: '上传文件'
+        }
+    },
+    methods: {
+        selectFile: function () {
+            var fileInput = this.$el.querySelector('input');
+            fileInput.click();
+        },
+        fileChange: function () {
+            var that = this;
+            var fileInput = this.$el.querySelector('input');
+            var file = fileInput.files[0];
+            if (file) {
+                that.buttonTitle = '正在上传';
+                var formBody = new FormData();
+                formBody.append('file', file);
+                formBody.append('name', file.name);
+                Vue.http.post('/sysmanager/home/ProcessUpload', formBody, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then(function (res) {
+                    console.log(res.body);
+                    that.buttonTitle = "上传成功";
+                    setTimeout(function () {
+                        that.buttonTitle = '上传文件';
+                    }, 1500)
+                    that.$emit('uploaded', res.body);
+                }, function (res) {
+                    console.log('upload file error');
+                    that.buttonTitle = "上传失败";
+                    setTimeout(function () {
+                        that.buttonTitle = '上传文件';
+                    }, 1500);
+                });
+            }
+        }
     }
 });
 
-Vue.component('switchCheckbox',{
+Vue.component('switchCheckbox', {
     template:
-    '<div v-on:click="onClick" style="width:80px;height:30px" >'+
-    '<div v-bind:style="!value?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{value?"":"否"}}</div>'+
-    '<div v-bind:style="!value?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{value?"是":""}}</div>'+
+    '<div v-on:click="onClick" style="width:80px;height:30px" >' +
+    '<div v-bind:style="!value?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{value?"":"否"}}</div>' +
+    '<div v-bind:style="!value?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{value?"是":""}}</div>' +
     '</div>',
-    props:['value'],
+    props: ['value'],
 
-    data:function(){
+    data: function () {
         return {
-            uncheckedStyleLeft:{
-                backgroundColor:'#fff',
+            uncheckedStyleLeft: {
+                backgroundColor: '#fff',
                 border: '1px solid #ddd'
             },
-            checkedStyleLeft:{
-                backgroundColor:'#00a65a',
+            checkedStyleLeft: {
+                backgroundColor: '#00a65a',
                 border: '1px solid #00a65a'
             },
-            uncheckedStyleRight:{
-                backgroundColor:'#ddd',
+            uncheckedStyleRight: {
+                backgroundColor: '#ddd',
                 border: '1px solid #ddd'
             },
-            checkedStyleRight:{
-                backgroundColor:'#fff',
+            checkedStyleRight: {
+                backgroundColor: '#fff',
                 border: '1px solid #00a65a'
             }
         };
     },
-    methods:{
-        onClick:function(){
+    methods: {
+        onClick: function () {
             this.value = !this.value;
-            this.$emit('input',this.value);
+            this.$emit('input', this.value);
         },
-        updateValue:function(){
-            console.log('switchCheckbox value change',this.value);
+        updateValue: function () {
+            console.log('switchCheckbox value change', this.value);
         }
     }
 });
@@ -189,7 +226,7 @@ var vm = new Vue({
             this.currentPageIndex = pageIndex;
             this.loadBanners();
         },
-        switchCheckboxChange:function(checked){
+        switchCheckboxChange: function (checked) {
             this.editOrAddObj.IsDeleted = checked;
         },
         editBannerModal: function (banner) {
@@ -197,18 +234,24 @@ var vm = new Vue({
             $('#bannerEdit').modal('show');
         },
         addBannerModal: function () {
-            this.editOrAddObj = {};
+            this.editOrAddObj = {
+                Title: '',
+                Url: '',
+                ImageUrl: '',
+                Sort: '',
+                IsDeleted: false
+            };
             $('#bannerEdit').modal('show');
         },
         valid: function () {
-            var invalid ={};
-            invalid.Sort = this.editOrAddObj.Sort === undefined||this.editOrAddObj.Sort==='';
+            var invalid = {};
+            invalid.Sort = this.editOrAddObj.Sort === undefined || this.editOrAddObj.Sort === '';
 
-            this.$set(this.editOrAddObj,'invalid',invalid);
+            this.$set(this.editOrAddObj, 'invalid', invalid);
 
-            for(var prop in  invalid){
+            for (var prop in invalid) {
                 var val = invalid[prop];
-                if(val){
+                if (val) {
                     return false;
                 }
             }
@@ -217,7 +260,7 @@ var vm = new Vue({
         },
         saveBanner: function () {
             var val = this.valid();
-            if(!val){
+            if (!val) {
                 return;
             }
 
@@ -254,6 +297,11 @@ var vm = new Vue({
                         console.log('create error.');
                     }
                 );
+            }
+        },
+        fileUploaded: function (result) {
+            if (result.success) {
+                this.editOrAddObj.ImageUrl = result.Url;
             }
         }
     }
