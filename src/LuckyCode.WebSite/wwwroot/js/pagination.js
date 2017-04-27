@@ -1,6 +1,21 @@
 ﻿Vue.component('pagination',
     {
-        template: '#template_pagination' ,
+        template: '<nav>\
+            <ul class="pagination">\
+            <li :class="{"disabled": currentIndex == 1}"><a href="javascript:;" @click="setCurrent(1)"> 首页 </a></li>\
+            <li :class="{"disabled": currentIndex == 1}"><a href="javascript:;" @click="setCurrent(currentIndex - 1)"> 上一页 </a></li> \
+            <li v-for=" item in grouplist " :class="{"active": current == item.val}"><a href="javascript:;" @click="setCurrent(item.val)"> {{ item.text }} </a></li>\
+            <li :class="{"disabled": currentIndex == page}"><a href="javascript:;" @click="setCurrent(currentIndex + 1)"> 下一页</a></li>\
+         <li :class="{"disabled": currentIndex == page}"><a href="javascript:;" @click="setCurrent(page)"> 尾页 </a></li>\
+         </ul >\
+        <ul class="pagination pull-right">\
+        <li><span> 共 {{ total }}  条数据 </span></li>\
+        <li><span> 每页显示 {{ pageSize }}  条数据 </span></li>\
+        <li><span> 共 {{ page }} 页 </span></li>\
+        <li><span> 当前第 {{ currentIndex }} 页 </span></li>\
+        </ul>\
+        </nav>\
+            ',
         props: {
             total: {			// 数据总条数
                 type: Number,
