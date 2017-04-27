@@ -1,4 +1,39 @@
 // var moment = require('moment');
+Vue.component('switchCheckbox',{
+    template:
+    '<div v-on:click="onClick" style="width:80px;height:30px" >'+
+    '<div v-bind:style="!checked?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{checked?"":"否"}}</div>'+
+    '<div v-bind:style="!checked?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{checked?"是":""}}</div>'+
+    '</div></span>',
+    props:['checked'],
+
+    data:function(){
+        return {
+            uncheckedStyleLeft:{
+                backgroundColor:'#fff',
+                border: '1px solid #ddd'
+            },
+            checkedStyleLeft:{
+                backgroundColor:'#00a65a',
+                border: '1px solid #00a65a'
+            },
+            uncheckedStyleRight:{
+                backgroundColor:'#ddd',
+                border: '1px solid #ddd'
+            },
+            checkedStyleRight:{
+                backgroundColor:'#fff',
+                border: '1px solid #00a65a'
+            }
+        };
+    },
+    methods:{
+        onClick:function(){
+            this.checked = !this.checked;
+            this.$emit('change',this.checked);
+        }
+    }
+});
 
 Vue.component('pagebar', {
     template: '<div>显示第 {{startRow}} 到第 {{endRow}} 条记录，总共 {{totalRowCount}} 条记录 ' +
@@ -73,7 +108,8 @@ var vm = new Vue({
         totalItems: 0,
         currentPageIndex: 1,
         pageSize: 10,
-        totalRowCount: 0
+        totalRowCount: 0,
+        editOrAddObj: {}
     },
     created: function () {
         console.log('newsbanner page created .');
@@ -97,7 +133,7 @@ var vm = new Vue({
                 params: {
                     pageIndex: that.currentPageIndex,
                     pageSize: that.pageSize,
-                    _:Date.parse(new Date())
+                    _: Date.parse(new Date())
                 }
             }).then(
                 function (res) {
@@ -119,11 +155,11 @@ var vm = new Vue({
 
                     Vue.http.get('Delete/id' + bannerId).then(
                         function (res) {
-                            if(res.body){
-                                for(var index in that.banners){
+                            if (res.body) {
+                                for (var index in that.banners) {
                                     var banner = that.banners[index];
-                                    if(bannerId===banner.Id){
-                                        that.banners.splice(index,1);
+                                    if (bannerId === banner.Id) {
+                                        that.banners.splice(index, 1);
                                     }
                                 }
                             }
@@ -142,6 +178,73 @@ var vm = new Vue({
         pageChange: function (pageIndex) {
             this.currentPageIndex = pageIndex;
             this.loadBanners();
+        },
+        switchCheckboxChange:function(checked){
+            this.editOrAddObj.IsDeleted = checked;
+        },
+        editBannerModal: function (banner) {
+            this.editOrAddObj = banner;
+            $('#bannerEdit').modal('show');
+        },
+        addBannerModal: function () {
+            this.editOrAddObj = {};
+            $('#bannerEdit').modal('show');
+        },
+        valid: function () {
+            var invalid ={};
+            invalid.Sort = this.editOrAddObj.Sort === undefined||this.editOrAddObj.Sort==='';
+
+            this.$set(this.editOrAddObj,'invalid',invalid);
+
+            for(var prop in  invalid){
+                var val = invalid[prop];
+                if(val){
+                    return false;
+                }
+            }
+
+            return true;
+        },
+        saveBanner: function () {
+            var val = this.valid();
+            if(!val){
+                return;
+            }
+
+            if (this.editOrAddObj.Id) {
+                //edit
+                Vue.http.post('Edit', this.editOrAddObj).then(
+                    function (res) {
+                        if (res.body) {
+                            layer.alert('编辑Banner成功！');
+                            $('#bannerEdit').modal('hide');
+                        }
+                        else {
+                            console.log('edit fail.');
+                        }
+                    },
+                    function (res) {
+                        console.log('edit error.');
+                    }
+                );
+            }
+            else {
+                //add
+                Vue.http.post('Create', this.editOrAddObj).then(
+                    function (res) {
+                        if (res.body) {
+                            layer.alert('添加Banner成功！');
+                            $('#bannerEdit').modal('hide');
+                        }
+                        else {
+                            console.log('create fail.');
+                        }
+                    },
+                    function (res) {
+                        console.log('create error.');
+                    }
+                );
+            }
         }
     }
 

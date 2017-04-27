@@ -12,8 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\js\pages\SysApplicationVue.js" />
-    <Content Include="wwwroot\js\pagination.js" />
+    <Content Include="wwwroot\img\t_border_1.jpg" />
   </ItemGroup>
 
   <ItemGroup>

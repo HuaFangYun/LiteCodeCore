@@ -59,7 +59,11 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
+<<<<<<< HEAD
+/******/ 	var hotCurrentHash = "df0506c65ae9f24b2633"; // eslint-disable-line no-unused-vars
+=======
 /******/ 	var hotCurrentHash = "a38cdb4c9bad2b07d405"; // eslint-disable-line no-unused-vars
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +708,11 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
+/******/ 	return hotCreateRequire(73)(__webpack_require__.s = 73);
+=======
 /******/ 	return hotCreateRequire(83)(__webpack_require__.s = 83);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10488,7 +10496,11 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue$3);
 
+<<<<<<< HEAD
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(70)))
+=======
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(81)))
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /***/ }),
 /* 3 */
@@ -10646,7 +10658,11 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
+<<<<<<< HEAD
+module.exports = vendor_03b92521c730e493931d;
+=======
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /***/ }),
 /* 5 */
@@ -10675,7 +10691,11 @@ var USER_SIGNOUT = exports.USER_SIGNOUT = 'USER_SIGNOUT';
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+exports = module.exports = __webpack_require__(8)();
+=======
 exports = module.exports = __webpack_require__(13)();
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 // imports
 
 
@@ -10689,7 +10709,26 @@ exports.push([module.i, "\nhtml, body {\n  padding: 0;\n}\n", ""]);
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+exports = module.exports = __webpack_require__(8)();
+=======
 exports = module.exports = __webpack_require__(13)();
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
+// imports
+
+
+// module
+exports.push([module.i, "\n.ss-table {\n  flex-grow: 1;\n  flex-basis: 0px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n}\n.ss-table .ss-table-header {\n    background-color: #eee;\n    background-image: -webkit-linear-gradient(top, #f2f2f2 0, #fafafa 100%);\n    background-image: -moz-linear-gradient(top, #f2f2f2 0, #fafafa 100%);\n    background-image: -o-linear-gradient(top, #f2f2f2 0, #fafafa 100%);\n    background-image: linear-gradient(to bottom, #f2f2f2 0, #fafafa 100%);\n    font-size: 12px;\n}\n.ss-table .ss-table-content {\n    flex-grow: 1;\n    flex-basis: auto;\n    overflow: auto;\n    /*thead th {\r\n            background-color: rgba(0, 0, 0, 0.1);\r\n        }*/\n}\n.ss-table .ss-table-content thead tr {\n      border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.ss-table .table {\n    width: 100%;\n    padding-bottom: 0;\n    margin-bottom: 0;\n    border-left: none;\n    border-right: none;\n    table-layout: fixed;\n    overflow: hidden;\n}\n.ss-table .table input[type=checkbox], .ss-table .table input[type=radio] {\n      position: static;\n      left: 0;\n      opacity: 100;\n}\n.ss-table .table .btn {\n      font-size: 12px;\n      padding: 4px 9px;\n      line-height: 1.39;\n}\n.ss-table .table th, .ss-table .table td {\n      text-align: center;\n      font-weight: normal;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n      overflow: hidden;\n      border: none;\n      background: url(\"/img/t_border_1.jpg\") right no-repeat;\n      height: 100%;\n}\n.ss-table .table th.command, .ss-table .table td.command {\n        overflow: auto;\n        vertical-align: top;\n        position: relative;\n}\n.ss-table .table th:first-child input[type=checkbox], .ss-table .table td:first-child input[type=checkbox] {\n        width: 18px;\n        height: 18px;\n}\n.ss-table .table th:last-child, .ss-table .table td:last-child {\n        background-image: none;\n}\n.ss-table .table th {\n      font-family: 'Microsoft YaHei';\n      font-size: 14px;\n      line-height: 3;\n      padding: 0;\n}\n.ss-table .table tr.selected {\n      background-color: #0094ff;\n}\n.ss-table .table tr.selected th, .ss-table .table tr.selected td {\n        color: white;\n}\n.ss-table.ss-table-fixed .ss-table-content {\n    overflow-y: scroll;\n    overflow-x: auto;\n    flex-basis: auto;\n}\n.ss-table.ss-table-fixed .ss-table-header {\n    padding-right: 17px;\n}\n\n/**\r\n* CSS themes for simplePagination.js\r\n* Author: Flavius Matis - http://flaviusmatis.github.com/\r\n* URL: https://github.com/flaviusmatis/simplePagination.js\r\n*/\nul.simple-pagination {\n  list-style: none;\n}\n.simple-pagination {\n  display: block;\n  overflow: hidden;\n  padding: 0 5px 5px 0;\n  margin: 0;\n}\n.simple-pagination ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.simple-pagination li {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  float: left;\n  cursor: pointer;\n}\nspan.ellipse.clickable {\n  cursor: pointer;\n}\n.ellipse input {\n  width: 3em;\n}\n\n/*------------------------------------*\tCompact Theme Styles\r\n\\*------------------------------------*/\n.compact-theme a, .compact-theme span {\n  float: left;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: normal;\n  text-align: center;\n  border: 1px solid #AAA;\n  border-left: none;\n  min-width: 14px;\n  padding: 0 7px;\n  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);\n  background: #efefef;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* Opera11.10+ */\n  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* IE10+ */\n  background: linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* W3C */\n}\n.compact-theme a:hover {\n  text-decoration: none;\n  background: #efefef;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(100%, #bbbbbb));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #efefef 0%, #bbbbbb 100%);\n  /* Opera11.10+ */\n  background: -ms-linear-gradient(top, #efefef 0%, #bbbbbb 100%);\n  /* IE10+ */\n  background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);\n  /* W3C */\n}\n.compact-theme li:first-child a, .compact-theme li:first-child span {\n  border-left: 1px solid #AAA;\n  border-radius: 3px 0 0 3px;\n}\n.compact-theme li:last-child a, .compact-theme li:last-child span {\n  border-radius: 0 3px 3px 0;\n}\n.compact-theme .current {\n  background: #bbbbbb;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #bbbbbb 0%, #efefef 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bbbbbb), color-stop(100%, #efefef));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #bbbbbb 0%, #efefef 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #bbbbbb 0%, #efefef 100%);\n  /* Opera11.10+ */\n  background: -ms-linear-gradient(top, #bbbbbb 0%, #efefef 100%);\n  /* IE10+ */\n  background: linear-gradient(top, #bbbbbb 0%, #efefef 100%);\n  /* W3C */\n  cursor: default;\n}\n.compact-theme .ellipse {\n  background: #EAEAEA;\n  padding: 0 10px;\n  cursor: default;\n}\n\n/*------------------------------------*\tLight Theme Styles\r\n\\*------------------------------------*/\n.light-theme a, .light-theme span {\n  float: left;\n  color: #666;\n  font-size: 12px;\n  line-height: 24px;\n  font-weight: normal;\n  text-align: center;\n  border: 1px solid #BBB;\n  min-width: 14px;\n  padding: 0 7px;\n  margin: 0 5px 0 0;\n  border-radius: 3px;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n  background: #efefef;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* Opera11.10+ */\n  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* IE10+ */\n  background: linear-gradient(top, #ffffff 0%, #efefef 100%);\n  /* W3C */\n}\n.light-theme a:hover {\n  text-decoration: none;\n  background: #FCFCFC;\n}\n.light-theme .current {\n  background: #666;\n  color: #FFF;\n  border-color: #444;\n  box-shadow: 0 1px 0 white, 0 0 2px rgba(0, 0, 0, 0.3) inset;\n  cursor: default;\n}\n.light-theme .ellipse {\n  background: none;\n  border: none;\n  border-radius: 0;\n  box-shadow: none;\n  font-weight: bold;\n  cursor: default;\n}\n\n/*------------------------------------*\tDark Theme Styles\r\n\\*------------------------------------*/\n.dark-theme a, .dark-theme span {\n  float: left;\n  color: #CCC;\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: normal;\n  text-align: center;\n  border: 1px solid #222;\n  min-width: 14px;\n  padding: 0 7px;\n  margin: 0 5px 0 0;\n  border-radius: 3px;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n  background: #555;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #555 0%, #333 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #555), color-stop(100%, #333));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #555 0%, #333 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #555 0%, #333 100%);\n  /* Opera11.10+ */\n  background: -ms-linear-gradient(top, #555 0%, #333 100%);\n  /* IE10+ */\n  background: linear-gradient(top, #555 0%, #333 100%);\n  /* W3C */\n}\n.dark-theme a:hover {\n  text-decoration: none;\n  background: #444;\n}\n.dark-theme .current {\n  background: #222;\n  color: #FFF;\n  border-color: #000;\n  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 1px 1px rgba(0, 0, 0, 0.1) inset;\n  cursor: default;\n}\n.dark-theme .ellipse {\n  background: none;\n  border: none;\n  border-radius: 0;\n  box-shadow: none;\n  font-weight: bold;\n  cursor: default;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+<<<<<<< HEAD
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)();
 // imports
 
 
@@ -10701,7 +10740,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+=======
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 "use strict";
 
@@ -10719,6 +10762,136 @@ module.exports = function xhrAdapter(config) {
     var requestData = config.data;
     var requestHeaders = config.headers;
 
+<<<<<<< HEAD
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.vNodeToHtml = vNodeToHtml;
+exports.vNodesToHtml = vNodesToHtml;
+exports.getJSONFromExpression = getJSONFromExpression;
+exports.defaultUnit = defaultUnit;
+exports.newGuid = newGuid;
+//工具类集合
+function vNodeToHtml(vNode) {
+    return vNodesToHtml([vNode]);
+}
+/**
+ * 将vue 虚拟dom(VNode)集合转换为对应的html
+ * @param {any} vNodes 虚拟dom(VNode)集合
+ */
+function vNodesToHtml(vNodes) {
+    var result = [];
+    function _vNodeToHtml(vNode) {
+        if (!vNode) return;
+        if (vNode.tag) {
+            result.push('<' + vNode.tag);
+            var data = vNode.data;
+            var attrs = data.attrs;
+            if (data.staticClass) {
+                result.push(' class=\'' + data.staticClass + '\'');
+            }
+            if (data.staticStyle) {
+                var styles = [];
+                for (var styleName in data.staticStyle) {
+                    if (data.staticStyle.hasOwnProperty(styleName)) {
+                        styles.push(styleName + '=' + data.staticStyle[styleName]);
+                    }
+                }
+                result.push(' style=\'' + styles.join(";") + '\'');
+            }
+            if (attrs) {
+                for (var name in attrs) {
+                    if (attrs.hasOwnProperty(name)) {
+                        result.push(' ' + name + '=\'' + attrs[name] + '\'');
+                    }
+                }
+            }
+            result.push(' />');
+        } else {
+            if (vNode.text) {
+                result.push(vNode.text);
+            }
+        }
+        if (vNode.children && vNode.children.length > 0) {
+            vNode.children.forEach(function (child) {
+                _vNodeToHtml(child);
+            });
+        }
+        if (vNode.tag) {
+            result.push('</' + vNode.tag + '>');
+        }
+    }
+
+    vNodes.forEach(function (node) {
+        _vNodeToHtml(node);
+    });
+    var template = result.join('');
+    template = template.replace(/\$\{([^\}]+)\}/ig, "{{$1}}");
+    template = template.replace(/\$\:/ig, ":");
+    template = template.replace(/\$\@/ig, "@");
+    return template;
+}
+
+/**
+ * 将表达式格式 a=2&c=1 或者 a:2,b:3 转换为对应json
+ * @param {string} expression 
+ * @param {Array} outputParams 输出参数方式,如果不填,则可以获取返回值
+ * @returns {Object<>}  [{name:"a",value:2},{name:"c",value:1}]
+ */
+function getJSONFromExpression(expression) {
+    if (!expression) {
+        return {};
+    }
+    var data = {};
+
+    function processExpression(separator1, separator2) {
+        if (expression.indexOf(separator2) === -1) {
+            return;
+        }
+        var firstParts = expression.split(separator1);
+        for (var i = 0; i < firstParts.length; i++) {
+            var secondParts = firstParts[i].split(separator2);
+            if (secondParts.length === 2) {
+                data[secondParts[0]] = secondParts[1];
+            }
+        }
+    }
+
+    processExpression("&", "=");
+
+    processExpression(",", ":");
+
+    return data;
+}
+
+function defaultUnit(value, defaultValue) {
+    if (value && /^\d+$/.test(value)) {
+        return value + (defaultValue || "px");
+    }
+    return defaultValue;
+}
+
+function S4() {
+    return ((1 + Math.random()) * 0x10000 | 0).toString(16).substring(1);
+}
+
+function newGuid() {
+    return S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4();
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+var ENTITIES = [['Aacute', [193]], ['aacute', [225]], ['Abreve', [258]], ['abreve', [259]], ['ac', [8766]], ['acd', [8767]], ['acE', [8766, 819]], ['Acirc', [194]], ['acirc', [226]], ['acute', [180]], ['Acy', [1040]], ['acy', [1072]], ['AElig', [198]], ['aelig', [230]], ['af', [8289]], ['Afr', [120068]], ['afr', [120094]], ['Agrave', [192]], ['agrave', [224]], ['alefsym', [8501]], ['aleph', [8501]], ['Alpha', [913]], ['alpha', [945]], ['Amacr', [256]], ['amacr', [257]], ['amalg', [10815]], ['amp', [38]], ['AMP', [38]], ['andand', [10837]], ['And', [10835]], ['and', [8743]], ['andd', [10844]], ['andslope', [10840]], ['andv', [10842]], ['ang', [8736]], ['ange', [10660]], ['angle', [8736]], ['angmsdaa', [10664]], ['angmsdab', [10665]], ['angmsdac', [10666]], ['angmsdad', [10667]], ['angmsdae', [10668]], ['angmsdaf', [10669]], ['angmsdag', [10670]], ['angmsdah', [10671]], ['angmsd', [8737]], ['angrt', [8735]], ['angrtvb', [8894]], ['angrtvbd', [10653]], ['angsph', [8738]], ['angst', [197]], ['angzarr', [9084]], ['Aogon', [260]], ['aogon', [261]], ['Aopf', [120120]], ['aopf', [120146]], ['apacir', [10863]], ['ap', [8776]], ['apE', [10864]], ['ape', [8778]], ['apid', [8779]], ['apos', [39]], ['ApplyFunction', [8289]], ['approx', [8776]], ['approxeq', [8778]], ['Aring', [197]], ['aring', [229]], ['Ascr', [119964]], ['ascr', [119990]], ['Assign', [8788]], ['ast', [42]], ['asymp', [8776]], ['asympeq', [8781]], ['Atilde', [195]], ['atilde', [227]], ['Auml', [196]], ['auml', [228]], ['awconint', [8755]], ['awint', [10769]], ['backcong', [8780]], ['backepsilon', [1014]], ['backprime', [8245]], ['backsim', [8765]], ['backsimeq', [8909]], ['Backslash', [8726]], ['Barv', [10983]], ['barvee', [8893]], ['barwed', [8965]], ['Barwed', [8966]], ['barwedge', [8965]], ['bbrk', [9141]], ['bbrktbrk', [9142]], ['bcong', [8780]], ['Bcy', [1041]], ['bcy', [1073]], ['bdquo', [8222]], ['becaus', [8757]], ['because', [8757]], ['Because', [8757]], ['bemptyv', [10672]], ['bepsi', [1014]], ['bernou', [8492]], ['Bernoullis', [8492]], ['Beta', [914]], ['beta', [946]], ['beth', [8502]], ['between', [8812]], ['Bfr', [120069]], ['bfr', [120095]], ['bigcap', [8898]], ['bigcirc', [9711]], ['bigcup', [8899]], ['bigodot', [10752]], ['bigoplus', [10753]], ['bigotimes', [10754]], ['bigsqcup', [10758]], ['bigstar', [9733]], ['bigtriangledown', [9661]], ['bigtriangleup', [9651]], ['biguplus', [10756]], ['bigvee', [8897]], ['bigwedge', [8896]], ['bkarow', [10509]], ['blacklozenge', [10731]], ['blacksquare', [9642]], ['blacktriangle', [9652]], ['blacktriangledown', [9662]], ['blacktriangleleft', [9666]], ['blacktriangleright', [9656]], ['blank', [9251]], ['blk12', [9618]], ['blk14', [9617]], ['blk34', [9619]], ['block', [9608]], ['bne', [61, 8421]], ['bnequiv', [8801, 8421]], ['bNot', [10989]], ['bnot', [8976]], ['Bopf', [120121]], ['bopf', [120147]], ['bot', [8869]], ['bottom', [8869]], ['bowtie', [8904]], ['boxbox', [10697]], ['boxdl', [9488]], ['boxdL', [9557]], ['boxDl', [9558]], ['boxDL', [9559]], ['boxdr', [9484]], ['boxdR', [9554]], ['boxDr', [9555]], ['boxDR', [9556]], ['boxh', [9472]], ['boxH', [9552]], ['boxhd', [9516]], ['boxHd', [9572]], ['boxhD', [9573]], ['boxHD', [9574]], ['boxhu', [9524]], ['boxHu', [9575]], ['boxhU', [9576]], ['boxHU', [9577]], ['boxminus', [8863]], ['boxplus', [8862]], ['boxtimes', [8864]], ['boxul', [9496]], ['boxuL', [9563]], ['boxUl', [9564]], ['boxUL', [9565]], ['boxur', [9492]], ['boxuR', [9560]], ['boxUr', [9561]], ['boxUR', [9562]], ['boxv', [9474]], ['boxV', [9553]], ['boxvh', [9532]], ['boxvH', [9578]], ['boxVh', [9579]], ['boxVH', [9580]], ['boxvl', [9508]], ['boxvL', [9569]], ['boxVl', [9570]], ['boxVL', [9571]], ['boxvr', [9500]], ['boxvR', [9566]], ['boxVr', [9567]], ['boxVR', [9568]], ['bprime', [8245]], ['breve', [728]], ['Breve', [728]], ['brvbar', [166]], ['bscr', [119991]], ['Bscr', [8492]], ['bsemi', [8271]], ['bsim', [8765]], ['bsime', [8909]], ['bsolb', [10693]], ['bsol', [92]], ['bsolhsub', [10184]], ['bull', [8226]], ['bullet', [8226]], ['bump', [8782]], ['bumpE', [10926]], ['bumpe', [8783]], ['Bumpeq', [8782]], ['bumpeq', [8783]], ['Cacute', [262]], ['cacute', [263]], ['capand', [10820]], ['capbrcup', [10825]], ['capcap', [10827]], ['cap', [8745]], ['Cap', [8914]], ['capcup', [10823]], ['capdot', [10816]], ['CapitalDifferentialD', [8517]], ['caps', [8745, 65024]], ['caret', [8257]], ['caron', [711]], ['Cayleys', [8493]], ['ccaps', [10829]], ['Ccaron', [268]], ['ccaron', [269]], ['Ccedil', [199]], ['ccedil', [231]], ['Ccirc', [264]], ['ccirc', [265]], ['Cconint', [8752]], ['ccups', [10828]], ['ccupssm', [10832]], ['Cdot', [266]], ['cdot', [267]], ['cedil', [184]], ['Cedilla', [184]], ['cemptyv', [10674]], ['cent', [162]], ['centerdot', [183]], ['CenterDot', [183]], ['cfr', [120096]], ['Cfr', [8493]], ['CHcy', [1063]], ['chcy', [1095]], ['check', [10003]], ['checkmark', [10003]], ['Chi', [935]], ['chi', [967]], ['circ', [710]], ['circeq', [8791]], ['circlearrowleft', [8634]], ['circlearrowright', [8635]], ['circledast', [8859]], ['circledcirc', [8858]], ['circleddash', [8861]], ['CircleDot', [8857]], ['circledR', [174]], ['circledS', [9416]], ['CircleMinus', [8854]], ['CirclePlus', [8853]], ['CircleTimes', [8855]], ['cir', [9675]], ['cirE', [10691]], ['cire', [8791]], ['cirfnint', [10768]], ['cirmid', [10991]], ['cirscir', [10690]], ['ClockwiseContourIntegral', [8754]], ['clubs', [9827]], ['clubsuit', [9827]], ['colon', [58]], ['Colon', [8759]], ['Colone', [10868]], ['colone', [8788]], ['coloneq', [8788]], ['comma', [44]], ['commat', [64]], ['comp', [8705]], ['compfn', [8728]], ['complement', [8705]], ['complexes', [8450]], ['cong', [8773]], ['congdot', [10861]], ['Congruent', [8801]], ['conint', [8750]], ['Conint', [8751]], ['ContourIntegral', [8750]], ['copf', [120148]], ['Copf', [8450]], ['coprod', [8720]], ['Coproduct', [8720]], ['copy', [169]], ['COPY', [169]], ['copysr', [8471]], ['CounterClockwiseContourIntegral', [8755]], ['crarr', [8629]], ['cross', [10007]], ['Cross', [10799]], ['Cscr', [119966]], ['cscr', [119992]], ['csub', [10959]], ['csube', [10961]], ['csup', [10960]], ['csupe', [10962]], ['ctdot', [8943]], ['cudarrl', [10552]], ['cudarrr', [10549]], ['cuepr', [8926]], ['cuesc', [8927]], ['cularr', [8630]], ['cularrp', [10557]], ['cupbrcap', [10824]], ['cupcap', [10822]], ['CupCap', [8781]], ['cup', [8746]], ['Cup', [8915]], ['cupcup', [10826]], ['cupdot', [8845]], ['cupor', [10821]], ['cups', [8746, 65024]], ['curarr', [8631]], ['curarrm', [10556]], ['curlyeqprec', [8926]], ['curlyeqsucc', [8927]], ['curlyvee', [8910]], ['curlywedge', [8911]], ['curren', [164]], ['curvearrowleft', [8630]], ['curvearrowright', [8631]], ['cuvee', [8910]], ['cuwed', [8911]], ['cwconint', [8754]], ['cwint', [8753]], ['cylcty', [9005]], ['dagger', [8224]], ['Dagger', [8225]], ['daleth', [8504]], ['darr', [8595]], ['Darr', [8609]], ['dArr', [8659]], ['dash', [8208]], ['Dashv', [10980]], ['dashv', [8867]], ['dbkarow', [10511]], ['dblac', [733]], ['Dcaron', [270]], ['dcaron', [271]], ['Dcy', [1044]], ['dcy', [1076]], ['ddagger', [8225]], ['ddarr', [8650]], ['DD', [8517]], ['dd', [8518]], ['DDotrahd', [10513]], ['ddotseq', [10871]], ['deg', [176]], ['Del', [8711]], ['Delta', [916]], ['delta', [948]], ['demptyv', [10673]], ['dfisht', [10623]], ['Dfr', [120071]], ['dfr', [120097]], ['dHar', [10597]], ['dharl', [8643]], ['dharr', [8642]], ['DiacriticalAcute', [180]], ['DiacriticalDot', [729]], ['DiacriticalDoubleAcute', [733]], ['DiacriticalGrave', [96]], ['DiacriticalTilde', [732]], ['diam', [8900]], ['diamond', [8900]], ['Diamond', [8900]], ['diamondsuit', [9830]], ['diams', [9830]], ['die', [168]], ['DifferentialD', [8518]], ['digamma', [989]], ['disin', [8946]], ['div', [247]], ['divide', [247]], ['divideontimes', [8903]], ['divonx', [8903]], ['DJcy', [1026]], ['djcy', [1106]], ['dlcorn', [8990]], ['dlcrop', [8973]], ['dollar', [36]], ['Dopf', [120123]], ['dopf', [120149]], ['Dot', [168]], ['dot', [729]], ['DotDot', [8412]], ['doteq', [8784]], ['doteqdot', [8785]], ['DotEqual', [8784]], ['dotminus', [8760]], ['dotplus', [8724]], ['dotsquare', [8865]], ['doublebarwedge', [8966]], ['DoubleContourIntegral', [8751]], ['DoubleDot', [168]], ['DoubleDownArrow', [8659]], ['DoubleLeftArrow', [8656]], ['DoubleLeftRightArrow', [8660]], ['DoubleLeftTee', [10980]], ['DoubleLongLeftArrow', [10232]], ['DoubleLongLeftRightArrow', [10234]], ['DoubleLongRightArrow', [10233]], ['DoubleRightArrow', [8658]], ['DoubleRightTee', [8872]], ['DoubleUpArrow', [8657]], ['DoubleUpDownArrow', [8661]], ['DoubleVerticalBar', [8741]], ['DownArrowBar', [10515]], ['downarrow', [8595]], ['DownArrow', [8595]], ['Downarrow', [8659]], ['DownArrowUpArrow', [8693]], ['DownBreve', [785]], ['downdownarrows', [8650]], ['downharpoonleft', [8643]], ['downharpoonright', [8642]], ['DownLeftRightVector', [10576]], ['DownLeftTeeVector', [10590]], ['DownLeftVectorBar', [10582]], ['DownLeftVector', [8637]], ['DownRightTeeVector', [10591]], ['DownRightVectorBar', [10583]], ['DownRightVector', [8641]], ['DownTeeArrow', [8615]], ['DownTee', [8868]], ['drbkarow', [10512]], ['drcorn', [8991]], ['drcrop', [8972]], ['Dscr', [119967]], ['dscr', [119993]], ['DScy', [1029]], ['dscy', [1109]], ['dsol', [10742]], ['Dstrok', [272]], ['dstrok', [273]], ['dtdot', [8945]], ['dtri', [9663]], ['dtrif', [9662]], ['duarr', [8693]], ['duhar', [10607]], ['dwangle', [10662]], ['DZcy', [1039]], ['dzcy', [1119]], ['dzigrarr', [10239]], ['Eacute', [201]], ['eacute', [233]], ['easter', [10862]], ['Ecaron', [282]], ['ecaron', [283]], ['Ecirc', [202]], ['ecirc', [234]], ['ecir', [8790]], ['ecolon', [8789]], ['Ecy', [1069]], ['ecy', [1101]], ['eDDot', [10871]], ['Edot', [278]], ['edot', [279]], ['eDot', [8785]], ['ee', [8519]], ['efDot', [8786]], ['Efr', [120072]], ['efr', [120098]], ['eg', [10906]], ['Egrave', [200]], ['egrave', [232]], ['egs', [10902]], ['egsdot', [10904]], ['el', [10905]], ['Element', [8712]], ['elinters', [9191]], ['ell', [8467]], ['els', [10901]], ['elsdot', [10903]], ['Emacr', [274]], ['emacr', [275]], ['empty', [8709]], ['emptyset', [8709]], ['EmptySmallSquare', [9723]], ['emptyv', [8709]], ['EmptyVerySmallSquare', [9643]], ['emsp13', [8196]], ['emsp14', [8197]], ['emsp', [8195]], ['ENG', [330]], ['eng', [331]], ['ensp', [8194]], ['Eogon', [280]], ['eogon', [281]], ['Eopf', [120124]], ['eopf', [120150]], ['epar', [8917]], ['eparsl', [10723]], ['eplus', [10865]], ['epsi', [949]], ['Epsilon', [917]], ['epsilon', [949]], ['epsiv', [1013]], ['eqcirc', [8790]], ['eqcolon', [8789]], ['eqsim', [8770]], ['eqslantgtr', [10902]], ['eqslantless', [10901]], ['Equal', [10869]], ['equals', [61]], ['EqualTilde', [8770]], ['equest', [8799]], ['Equilibrium', [8652]], ['equiv', [8801]], ['equivDD', [10872]], ['eqvparsl', [10725]], ['erarr', [10609]], ['erDot', [8787]], ['escr', [8495]], ['Escr', [8496]], ['esdot', [8784]], ['Esim', [10867]], ['esim', [8770]], ['Eta', [919]], ['eta', [951]], ['ETH', [208]], ['eth', [240]], ['Euml', [203]], ['euml', [235]], ['euro', [8364]], ['excl', [33]], ['exist', [8707]], ['Exists', [8707]], ['expectation', [8496]], ['exponentiale', [8519]], ['ExponentialE', [8519]], ['fallingdotseq', [8786]], ['Fcy', [1060]], ['fcy', [1092]], ['female', [9792]], ['ffilig', [64259]], ['fflig', [64256]], ['ffllig', [64260]], ['Ffr', [120073]], ['ffr', [120099]], ['filig', [64257]], ['FilledSmallSquare', [9724]], ['FilledVerySmallSquare', [9642]], ['fjlig', [102, 106]], ['flat', [9837]], ['fllig', [64258]], ['fltns', [9649]], ['fnof', [402]], ['Fopf', [120125]], ['fopf', [120151]], ['forall', [8704]], ['ForAll', [8704]], ['fork', [8916]], ['forkv', [10969]], ['Fouriertrf', [8497]], ['fpartint', [10765]], ['frac12', [189]], ['frac13', [8531]], ['frac14', [188]], ['frac15', [8533]], ['frac16', [8537]], ['frac18', [8539]], ['frac23', [8532]], ['frac25', [8534]], ['frac34', [190]], ['frac35', [8535]], ['frac38', [8540]], ['frac45', [8536]], ['frac56', [8538]], ['frac58', [8541]], ['frac78', [8542]], ['frasl', [8260]], ['frown', [8994]], ['fscr', [119995]], ['Fscr', [8497]], ['gacute', [501]], ['Gamma', [915]], ['gamma', [947]], ['Gammad', [988]], ['gammad', [989]], ['gap', [10886]], ['Gbreve', [286]], ['gbreve', [287]], ['Gcedil', [290]], ['Gcirc', [284]], ['gcirc', [285]], ['Gcy', [1043]], ['gcy', [1075]], ['Gdot', [288]], ['gdot', [289]], ['ge', [8805]], ['gE', [8807]], ['gEl', [10892]], ['gel', [8923]], ['geq', [8805]], ['geqq', [8807]], ['geqslant', [10878]], ['gescc', [10921]], ['ges', [10878]], ['gesdot', [10880]], ['gesdoto', [10882]], ['gesdotol', [10884]], ['gesl', [8923, 65024]], ['gesles', [10900]], ['Gfr', [120074]], ['gfr', [120100]], ['gg', [8811]], ['Gg', [8921]], ['ggg', [8921]], ['gimel', [8503]], ['GJcy', [1027]], ['gjcy', [1107]], ['gla', [10917]], ['gl', [8823]], ['glE', [10898]], ['glj', [10916]], ['gnap', [10890]], ['gnapprox', [10890]], ['gne', [10888]], ['gnE', [8809]], ['gneq', [10888]], ['gneqq', [8809]], ['gnsim', [8935]], ['Gopf', [120126]], ['gopf', [120152]], ['grave', [96]], ['GreaterEqual', [8805]], ['GreaterEqualLess', [8923]], ['GreaterFullEqual', [8807]], ['GreaterGreater', [10914]], ['GreaterLess', [8823]], ['GreaterSlantEqual', [10878]], ['GreaterTilde', [8819]], ['Gscr', [119970]], ['gscr', [8458]], ['gsim', [8819]], ['gsime', [10894]], ['gsiml', [10896]], ['gtcc', [10919]], ['gtcir', [10874]], ['gt', [62]], ['GT', [62]], ['Gt', [8811]], ['gtdot', [8919]], ['gtlPar', [10645]], ['gtquest', [10876]], ['gtrapprox', [10886]], ['gtrarr', [10616]], ['gtrdot', [8919]], ['gtreqless', [8923]], ['gtreqqless', [10892]], ['gtrless', [8823]], ['gtrsim', [8819]], ['gvertneqq', [8809, 65024]], ['gvnE', [8809, 65024]], ['Hacek', [711]], ['hairsp', [8202]], ['half', [189]], ['hamilt', [8459]], ['HARDcy', [1066]], ['hardcy', [1098]], ['harrcir', [10568]], ['harr', [8596]], ['hArr', [8660]], ['harrw', [8621]], ['Hat', [94]], ['hbar', [8463]], ['Hcirc', [292]], ['hcirc', [293]], ['hearts', [9829]], ['heartsuit', [9829]], ['hellip', [8230]], ['hercon', [8889]], ['hfr', [120101]], ['Hfr', [8460]], ['HilbertSpace', [8459]], ['hksearow', [10533]], ['hkswarow', [10534]], ['hoarr', [8703]], ['homtht', [8763]], ['hookleftarrow', [8617]], ['hookrightarrow', [8618]], ['hopf', [120153]], ['Hopf', [8461]], ['horbar', [8213]], ['HorizontalLine', [9472]], ['hscr', [119997]], ['Hscr', [8459]], ['hslash', [8463]], ['Hstrok', [294]], ['hstrok', [295]], ['HumpDownHump', [8782]], ['HumpEqual', [8783]], ['hybull', [8259]], ['hyphen', [8208]], ['Iacute', [205]], ['iacute', [237]], ['ic', [8291]], ['Icirc', [206]], ['icirc', [238]], ['Icy', [1048]], ['icy', [1080]], ['Idot', [304]], ['IEcy', [1045]], ['iecy', [1077]], ['iexcl', [161]], ['iff', [8660]], ['ifr', [120102]], ['Ifr', [8465]], ['Igrave', [204]], ['igrave', [236]], ['ii', [8520]], ['iiiint', [10764]], ['iiint', [8749]], ['iinfin', [10716]], ['iiota', [8489]], ['IJlig', [306]], ['ijlig', [307]], ['Imacr', [298]], ['imacr', [299]], ['image', [8465]], ['ImaginaryI', [8520]], ['imagline', [8464]], ['imagpart', [8465]], ['imath', [305]], ['Im', [8465]], ['imof', [8887]], ['imped', [437]], ['Implies', [8658]], ['incare', [8453]], ['in', [8712]], ['infin', [8734]], ['infintie', [10717]], ['inodot', [305]], ['intcal', [8890]], ['int', [8747]], ['Int', [8748]], ['integers', [8484]], ['Integral', [8747]], ['intercal', [8890]], ['Intersection', [8898]], ['intlarhk', [10775]], ['intprod', [10812]], ['InvisibleComma', [8291]], ['InvisibleTimes', [8290]], ['IOcy', [1025]], ['iocy', [1105]], ['Iogon', [302]], ['iogon', [303]], ['Iopf', [120128]], ['iopf', [120154]], ['Iota', [921]], ['iota', [953]], ['iprod', [10812]], ['iquest', [191]], ['iscr', [119998]], ['Iscr', [8464]], ['isin', [8712]], ['isindot', [8949]], ['isinE', [8953]], ['isins', [8948]], ['isinsv', [8947]], ['isinv', [8712]], ['it', [8290]], ['Itilde', [296]], ['itilde', [297]], ['Iukcy', [1030]], ['iukcy', [1110]], ['Iuml', [207]], ['iuml', [239]], ['Jcirc', [308]], ['jcirc', [309]], ['Jcy', [1049]], ['jcy', [1081]], ['Jfr', [120077]], ['jfr', [120103]], ['jmath', [567]], ['Jopf', [120129]], ['jopf', [120155]], ['Jscr', [119973]], ['jscr', [119999]], ['Jsercy', [1032]], ['jsercy', [1112]], ['Jukcy', [1028]], ['jukcy', [1108]], ['Kappa', [922]], ['kappa', [954]], ['kappav', [1008]], ['Kcedil', [310]], ['kcedil', [311]], ['Kcy', [1050]], ['kcy', [1082]], ['Kfr', [120078]], ['kfr', [120104]], ['kgreen', [312]], ['KHcy', [1061]], ['khcy', [1093]], ['KJcy', [1036]], ['kjcy', [1116]], ['Kopf', [120130]], ['kopf', [120156]], ['Kscr', [119974]], ['kscr', [120000]], ['lAarr', [8666]], ['Lacute', [313]], ['lacute', [314]], ['laemptyv', [10676]], ['lagran', [8466]], ['Lambda', [923]], ['lambda', [955]], ['lang', [10216]], ['Lang', [10218]], ['langd', [10641]], ['langle', [10216]], ['lap', [10885]], ['Laplacetrf', [8466]], ['laquo', [171]], ['larrb', [8676]], ['larrbfs', [10527]], ['larr', [8592]], ['Larr', [8606]], ['lArr', [8656]], ['larrfs', [10525]], ['larrhk', [8617]], ['larrlp', [8619]], ['larrpl', [10553]], ['larrsim', [10611]], ['larrtl', [8610]], ['latail', [10521]], ['lAtail', [10523]], ['lat', [10923]], ['late', [10925]], ['lates', [10925, 65024]], ['lbarr', [10508]], ['lBarr', [10510]], ['lbbrk', [10098]], ['lbrace', [123]], ['lbrack', [91]], ['lbrke', [10635]], ['lbrksld', [10639]], ['lbrkslu', [10637]], ['Lcaron', [317]], ['lcaron', [318]], ['Lcedil', [315]], ['lcedil', [316]], ['lceil', [8968]], ['lcub', [123]], ['Lcy', [1051]], ['lcy', [1083]], ['ldca', [10550]], ['ldquo', [8220]], ['ldquor', [8222]], ['ldrdhar', [10599]], ['ldrushar', [10571]], ['ldsh', [8626]], ['le', [8804]], ['lE', [8806]], ['LeftAngleBracket', [10216]], ['LeftArrowBar', [8676]], ['leftarrow', [8592]], ['LeftArrow', [8592]], ['Leftarrow', [8656]], ['LeftArrowRightArrow', [8646]], ['leftarrowtail', [8610]], ['LeftCeiling', [8968]], ['LeftDoubleBracket', [10214]], ['LeftDownTeeVector', [10593]], ['LeftDownVectorBar', [10585]], ['LeftDownVector', [8643]], ['LeftFloor', [8970]], ['leftharpoondown', [8637]], ['leftharpoonup', [8636]], ['leftleftarrows', [8647]], ['leftrightarrow', [8596]], ['LeftRightArrow', [8596]], ['Leftrightarrow', [8660]], ['leftrightarrows', [8646]], ['leftrightharpoons', [8651]], ['leftrightsquigarrow', [8621]], ['LeftRightVector', [10574]], ['LeftTeeArrow', [8612]], ['LeftTee', [8867]], ['LeftTeeVector', [10586]], ['leftthreetimes', [8907]], ['LeftTriangleBar', [10703]], ['LeftTriangle', [8882]], ['LeftTriangleEqual', [8884]], ['LeftUpDownVector', [10577]], ['LeftUpTeeVector', [10592]], ['LeftUpVectorBar', [10584]], ['LeftUpVector', [8639]], ['LeftVectorBar', [10578]], ['LeftVector', [8636]], ['lEg', [10891]], ['leg', [8922]], ['leq', [8804]], ['leqq', [8806]], ['leqslant', [10877]], ['lescc', [10920]], ['les', [10877]], ['lesdot', [10879]], ['lesdoto', [10881]], ['lesdotor', [10883]], ['lesg', [8922, 65024]], ['lesges', [10899]], ['lessapprox', [10885]], ['lessdot', [8918]], ['lesseqgtr', [8922]], ['lesseqqgtr', [10891]], ['LessEqualGreater', [8922]], ['LessFullEqual', [8806]], ['LessGreater', [8822]], ['lessgtr', [8822]], ['LessLess', [10913]], ['lesssim', [8818]], ['LessSlantEqual', [10877]], ['LessTilde', [8818]], ['lfisht', [10620]], ['lfloor', [8970]], ['Lfr', [120079]], ['lfr', [120105]], ['lg', [8822]], ['lgE', [10897]], ['lHar', [10594]], ['lhard', [8637]], ['lharu', [8636]], ['lharul', [10602]], ['lhblk', [9604]], ['LJcy', [1033]], ['ljcy', [1113]], ['llarr', [8647]], ['ll', [8810]], ['Ll', [8920]], ['llcorner', [8990]], ['Lleftarrow', [8666]], ['llhard', [10603]], ['lltri', [9722]], ['Lmidot', [319]], ['lmidot', [320]], ['lmoustache', [9136]], ['lmoust', [9136]], ['lnap', [10889]], ['lnapprox', [10889]], ['lne', [10887]], ['lnE', [8808]], ['lneq', [10887]], ['lneqq', [8808]], ['lnsim', [8934]], ['loang', [10220]], ['loarr', [8701]], ['lobrk', [10214]], ['longleftarrow', [10229]], ['LongLeftArrow', [10229]], ['Longleftarrow', [10232]], ['longleftrightarrow', [10231]], ['LongLeftRightArrow', [10231]], ['Longleftrightarrow', [10234]], ['longmapsto', [10236]], ['longrightarrow', [10230]], ['LongRightArrow', [10230]], ['Longrightarrow', [10233]], ['looparrowleft', [8619]], ['looparrowright', [8620]], ['lopar', [10629]], ['Lopf', [120131]], ['lopf', [120157]], ['loplus', [10797]], ['lotimes', [10804]], ['lowast', [8727]], ['lowbar', [95]], ['LowerLeftArrow', [8601]], ['LowerRightArrow', [8600]], ['loz', [9674]], ['lozenge', [9674]], ['lozf', [10731]], ['lpar', [40]], ['lparlt', [10643]], ['lrarr', [8646]], ['lrcorner', [8991]], ['lrhar', [8651]], ['lrhard', [10605]], ['lrm', [8206]], ['lrtri', [8895]], ['lsaquo', [8249]], ['lscr', [120001]], ['Lscr', [8466]], ['lsh', [8624]], ['Lsh', [8624]], ['lsim', [8818]], ['lsime', [10893]], ['lsimg', [10895]], ['lsqb', [91]], ['lsquo', [8216]], ['lsquor', [8218]], ['Lstrok', [321]], ['lstrok', [322]], ['ltcc', [10918]], ['ltcir', [10873]], ['lt', [60]], ['LT', [60]], ['Lt', [8810]], ['ltdot', [8918]], ['lthree', [8907]], ['ltimes', [8905]], ['ltlarr', [10614]], ['ltquest', [10875]], ['ltri', [9667]], ['ltrie', [8884]], ['ltrif', [9666]], ['ltrPar', [10646]], ['lurdshar', [10570]], ['luruhar', [10598]], ['lvertneqq', [8808, 65024]], ['lvnE', [8808, 65024]], ['macr', [175]], ['male', [9794]], ['malt', [10016]], ['maltese', [10016]], ['Map', [10501]], ['map', [8614]], ['mapsto', [8614]], ['mapstodown', [8615]], ['mapstoleft', [8612]], ['mapstoup', [8613]], ['marker', [9646]], ['mcomma', [10793]], ['Mcy', [1052]], ['mcy', [1084]], ['mdash', [8212]], ['mDDot', [8762]], ['measuredangle', [8737]], ['MediumSpace', [8287]], ['Mellintrf', [8499]], ['Mfr', [120080]], ['mfr', [120106]], ['mho', [8487]], ['micro', [181]], ['midast', [42]], ['midcir', [10992]], ['mid', [8739]], ['middot', [183]], ['minusb', [8863]], ['minus', [8722]], ['minusd', [8760]], ['minusdu', [10794]], ['MinusPlus', [8723]], ['mlcp', [10971]], ['mldr', [8230]], ['mnplus', [8723]], ['models', [8871]], ['Mopf', [120132]], ['mopf', [120158]], ['mp', [8723]], ['mscr', [120002]], ['Mscr', [8499]], ['mstpos', [8766]], ['Mu', [924]], ['mu', [956]], ['multimap', [8888]], ['mumap', [8888]], ['nabla', [8711]], ['Nacute', [323]], ['nacute', [324]], ['nang', [8736, 8402]], ['nap', [8777]], ['napE', [10864, 824]], ['napid', [8779, 824]], ['napos', [329]], ['napprox', [8777]], ['natural', [9838]], ['naturals', [8469]], ['natur', [9838]], ['nbsp', [160]], ['nbump', [8782, 824]], ['nbumpe', [8783, 824]], ['ncap', [10819]], ['Ncaron', [327]], ['ncaron', [328]], ['Ncedil', [325]], ['ncedil', [326]], ['ncong', [8775]], ['ncongdot', [10861, 824]], ['ncup', [10818]], ['Ncy', [1053]], ['ncy', [1085]], ['ndash', [8211]], ['nearhk', [10532]], ['nearr', [8599]], ['neArr', [8663]], ['nearrow', [8599]], ['ne', [8800]], ['nedot', [8784, 824]], ['NegativeMediumSpace', [8203]], ['NegativeThickSpace', [8203]], ['NegativeThinSpace', [8203]], ['NegativeVeryThinSpace', [8203]], ['nequiv', [8802]], ['nesear', [10536]], ['nesim', [8770, 824]], ['NestedGreaterGreater', [8811]], ['NestedLessLess', [8810]], ['nexist', [8708]], ['nexists', [8708]], ['Nfr', [120081]], ['nfr', [120107]], ['ngE', [8807, 824]], ['nge', [8817]], ['ngeq', [8817]], ['ngeqq', [8807, 824]], ['ngeqslant', [10878, 824]], ['nges', [10878, 824]], ['nGg', [8921, 824]], ['ngsim', [8821]], ['nGt', [8811, 8402]], ['ngt', [8815]], ['ngtr', [8815]], ['nGtv', [8811, 824]], ['nharr', [8622]], ['nhArr', [8654]], ['nhpar', [10994]], ['ni', [8715]], ['nis', [8956]], ['nisd', [8954]], ['niv', [8715]], ['NJcy', [1034]], ['njcy', [1114]], ['nlarr', [8602]], ['nlArr', [8653]], ['nldr', [8229]], ['nlE', [8806, 824]], ['nle', [8816]], ['nleftarrow', [8602]], ['nLeftarrow', [8653]], ['nleftrightarrow', [8622]], ['nLeftrightarrow', [8654]], ['nleq', [8816]], ['nleqq', [8806, 824]], ['nleqslant', [10877, 824]], ['nles', [10877, 824]], ['nless', [8814]], ['nLl', [8920, 824]], ['nlsim', [8820]], ['nLt', [8810, 8402]], ['nlt', [8814]], ['nltri', [8938]], ['nltrie', [8940]], ['nLtv', [8810, 824]], ['nmid', [8740]], ['NoBreak', [8288]], ['NonBreakingSpace', [160]], ['nopf', [120159]], ['Nopf', [8469]], ['Not', [10988]], ['not', [172]], ['NotCongruent', [8802]], ['NotCupCap', [8813]], ['NotDoubleVerticalBar', [8742]], ['NotElement', [8713]], ['NotEqual', [8800]], ['NotEqualTilde', [8770, 824]], ['NotExists', [8708]], ['NotGreater', [8815]], ['NotGreaterEqual', [8817]], ['NotGreaterFullEqual', [8807, 824]], ['NotGreaterGreater', [8811, 824]], ['NotGreaterLess', [8825]], ['NotGreaterSlantEqual', [10878, 824]], ['NotGreaterTilde', [8821]], ['NotHumpDownHump', [8782, 824]], ['NotHumpEqual', [8783, 824]], ['notin', [8713]], ['notindot', [8949, 824]], ['notinE', [8953, 824]], ['notinva', [8713]], ['notinvb', [8951]], ['notinvc', [8950]], ['NotLeftTriangleBar', [10703, 824]], ['NotLeftTriangle', [8938]], ['NotLeftTriangleEqual', [8940]], ['NotLess', [8814]], ['NotLessEqual', [8816]], ['NotLessGreater', [8824]], ['NotLessLess', [8810, 824]], ['NotLessSlantEqual', [10877, 824]], ['NotLessTilde', [8820]], ['NotNestedGreaterGreater', [10914, 824]], ['NotNestedLessLess', [10913, 824]], ['notni', [8716]], ['notniva', [8716]], ['notnivb', [8958]], ['notnivc', [8957]], ['NotPrecedes', [8832]], ['NotPrecedesEqual', [10927, 824]], ['NotPrecedesSlantEqual', [8928]], ['NotReverseElement', [8716]], ['NotRightTriangleBar', [10704, 824]], ['NotRightTriangle', [8939]], ['NotRightTriangleEqual', [8941]], ['NotSquareSubset', [8847, 824]], ['NotSquareSubsetEqual', [8930]], ['NotSquareSuperset', [8848, 824]], ['NotSquareSupersetEqual', [8931]], ['NotSubset', [8834, 8402]], ['NotSubsetEqual', [8840]], ['NotSucceeds', [8833]], ['NotSucceedsEqual', [10928, 824]], ['NotSucceedsSlantEqual', [8929]], ['NotSucceedsTilde', [8831, 824]], ['NotSuperset', [8835, 8402]], ['NotSupersetEqual', [8841]], ['NotTilde', [8769]], ['NotTildeEqual', [8772]], ['NotTildeFullEqual', [8775]], ['NotTildeTilde', [8777]], ['NotVerticalBar', [8740]], ['nparallel', [8742]], ['npar', [8742]], ['nparsl', [11005, 8421]], ['npart', [8706, 824]], ['npolint', [10772]], ['npr', [8832]], ['nprcue', [8928]], ['nprec', [8832]], ['npreceq', [10927, 824]], ['npre', [10927, 824]], ['nrarrc', [10547, 824]], ['nrarr', [8603]], ['nrArr', [8655]], ['nrarrw', [8605, 824]], ['nrightarrow', [8603]], ['nRightarrow', [8655]], ['nrtri', [8939]], ['nrtrie', [8941]], ['nsc', [8833]], ['nsccue', [8929]], ['nsce', [10928, 824]], ['Nscr', [119977]], ['nscr', [120003]], ['nshortmid', [8740]], ['nshortparallel', [8742]], ['nsim', [8769]], ['nsime', [8772]], ['nsimeq', [8772]], ['nsmid', [8740]], ['nspar', [8742]], ['nsqsube', [8930]], ['nsqsupe', [8931]], ['nsub', [8836]], ['nsubE', [10949, 824]], ['nsube', [8840]], ['nsubset', [8834, 8402]], ['nsubseteq', [8840]], ['nsubseteqq', [10949, 824]], ['nsucc', [8833]], ['nsucceq', [10928, 824]], ['nsup', [8837]], ['nsupE', [10950, 824]], ['nsupe', [8841]], ['nsupset', [8835, 8402]], ['nsupseteq', [8841]], ['nsupseteqq', [10950, 824]], ['ntgl', [8825]], ['Ntilde', [209]], ['ntilde', [241]], ['ntlg', [8824]], ['ntriangleleft', [8938]], ['ntrianglelefteq', [8940]], ['ntriangleright', [8939]], ['ntrianglerighteq', [8941]], ['Nu', [925]], ['nu', [957]], ['num', [35]], ['numero', [8470]], ['numsp', [8199]], ['nvap', [8781, 8402]], ['nvdash', [8876]], ['nvDash', [8877]], ['nVdash', [8878]], ['nVDash', [8879]], ['nvge', [8805, 8402]], ['nvgt', [62, 8402]], ['nvHarr', [10500]], ['nvinfin', [10718]], ['nvlArr', [10498]], ['nvle', [8804, 8402]], ['nvlt', [60, 8402]], ['nvltrie', [8884, 8402]], ['nvrArr', [10499]], ['nvrtrie', [8885, 8402]], ['nvsim', [8764, 8402]], ['nwarhk', [10531]], ['nwarr', [8598]], ['nwArr', [8662]], ['nwarrow', [8598]], ['nwnear', [10535]], ['Oacute', [211]], ['oacute', [243]], ['oast', [8859]], ['Ocirc', [212]], ['ocirc', [244]], ['ocir', [8858]], ['Ocy', [1054]], ['ocy', [1086]], ['odash', [8861]], ['Odblac', [336]], ['odblac', [337]], ['odiv', [10808]], ['odot', [8857]], ['odsold', [10684]], ['OElig', [338]], ['oelig', [339]], ['ofcir', [10687]], ['Ofr', [120082]], ['ofr', [120108]], ['ogon', [731]], ['Ograve', [210]], ['ograve', [242]], ['ogt', [10689]], ['ohbar', [10677]], ['ohm', [937]], ['oint', [8750]], ['olarr', [8634]], ['olcir', [10686]], ['olcross', [10683]], ['oline', [8254]], ['olt', [10688]], ['Omacr', [332]], ['omacr', [333]], ['Omega', [937]], ['omega', [969]], ['Omicron', [927]], ['omicron', [959]], ['omid', [10678]], ['ominus', [8854]], ['Oopf', [120134]], ['oopf', [120160]], ['opar', [10679]], ['OpenCurlyDoubleQuote', [8220]], ['OpenCurlyQuote', [8216]], ['operp', [10681]], ['oplus', [8853]], ['orarr', [8635]], ['Or', [10836]], ['or', [8744]], ['ord', [10845]], ['order', [8500]], ['orderof', [8500]], ['ordf', [170]], ['ordm', [186]], ['origof', [8886]], ['oror', [10838]], ['orslope', [10839]], ['orv', [10843]], ['oS', [9416]], ['Oscr', [119978]], ['oscr', [8500]], ['Oslash', [216]], ['oslash', [248]], ['osol', [8856]], ['Otilde', [213]], ['otilde', [245]], ['otimesas', [10806]], ['Otimes', [10807]], ['otimes', [8855]], ['Ouml', [214]], ['ouml', [246]], ['ovbar', [9021]], ['OverBar', [8254]], ['OverBrace', [9182]], ['OverBracket', [9140]], ['OverParenthesis', [9180]], ['para', [182]], ['parallel', [8741]], ['par', [8741]], ['parsim', [10995]], ['parsl', [11005]], ['part', [8706]], ['PartialD', [8706]], ['Pcy', [1055]], ['pcy', [1087]], ['percnt', [37]], ['period', [46]], ['permil', [8240]], ['perp', [8869]], ['pertenk', [8241]], ['Pfr', [120083]], ['pfr', [120109]], ['Phi', [934]], ['phi', [966]], ['phiv', [981]], ['phmmat', [8499]], ['phone', [9742]], ['Pi', [928]], ['pi', [960]], ['pitchfork', [8916]], ['piv', [982]], ['planck', [8463]], ['planckh', [8462]], ['plankv', [8463]], ['plusacir', [10787]], ['plusb', [8862]], ['pluscir', [10786]], ['plus', [43]], ['plusdo', [8724]], ['plusdu', [10789]], ['pluse', [10866]], ['PlusMinus', [177]], ['plusmn', [177]], ['plussim', [10790]], ['plustwo', [10791]], ['pm', [177]], ['Poincareplane', [8460]], ['pointint', [10773]], ['popf', [120161]], ['Popf', [8473]], ['pound', [163]], ['prap', [10935]], ['Pr', [10939]], ['pr', [8826]], ['prcue', [8828]], ['precapprox', [10935]], ['prec', [8826]], ['preccurlyeq', [8828]], ['Precedes', [8826]], ['PrecedesEqual', [10927]], ['PrecedesSlantEqual', [8828]], ['PrecedesTilde', [8830]], ['preceq', [10927]], ['precnapprox', [10937]], ['precneqq', [10933]], ['precnsim', [8936]], ['pre', [10927]], ['prE', [10931]], ['precsim', [8830]], ['prime', [8242]], ['Prime', [8243]], ['primes', [8473]], ['prnap', [10937]], ['prnE', [10933]], ['prnsim', [8936]], ['prod', [8719]], ['Product', [8719]], ['profalar', [9006]], ['profline', [8978]], ['profsurf', [8979]], ['prop', [8733]], ['Proportional', [8733]], ['Proportion', [8759]], ['propto', [8733]], ['prsim', [8830]], ['prurel', [8880]], ['Pscr', [119979]], ['pscr', [120005]], ['Psi', [936]], ['psi', [968]], ['puncsp', [8200]], ['Qfr', [120084]], ['qfr', [120110]], ['qint', [10764]], ['qopf', [120162]], ['Qopf', [8474]], ['qprime', [8279]], ['Qscr', [119980]], ['qscr', [120006]], ['quaternions', [8461]], ['quatint', [10774]], ['quest', [63]], ['questeq', [8799]], ['quot', [34]], ['QUOT', [34]], ['rAarr', [8667]], ['race', [8765, 817]], ['Racute', [340]], ['racute', [341]], ['radic', [8730]], ['raemptyv', [10675]], ['rang', [10217]], ['Rang', [10219]], ['rangd', [10642]], ['range', [10661]], ['rangle', [10217]], ['raquo', [187]], ['rarrap', [10613]], ['rarrb', [8677]], ['rarrbfs', [10528]], ['rarrc', [10547]], ['rarr', [8594]], ['Rarr', [8608]], ['rArr', [8658]], ['rarrfs', [10526]], ['rarrhk', [8618]], ['rarrlp', [8620]], ['rarrpl', [10565]], ['rarrsim', [10612]], ['Rarrtl', [10518]], ['rarrtl', [8611]], ['rarrw', [8605]], ['ratail', [10522]], ['rAtail', [10524]], ['ratio', [8758]], ['rationals', [8474]], ['rbarr', [10509]], ['rBarr', [10511]], ['RBarr', [10512]], ['rbbrk', [10099]], ['rbrace', [125]], ['rbrack', [93]], ['rbrke', [10636]], ['rbrksld', [10638]], ['rbrkslu', [10640]], ['Rcaron', [344]], ['rcaron', [345]], ['Rcedil', [342]], ['rcedil', [343]], ['rceil', [8969]], ['rcub', [125]], ['Rcy', [1056]], ['rcy', [1088]], ['rdca', [10551]], ['rdldhar', [10601]], ['rdquo', [8221]], ['rdquor', [8221]], ['CloseCurlyDoubleQuote', [8221]], ['rdsh', [8627]], ['real', [8476]], ['realine', [8475]], ['realpart', [8476]], ['reals', [8477]], ['Re', [8476]], ['rect', [9645]], ['reg', [174]], ['REG', [174]], ['ReverseElement', [8715]], ['ReverseEquilibrium', [8651]], ['ReverseUpEquilibrium', [10607]], ['rfisht', [10621]], ['rfloor', [8971]], ['rfr', [120111]], ['Rfr', [8476]], ['rHar', [10596]], ['rhard', [8641]], ['rharu', [8640]], ['rharul', [10604]], ['Rho', [929]], ['rho', [961]], ['rhov', [1009]], ['RightAngleBracket', [10217]], ['RightArrowBar', [8677]], ['rightarrow', [8594]], ['RightArrow', [8594]], ['Rightarrow', [8658]], ['RightArrowLeftArrow', [8644]], ['rightarrowtail', [8611]], ['RightCeiling', [8969]], ['RightDoubleBracket', [10215]], ['RightDownTeeVector', [10589]], ['RightDownVectorBar', [10581]], ['RightDownVector', [8642]], ['RightFloor', [8971]], ['rightharpoondown', [8641]], ['rightharpoonup', [8640]], ['rightleftarrows', [8644]], ['rightleftharpoons', [8652]], ['rightrightarrows', [8649]], ['rightsquigarrow', [8605]], ['RightTeeArrow', [8614]], ['RightTee', [8866]], ['RightTeeVector', [10587]], ['rightthreetimes', [8908]], ['RightTriangleBar', [10704]], ['RightTriangle', [8883]], ['RightTriangleEqual', [8885]], ['RightUpDownVector', [10575]], ['RightUpTeeVector', [10588]], ['RightUpVectorBar', [10580]], ['RightUpVector', [8638]], ['RightVectorBar', [10579]], ['RightVector', [8640]], ['ring', [730]], ['risingdotseq', [8787]], ['rlarr', [8644]], ['rlhar', [8652]], ['rlm', [8207]], ['rmoustache', [9137]], ['rmoust', [9137]], ['rnmid', [10990]], ['roang', [10221]], ['roarr', [8702]], ['robrk', [10215]], ['ropar', [10630]], ['ropf', [120163]], ['Ropf', [8477]], ['roplus', [10798]], ['rotimes', [10805]], ['RoundImplies', [10608]], ['rpar', [41]], ['rpargt', [10644]], ['rppolint', [10770]], ['rrarr', [8649]], ['Rrightarrow', [8667]], ['rsaquo', [8250]], ['rscr', [120007]], ['Rscr', [8475]], ['rsh', [8625]], ['Rsh', [8625]], ['rsqb', [93]], ['rsquo', [8217]], ['rsquor', [8217]], ['CloseCurlyQuote', [8217]], ['rthree', [8908]], ['rtimes', [8906]], ['rtri', [9657]], ['rtrie', [8885]], ['rtrif', [9656]], ['rtriltri', [10702]], ['RuleDelayed', [10740]], ['ruluhar', [10600]], ['rx', [8478]], ['Sacute', [346]], ['sacute', [347]], ['sbquo', [8218]], ['scap', [10936]], ['Scaron', [352]], ['scaron', [353]], ['Sc', [10940]], ['sc', [8827]], ['sccue', [8829]], ['sce', [10928]], ['scE', [10932]], ['Scedil', [350]], ['scedil', [351]], ['Scirc', [348]], ['scirc', [349]], ['scnap', [10938]], ['scnE', [10934]], ['scnsim', [8937]], ['scpolint', [10771]], ['scsim', [8831]], ['Scy', [1057]], ['scy', [1089]], ['sdotb', [8865]], ['sdot', [8901]], ['sdote', [10854]], ['searhk', [10533]], ['searr', [8600]], ['seArr', [8664]], ['searrow', [8600]], ['sect', [167]], ['semi', [59]], ['seswar', [10537]], ['setminus', [8726]], ['setmn', [8726]], ['sext', [10038]], ['Sfr', [120086]], ['sfr', [120112]], ['sfrown', [8994]], ['sharp', [9839]], ['SHCHcy', [1065]], ['shchcy', [1097]], ['SHcy', [1064]], ['shcy', [1096]], ['ShortDownArrow', [8595]], ['ShortLeftArrow', [8592]], ['shortmid', [8739]], ['shortparallel', [8741]], ['ShortRightArrow', [8594]], ['ShortUpArrow', [8593]], ['shy', [173]], ['Sigma', [931]], ['sigma', [963]], ['sigmaf', [962]], ['sigmav', [962]], ['sim', [8764]], ['simdot', [10858]], ['sime', [8771]], ['simeq', [8771]], ['simg', [10910]], ['simgE', [10912]], ['siml', [10909]], ['simlE', [10911]], ['simne', [8774]], ['simplus', [10788]], ['simrarr', [10610]], ['slarr', [8592]], ['SmallCircle', [8728]], ['smallsetminus', [8726]], ['smashp', [10803]], ['smeparsl', [10724]], ['smid', [8739]], ['smile', [8995]], ['smt', [10922]], ['smte', [10924]], ['smtes', [10924, 65024]], ['SOFTcy', [1068]], ['softcy', [1100]], ['solbar', [9023]], ['solb', [10692]], ['sol', [47]], ['Sopf', [120138]], ['sopf', [120164]], ['spades', [9824]], ['spadesuit', [9824]], ['spar', [8741]], ['sqcap', [8851]], ['sqcaps', [8851, 65024]], ['sqcup', [8852]], ['sqcups', [8852, 65024]], ['Sqrt', [8730]], ['sqsub', [8847]], ['sqsube', [8849]], ['sqsubset', [8847]], ['sqsubseteq', [8849]], ['sqsup', [8848]], ['sqsupe', [8850]], ['sqsupset', [8848]], ['sqsupseteq', [8850]], ['square', [9633]], ['Square', [9633]], ['SquareIntersection', [8851]], ['SquareSubset', [8847]], ['SquareSubsetEqual', [8849]], ['SquareSuperset', [8848]], ['SquareSupersetEqual', [8850]], ['SquareUnion', [8852]], ['squarf', [9642]], ['squ', [9633]], ['squf', [9642]], ['srarr', [8594]], ['Sscr', [119982]], ['sscr', [120008]], ['ssetmn', [8726]], ['ssmile', [8995]], ['sstarf', [8902]], ['Star', [8902]], ['star', [9734]], ['starf', [9733]], ['straightepsilon', [1013]], ['straightphi', [981]], ['strns', [175]], ['sub', [8834]], ['Sub', [8912]], ['subdot', [10941]], ['subE', [10949]], ['sube', [8838]], ['subedot', [10947]], ['submult', [10945]], ['subnE', [10955]], ['subne', [8842]], ['subplus', [10943]], ['subrarr', [10617]], ['subset', [8834]], ['Subset', [8912]], ['subseteq', [8838]], ['subseteqq', [10949]], ['SubsetEqual', [8838]], ['subsetneq', [8842]], ['subsetneqq', [10955]], ['subsim', [10951]], ['subsub', [10965]], ['subsup', [10963]], ['succapprox', [10936]], ['succ', [8827]], ['succcurlyeq', [8829]], ['Succeeds', [8827]], ['SucceedsEqual', [10928]], ['SucceedsSlantEqual', [8829]], ['SucceedsTilde', [8831]], ['succeq', [10928]], ['succnapprox', [10938]], ['succneqq', [10934]], ['succnsim', [8937]], ['succsim', [8831]], ['SuchThat', [8715]], ['sum', [8721]], ['Sum', [8721]], ['sung', [9834]], ['sup1', [185]], ['sup2', [178]], ['sup3', [179]], ['sup', [8835]], ['Sup', [8913]], ['supdot', [10942]], ['supdsub', [10968]], ['supE', [10950]], ['supe', [8839]], ['supedot', [10948]], ['Superset', [8835]], ['SupersetEqual', [8839]], ['suphsol', [10185]], ['suphsub', [10967]], ['suplarr', [10619]], ['supmult', [10946]], ['supnE', [10956]], ['supne', [8843]], ['supplus', [10944]], ['supset', [8835]], ['Supset', [8913]], ['supseteq', [8839]], ['supseteqq', [10950]], ['supsetneq', [8843]], ['supsetneqq', [10956]], ['supsim', [10952]], ['supsub', [10964]], ['supsup', [10966]], ['swarhk', [10534]], ['swarr', [8601]], ['swArr', [8665]], ['swarrow', [8601]], ['swnwar', [10538]], ['szlig', [223]], ['Tab', [9]], ['target', [8982]], ['Tau', [932]], ['tau', [964]], ['tbrk', [9140]], ['Tcaron', [356]], ['tcaron', [357]], ['Tcedil', [354]], ['tcedil', [355]], ['Tcy', [1058]], ['tcy', [1090]], ['tdot', [8411]], ['telrec', [8981]], ['Tfr', [120087]], ['tfr', [120113]], ['there4', [8756]], ['therefore', [8756]], ['Therefore', [8756]], ['Theta', [920]], ['theta', [952]], ['thetasym', [977]], ['thetav', [977]], ['thickapprox', [8776]], ['thicksim', [8764]], ['ThickSpace', [8287, 8202]], ['ThinSpace', [8201]], ['thinsp', [8201]], ['thkap', [8776]], ['thksim', [8764]], ['THORN', [222]], ['thorn', [254]], ['tilde', [732]], ['Tilde', [8764]], ['TildeEqual', [8771]], ['TildeFullEqual', [8773]], ['TildeTilde', [8776]], ['timesbar', [10801]], ['timesb', [8864]], ['times', [215]], ['timesd', [10800]], ['tint', [8749]], ['toea', [10536]], ['topbot', [9014]], ['topcir', [10993]], ['top', [8868]], ['Topf', [120139]], ['topf', [120165]], ['topfork', [10970]], ['tosa', [10537]], ['tprime', [8244]], ['trade', [8482]], ['TRADE', [8482]], ['triangle', [9653]], ['triangledown', [9663]], ['triangleleft', [9667]], ['trianglelefteq', [8884]], ['triangleq', [8796]], ['triangleright', [9657]], ['trianglerighteq', [8885]], ['tridot', [9708]], ['trie', [8796]], ['triminus', [10810]], ['TripleDot', [8411]], ['triplus', [10809]], ['trisb', [10701]], ['tritime', [10811]], ['trpezium', [9186]], ['Tscr', [119983]], ['tscr', [120009]], ['TScy', [1062]], ['tscy', [1094]], ['TSHcy', [1035]], ['tshcy', [1115]], ['Tstrok', [358]], ['tstrok', [359]], ['twixt', [8812]], ['twoheadleftarrow', [8606]], ['twoheadrightarrow', [8608]], ['Uacute', [218]], ['uacute', [250]], ['uarr', [8593]], ['Uarr', [8607]], ['uArr', [8657]], ['Uarrocir', [10569]], ['Ubrcy', [1038]], ['ubrcy', [1118]], ['Ubreve', [364]], ['ubreve', [365]], ['Ucirc', [219]], ['ucirc', [251]], ['Ucy', [1059]], ['ucy', [1091]], ['udarr', [8645]], ['Udblac', [368]], ['udblac', [369]], ['udhar', [10606]], ['ufisht', [10622]], ['Ufr', [120088]], ['ufr', [120114]], ['Ugrave', [217]], ['ugrave', [249]], ['uHar', [10595]], ['uharl', [8639]], ['uharr', [8638]], ['uhblk', [9600]], ['ulcorn', [8988]], ['ulcorner', [8988]], ['ulcrop', [8975]], ['ultri', [9720]], ['Umacr', [362]], ['umacr', [363]], ['uml', [168]], ['UnderBar', [95]], ['UnderBrace', [9183]], ['UnderBracket', [9141]], ['UnderParenthesis', [9181]], ['Union', [8899]], ['UnionPlus', [8846]], ['Uogon', [370]], ['uogon', [371]], ['Uopf', [120140]], ['uopf', [120166]], ['UpArrowBar', [10514]], ['uparrow', [8593]], ['UpArrow', [8593]], ['Uparrow', [8657]], ['UpArrowDownArrow', [8645]], ['updownarrow', [8597]], ['UpDownArrow', [8597]], ['Updownarrow', [8661]], ['UpEquilibrium', [10606]], ['upharpoonleft', [8639]], ['upharpoonright', [8638]], ['uplus', [8846]], ['UpperLeftArrow', [8598]], ['UpperRightArrow', [8599]], ['upsi', [965]], ['Upsi', [978]], ['upsih', [978]], ['Upsilon', [933]], ['upsilon', [965]], ['UpTeeArrow', [8613]], ['UpTee', [8869]], ['upuparrows', [8648]], ['urcorn', [8989]], ['urcorner', [8989]], ['urcrop', [8974]], ['Uring', [366]], ['uring', [367]], ['urtri', [9721]], ['Uscr', [119984]], ['uscr', [120010]], ['utdot', [8944]], ['Utilde', [360]], ['utilde', [361]], ['utri', [9653]], ['utrif', [9652]], ['uuarr', [8648]], ['Uuml', [220]], ['uuml', [252]], ['uwangle', [10663]], ['vangrt', [10652]], ['varepsilon', [1013]], ['varkappa', [1008]], ['varnothing', [8709]], ['varphi', [981]], ['varpi', [982]], ['varpropto', [8733]], ['varr', [8597]], ['vArr', [8661]], ['varrho', [1009]], ['varsigma', [962]], ['varsubsetneq', [8842, 65024]], ['varsubsetneqq', [10955, 65024]], ['varsupsetneq', [8843, 65024]], ['varsupsetneqq', [10956, 65024]], ['vartheta', [977]], ['vartriangleleft', [8882]], ['vartriangleright', [8883]], ['vBar', [10984]], ['Vbar', [10987]], ['vBarv', [10985]], ['Vcy', [1042]], ['vcy', [1074]], ['vdash', [8866]], ['vDash', [8872]], ['Vdash', [8873]], ['VDash', [8875]], ['Vdashl', [10982]], ['veebar', [8891]], ['vee', [8744]], ['Vee', [8897]], ['veeeq', [8794]], ['vellip', [8942]], ['verbar', [124]], ['Verbar', [8214]], ['vert', [124]], ['Vert', [8214]], ['VerticalBar', [8739]], ['VerticalLine', [124]], ['VerticalSeparator', [10072]], ['VerticalTilde', [8768]], ['VeryThinSpace', [8202]], ['Vfr', [120089]], ['vfr', [120115]], ['vltri', [8882]], ['vnsub', [8834, 8402]], ['vnsup', [8835, 8402]], ['Vopf', [120141]], ['vopf', [120167]], ['vprop', [8733]], ['vrtri', [8883]], ['Vscr', [119985]], ['vscr', [120011]], ['vsubnE', [10955, 65024]], ['vsubne', [8842, 65024]], ['vsupnE', [10956, 65024]], ['vsupne', [8843, 65024]], ['Vvdash', [8874]], ['vzigzag', [10650]], ['Wcirc', [372]], ['wcirc', [373]], ['wedbar', [10847]], ['wedge', [8743]], ['Wedge', [8896]], ['wedgeq', [8793]], ['weierp', [8472]], ['Wfr', [120090]], ['wfr', [120116]], ['Wopf', [120142]], ['wopf', [120168]], ['wp', [8472]], ['wr', [8768]], ['wreath', [8768]], ['Wscr', [119986]], ['wscr', [120012]], ['xcap', [8898]], ['xcirc', [9711]], ['xcup', [8899]], ['xdtri', [9661]], ['Xfr', [120091]], ['xfr', [120117]], ['xharr', [10231]], ['xhArr', [10234]], ['Xi', [926]], ['xi', [958]], ['xlarr', [10229]], ['xlArr', [10232]], ['xmap', [10236]], ['xnis', [8955]], ['xodot', [10752]], ['Xopf', [120143]], ['xopf', [120169]], ['xoplus', [10753]], ['xotime', [10754]], ['xrarr', [10230]], ['xrArr', [10233]], ['Xscr', [119987]], ['xscr', [120013]], ['xsqcup', [10758]], ['xuplus', [10756]], ['xutri', [9651]], ['xvee', [8897]], ['xwedge', [8896]], ['Yacute', [221]], ['yacute', [253]], ['YAcy', [1071]], ['yacy', [1103]], ['Ycirc', [374]], ['ycirc', [375]], ['Ycy', [1067]], ['ycy', [1099]], ['yen', [165]], ['Yfr', [120092]], ['yfr', [120118]], ['YIcy', [1031]], ['yicy', [1111]], ['Yopf', [120144]], ['yopf', [120170]], ['Yscr', [119988]], ['yscr', [120014]], ['YUcy', [1070]], ['yucy', [1102]], ['yuml', [255]], ['Yuml', [376]], ['Zacute', [377]], ['zacute', [378]], ['Zcaron', [381]], ['zcaron', [382]], ['Zcy', [1047]], ['zcy', [1079]], ['Zdot', [379]], ['zdot', [380]], ['zeetrf', [8488]], ['ZeroWidthSpace', [8203]], ['Zeta', [918]], ['zeta', [950]], ['zfr', [120119]], ['Zfr', [8488]], ['ZHcy', [1046]], ['zhcy', [1078]], ['zigrarr', [8669]], ['zopf', [120171]], ['Zopf', [8484]], ['Zscr', [119989]], ['zscr', [120015]], ['zwj', [8205]], ['zwnj', [8204]]];
+=======
     if (utils.isFormData(requestData)) {
       delete requestHeaders['Content-Type']; // Let the browser set it
     }
@@ -10726,6 +10899,7 @@ module.exports = function xhrAdapter(config) {
     var request = new XMLHttpRequest();
     var loadEvent = 'onreadystatechange';
     var xDomain = false;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
     // For IE 8/9 CORS support
     // Only supports POST and GET calls and doesn't returns the response headers.
@@ -11216,7 +11390,11 @@ module.exports = Html5Entities;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 11 */
+=======
 /* 15 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -11235,7 +11413,11 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
+<<<<<<< HEAD
+var listToStyles = __webpack_require__(65)
+=======
 var listToStyles = __webpack_require__(77)
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /*
 type StyleObject = {
@@ -11437,7 +11619,17 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(3))(7)
+
+/***/ }),
+/* 13 */
+=======
 /* 16 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11451,14 +11643,37 @@ var _vue = __webpack_require__(2);
 
 var _vue2 = _interopRequireDefault(_vue);
 
+<<<<<<< HEAD
+var _vueRouter = __webpack_require__(72);
+=======
 var _vueRouter = __webpack_require__(74);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _vueAxios = __webpack_require__(57);
+var _vueAxios = __webpack_require__(71);
 
 var _vueAxios2 = _interopRequireDefault(_vueAxios);
 
+<<<<<<< HEAD
+var _axios = __webpack_require__(12);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _app = __webpack_require__(40);
+
+var _app2 = _interopRequireDefault(_app);
+
+var _routes = __webpack_require__(21);
+
+var _routes2 = _interopRequireDefault(_routes);
+
+var _store = __webpack_require__(27);
+
+var _store2 = _interopRequireDefault(_store);
+
+var _shared = __webpack_require__(22);
+=======
 var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -11474,10 +11689,17 @@ var _store = __webpack_require__(44);
 var _store2 = _interopRequireDefault(_store);
 
 var _shared = __webpack_require__(39);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _shared2 = _interopRequireDefault(_shared);
 
+var _components = __webpack_require__(17);
+
+var _components2 = _interopRequireDefault(_components);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//批量注册组件
 
 Object.keys(_shared2.default).forEach(function (key) {
     var name = key.replace(/(\w)/, function (v) {
@@ -11488,31 +11710,12 @@ Object.keys(_shared2.default).forEach(function (key) {
 
 _vue2.default.use(_vueRouter2.default);
 _vue2.default.use(_vueAxios2.default, _axios2.default);
-
-_axios2.default.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-//axios.interceptors.request.use(config => {
-//    if (store.state.user) {
-//        config.headers.Authorization = `token ${store.state.user.token}`;
-//    }
-//    return config;
-//}, err => {
-//    return Promise.reject(err);
-//});
+_vue2.default.use(_components2.default);
 
 var router = new _vueRouter2.default({
     mode: "history",
-    routes: _routes.routes
+    routes: _routes2.default
 });
-
-//router.beforeEach(({meta, path}, from, next) => {
-//    var { auth = true } = meta;
-//    var isLogin = store.state.user && store.state.user.id;
-//    if (auth && !isLogin && path !== loginPath) {
-//        return next({ path: loginPath });
-//    }
-//    next();
-//});
 
 var vm = new _vue2.default({
     store: _store2.default,
@@ -11526,7 +11729,11 @@ vm.$mount('#app');
 exports.default = router;
 
 /***/ }),
+<<<<<<< HEAD
+/* 14 */
+=======
 /* 17 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__resourceQuery, module) {/*eslint-env browser*/
@@ -11542,7 +11749,11 @@ var options = {
   name: ''
 };
 if (true) {
+<<<<<<< HEAD
+  var querystring = __webpack_require__(38);
+=======
   var querystring = __webpack_require__(55);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -11662,11 +11873,19 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
+<<<<<<< HEAD
+  var strip = __webpack_require__(39);
+
+  var overlay;
+  if (typeof document !== 'undefined' && options.overlay) {
+    overlay = __webpack_require__(66);
+=======
   var strip = __webpack_require__(56);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
     overlay = __webpack_require__(79);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
   }
 
   var styles = {
@@ -11719,7 +11938,11 @@ function createReporter() {
   };
 }
 
+<<<<<<< HEAD
+var processUpdate = __webpack_require__(67);
+=======
 var processUpdate = __webpack_require__(80);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var customHandler;
 var subscribeAllHandler;
@@ -11784,10 +12007,17 @@ if (module) {
   };
 }
 
+<<<<<<< HEAD
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(68)(module)))
+
+/***/ }),
+/* 15 */
+=======
 /* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(82)(module)))
 
 /***/ }),
 /* 18 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11970,7 +12200,11 @@ ansiHTML.reset()
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 16 */
+=======
 /* 19 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11981,6 +12215,539 @@ module.exports = function () {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(1);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _table = __webpack_require__(19);
+
+var _table2 = _interopRequireDefault(_table);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//公用组件库
+var components = {
+    Table: _table2.default
+};
+
+var install = function install(Vue) {
+    var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    Object.keys(components).forEach(function (key) {
+        Vue.component("ss" + key, components[key]);
+    });
+};
+if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+}
+
+exports.default = Object.assign(components, { install: install });
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _axios = __webpack_require__(12);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//这里封装一些表格常用的api ...
+exports.default = {
+    editRow: function editRow(options) {},
+    deleteRow: function deleteRow(options) {
+        return new Promise(function (resolve, reject) {
+            if (options.confirm) {
+                window.layer.confirm(options.confirm, { icon: 3, title: "确认删除" }, function (index) {
+                    window.layer.msg("删除" + options.params);
+
+                    window.layer.close(index);
+                });
+            }
+        });
+    }
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Table = __webpack_require__(41);
+
+var _Table2 = _interopRequireDefault(_Table);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Table2.default;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+* simplePagination.js v1.6
+* A simple jQuery pagination plugin.
+* http://flaviusmatis.github.com/simplePagination.js/
+*
+* Copyright 2012, Flavius Matis
+* Released under the MIT license.
+* http://flaviusmatis.github.com/license.html
+*/
+
+(function ($) {
+
+    var methods = {
+        init: function init(options) {
+            var o = $.extend({
+                items: 1,
+                itemsOnPage: 1,
+                pages: 0,
+                displayedPages: 5,
+                edges: 2,
+                currentPage: 0,
+                hrefTextPrefix: '#page-',
+                hrefTextSuffix: '',
+                prevText: '上一页',
+                nextText: '下一页',
+                ellipseText: '&hellip;',
+                ellipsePageSet: true,
+                cssStyle: 'light-theme',
+                listStyle: '',
+                labelMap: [],
+                selectOnClick: true,
+                nextAtFront: false,
+                invertPageOrder: false,
+                useStartEdge: true,
+                useEndEdge: true,
+                pageInfo: "当前 第{0}页/共{1}页 {2} 条记录",
+                onPageClick: function onPageClick(pageNumber, event) {
+                    // Callback triggered when a page is clicked
+                    // Page number is given as an optional parameter
+                },
+                onInit: function onInit() {
+                    // Callback triggered immediately after initialization
+                }
+            }, options || {});
+
+            var self = this;
+
+            o.pages = o.pages ? o.pages : Math.ceil(o.items / o.itemsOnPage) ? Math.ceil(o.items / o.itemsOnPage) : 1;
+            if (o.currentPage) o.currentPage = o.currentPage - 1;else o.currentPage = !o.invertPageOrder ? 0 : o.pages - 1;
+            o.halfDisplayed = o.displayedPages / 2;
+
+            this.each(function () {
+                self.addClass(o.cssStyle + ' simple-pagination').data('pagination', o);
+                methods._draw.call(self);
+            });
+            o.onInit();
+            return this;
+        },
+        formatPageInfo: function formatPageInfo() {
+            var o = this.data('pagination');
+            this.each(function () {
+                var $pageInfo = $(".pageinfo", this);
+                var format = o.pageInfo;
+                format = format.replace("{0}", o.currentPage + 1);
+                format = format.replace("{1}", o.pages);
+                format = format.replace("{2}", o.items);
+                $pageInfo.html(format);
+            });
+        },
+        selectPage: function selectPage(page) {
+            methods._selectPage.call(this, page - 1);
+            return this;
+        },
+
+        prevPage: function prevPage() {
+            var o = this.data('pagination');
+            if (!o.invertPageOrder) {
+                if (o.currentPage > 0) {
+                    methods._selectPage.call(this, o.currentPage - 1);
+                }
+            } else {
+                if (o.currentPage < o.pages - 1) {
+                    methods._selectPage.call(this, o.currentPage + 1);
+                }
+            }
+            return this;
+        },
+
+        nextPage: function nextPage() {
+            var o = this.data('pagination');
+            if (!o.invertPageOrder) {
+                if (o.currentPage < o.pages - 1) {
+                    methods._selectPage.call(this, o.currentPage + 1);
+                }
+            } else {
+                if (o.currentPage > 0) {
+                    methods._selectPage.call(this, o.currentPage - 1);
+                }
+            }
+            return this;
+        },
+
+        getPagesCount: function getPagesCount() {
+            return this.data('pagination').pages;
+        },
+
+        setPagesCount: function setPagesCount(count) {
+            this.data('pagination').pages = count;
+        },
+
+        getCurrentPage: function getCurrentPage() {
+            return this.data('pagination').currentPage + 1;
+        },
+
+        destroy: function destroy() {
+            this.empty();
+            return this;
+        },
+
+        drawPage: function drawPage(page) {
+            var o = this.data('pagination');
+            o.currentPage = page - 1;
+            this.data('pagination', o);
+            methods._draw.call(this);
+            return this;
+        },
+
+        redraw: function redraw() {
+            methods._draw.call(this);
+            return this;
+        },
+
+        disable: function disable() {
+            var o = this.data('pagination');
+            o.disabled = true;
+            this.data('pagination', o);
+            methods._draw.call(this);
+            return this;
+        },
+
+        enable: function enable() {
+            var o = this.data('pagination');
+            o.disabled = false;
+            this.data('pagination', o);
+            methods._draw.call(this);
+            return this;
+        },
+
+        updateItems: function updateItems(newItems) {
+            var o = this.data('pagination');
+            o.items = newItems;
+            o.pages = methods._getPages(o);
+            this.data('pagination', o);
+            methods._draw.call(this);
+        },
+
+        updateItemsOnPage: function updateItemsOnPage(itemsOnPage) {
+            var o = this.data('pagination');
+            o.itemsOnPage = itemsOnPage;
+            o.pages = methods._getPages(o);
+            this.data('pagination', o);
+            methods._selectPage.call(this, 0);
+            return this;
+        },
+
+        getItemsOnPage: function getItemsOnPage() {
+            return this.data('pagination').itemsOnPage;
+        },
+
+        _draw: function _draw() {
+            var o = this.data('pagination'),
+                interval = methods._getInterval(o),
+                i,
+                tagName;
+
+            methods.destroy.call(this);
+
+            tagName = typeof this.prop === 'function' ? this.prop('tagName') : this.attr('tagName');
+
+            var $panel = tagName === 'UL' ? this : $('<ul' + (o.listStyle ? ' class="' + o.listStyle + '"' : '') + '></ul>').appendTo(this);
+
+            // Generate Prev link
+            if (o.prevText) {
+                methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage - 1 : o.currentPage + 1, { text: o.prevText, classes: 'prev' });
+            }
+
+            // Generate Next link (if option set for at front)
+            if (o.nextText && o.nextAtFront) {
+                methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, { text: o.nextText, classes: 'next' });
+            }
+
+            // Generate start edges
+            if (!o.invertPageOrder) {
+                if (interval.start > 0 && o.edges > 0) {
+                    if (o.useStartEdge) {
+                        var end = Math.min(o.edges, interval.start);
+                        for (i = 0; i < end; i++) {
+                            methods._appendItem.call(this, i);
+                        }
+                    }
+                    if (o.edges < interval.start && interval.start - o.edges != 1) {
+                        $panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+                    } else if (interval.start - o.edges == 1) {
+                        methods._appendItem.call(this, o.edges);
+                    }
+                }
+            } else {
+                if (interval.end < o.pages && o.edges > 0) {
+                    if (o.useStartEdge) {
+                        var begin = Math.max(o.pages - o.edges, interval.end);
+                        for (i = o.pages - 1; i >= begin; i--) {
+                            methods._appendItem.call(this, i);
+                        }
+                    }
+
+                    if (o.pages - o.edges > interval.end && o.pages - o.edges - interval.end != 1) {
+                        $panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+                    } else if (o.pages - o.edges - interval.end == 1) {
+                        methods._appendItem.call(this, interval.end);
+                    }
+                }
+            }
+
+            // Generate interval links
+            if (!o.invertPageOrder) {
+                for (i = interval.start; i < interval.end; i++) {
+                    methods._appendItem.call(this, i);
+                }
+            } else {
+                for (i = interval.end - 1; i >= interval.start; i--) {
+                    methods._appendItem.call(this, i);
+                }
+            }
+
+            // Generate end edges
+            if (!o.invertPageOrder) {
+                if (interval.end < o.pages && o.edges > 0) {
+                    if (o.pages - o.edges > interval.end && o.pages - o.edges - interval.end != 1) {
+                        $panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+                    } else if (o.pages - o.edges - interval.end == 1) {
+                        methods._appendItem.call(this, interval.end);
+                    }
+                    if (o.useEndEdge) {
+                        var begin = Math.max(o.pages - o.edges, interval.end);
+                        for (i = begin; i < o.pages; i++) {
+                            methods._appendItem.call(this, i);
+                        }
+                    }
+                }
+            } else {
+                if (interval.start > 0 && o.edges > 0) {
+                    if (o.edges < interval.start && interval.start - o.edges != 1) {
+                        $panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+                    } else if (interval.start - o.edges == 1) {
+                        methods._appendItem.call(this, o.edges);
+                    }
+
+                    if (o.useEndEdge) {
+                        var end = Math.min(o.edges, interval.start);
+                        for (i = end - 1; i >= 0; i--) {
+                            methods._appendItem.call(this, i);
+                        }
+                    }
+                }
+            }
+
+            // Generate Next link (unless option is set for at front)
+            if (o.nextText && !o.nextAtFront) {
+                methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, { text: o.nextText, classes: 'next' });
+            }
+
+            if (o.ellipsePageSet && !o.disabled) {
+                methods._ellipseClick.call(this, $panel);
+            }
+            var $pageInfo = $("<span class=pageinfo>");
+            this.append($pageInfo);
+            methods.formatPageInfo.call(this);
+        },
+
+        _getPages: function _getPages(o) {
+            var pages = Math.ceil(o.items / o.itemsOnPage);
+            return pages || 1;
+        },
+
+        _getInterval: function _getInterval(o) {
+            return {
+                start: Math.ceil(o.currentPage > o.halfDisplayed ? Math.max(Math.min(o.currentPage - o.halfDisplayed, o.pages - o.displayedPages), 0) : 0),
+                end: Math.ceil(o.currentPage > o.halfDisplayed ? Math.min(o.currentPage + o.halfDisplayed, o.pages) : Math.min(o.displayedPages, o.pages))
+            };
+        },
+
+        _appendItem: function _appendItem(pageIndex, opts) {
+            var self = this,
+                options,
+                $link,
+                o = self.data('pagination'),
+                $linkWrapper = $('<li></li>'),
+                $ul = self.find('ul');
+
+            pageIndex = pageIndex < 0 ? 0 : pageIndex < o.pages ? pageIndex : o.pages - 1;
+
+            options = {
+                text: pageIndex + 1,
+                classes: ''
+            };
+
+            if (o.labelMap.length && o.labelMap[pageIndex]) {
+                options.text = o.labelMap[pageIndex];
+            }
+
+            options = $.extend(options, opts || {});
+
+            if (pageIndex == o.currentPage || o.disabled) {
+                if (o.disabled || options.classes === 'prev' || options.classes === 'next') {
+                    $linkWrapper.addClass('disabled');
+                } else {
+                    $linkWrapper.addClass('active');
+                }
+                $link = $('<span class="current">' + options.text + '</span>');
+            } else {
+                //                $link = $('<a href="' + o.hrefTextPrefix + (pageIndex + 1) + o.hrefTextSuffix + '" class="page-link">' + (options.text) + '</a>');
+                $link = $('<a   class="page-link">' + options.text + '</a>');
+                $link.click(function (event) {
+                    return methods._selectPage.call(self, pageIndex, event);
+                });
+            }
+
+            if (options.classes) {
+                $link.addClass(options.classes);
+            }
+
+            $linkWrapper.append($link);
+
+            if ($ul.length) {
+                $ul.append($linkWrapper);
+            } else {
+                self.append($linkWrapper);
+            }
+        },
+
+        _selectPage: function _selectPage(pageIndex, event) {
+            var o = this.data('pagination');
+            o.currentPage = pageIndex;
+            if (o.selectOnClick) {
+                methods._draw.call(this);
+            }
+            methods.formatPageInfo.call(this);
+            return o.onPageClick(pageIndex + 1, event);
+        },
+
+        _ellipseClick: function _ellipseClick($panel) {
+            var self = this,
+                o = this.data('pagination'),
+                $ellip = $panel.find('.ellipse');
+            $ellip.addClass('clickable').parent().removeClass('disabled');
+            $ellip.click(function (event) {
+                if (!o.disable) {
+                    var $this = $(this),
+                        val = (parseInt($this.parent().prev().text(), 10) || 0) + 1;
+                    $this.html('<input type="number" min="1" max="' + o.pages + '" step="1" value="' + val + '">').find('input').focus().click(function (event) {
+                        // prevent input number arrows from bubbling a click event on $ellip
+                        event.stopPropagation();
+                    }).keyup(function (event) {
+                        var val = $(this).val();
+                        if (event.which === 13 && val !== '') {
+                            // enter to accept
+                            methods._selectPage.call(self, val - 1);
+                        } else if (event.which === 27) {
+                            // escape to cancel
+                            $ellip.empty().html(o.ellipseText);
+                        }
+                    }).bind('blur', function (event) {
+                        var val = $(this).val();
+                        if (val !== '') {
+                            methods._selectPage.call(self, val - 1);
+                        }
+                        $ellip.empty().html(o.ellipseText);
+                        return false;
+                    });
+                }
+                return false;
+            });
+        }
+
+    };
+
+    $.fn.pagination = function (method) {
+
+        // Method calling logic
+        if (methods[method] && method.charAt(0) != '_') {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if ((typeof method === 'undefined' ? 'undefined' : _typeof(method)) === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + method + ' does not exist on jQuery.pagination');
+        }
+    };
+})(jQuery);
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Home = __webpack_require__(43);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _News = __webpack_require__(44);
+
+var _News2 = _interopRequireDefault(_News);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = [{
+    name: 'home',
+    path: '/home',
+    component: _Home2.default
+}, {
+    name: 'news',
+    path: '/news',
+    component: _News2.default
+}];
+
+/***/ }),
+/* 22 */
+=======
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11988,6 +12755,7 @@ module.exports = __webpack_require__(21);
 
 /***/ }),
 /* 21 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11998,6 +12766,9 @@ var bind = __webpack_require__(12);
 var Axios = __webpack_require__(23);
 var defaults = __webpack_require__(4);
 
+<<<<<<< HEAD
+var _SidebarMenu = __webpack_require__(49);
+=======
 /**
  * Create an instance of Axios
  *
@@ -12007,37 +12778,54 @@ var defaults = __webpack_require__(4);
 function createInstance(defaultConfig) {
   var context = new Axios(defaultConfig);
   var instance = bind(Axios.prototype.request, context);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   // Copy axios.prototype to instance
   utils.extend(instance, Axios.prototype, context);
 
+<<<<<<< HEAD
+var _Sidebar = __webpack_require__(48);
+=======
   // Copy context to instance
   utils.extend(instance, context);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   return instance;
 }
 
+<<<<<<< HEAD
+var _ControlSidebar = __webpack_require__(45);
+=======
 // Create the default instance to be exported
 var axios = createInstance(defaults);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 // Expose Axios class to allow class inheritance
 axios.Axios = Axios;
 
+<<<<<<< HEAD
+var _Header = __webpack_require__(47);
+=======
 // Factory for creating new instances
 axios.create = function create(instanceConfig) {
   return createInstance(utils.merge(defaults, instanceConfig));
 };
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(9);
 axios.CancelToken = __webpack_require__(22);
 axios.isCancel = __webpack_require__(10);
 
+<<<<<<< HEAD
+var _Footer = __webpack_require__(46);
+=======
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
 axios.spread = __webpack_require__(37);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 module.exports = axios;
 
@@ -12046,7 +12834,11 @@ module.exports.default = axios;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 23 */
+=======
 /* 22 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12110,7 +12902,11 @@ module.exports = CancelToken;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 24 */
+=======
 /* 23 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12165,9 +12961,15 @@ Axios.prototype.request = function request(config) {
     chain.unshift(interceptor.fulfilled, interceptor.rejected);
   });
 
+<<<<<<< HEAD
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
   this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
     chain.push(interceptor.fulfilled, interceptor.rejected);
   });
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   while (chain.length) {
     promise = promise.then(chain.shift(), chain.shift());
@@ -12202,7 +13004,11 @@ module.exports = Axios;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 26 */
+=======
 /* 24 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12261,7 +13067,11 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 27 */
+=======
 /* 25 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12290,8 +13100,12 @@ function throwIfCancellationRequested(config) {
 module.exports = function dispatchRequest(config) {
   throwIfCancellationRequested(config);
 
+<<<<<<< HEAD
+var _vuex = __webpack_require__(69);
+=======
   // Ensure headers exist
   config.headers = config.headers || {};
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   // Transform request data
   config.data = transformData(
@@ -12300,12 +13114,16 @@ module.exports = function dispatchRequest(config) {
     config.transformRequest
   );
 
+<<<<<<< HEAD
+var _mutations = __webpack_require__(26);
+=======
   // Flatten headers
   config.headers = utils.merge(
     config.headers.common || {},
     config.headers[config.method] || {},
     config.headers || {}
   );
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   utils.forEach(
     ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
@@ -12314,17 +13132,25 @@ module.exports = function dispatchRequest(config) {
     }
   );
 
+<<<<<<< HEAD
+var _actions = __webpack_require__(24);
+=======
   var adapter = config.adapter || defaults.adapter;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   return adapter(config).then(function onAdapterResolution(response) {
     throwIfCancellationRequested(config);
 
+<<<<<<< HEAD
+var _getters = __webpack_require__(25);
+=======
     // Transform response data
     response.data = transformData(
       response.data,
       response.headers,
       config.transformResponse
     );
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
     return response;
   }, function onAdapterRejection(reason) {
@@ -12373,12 +13199,25 @@ module.exports = function enhanceError(error, config, code, response) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 28 */
+=======
 /* 27 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+<<<<<<< HEAD
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(1);
+
+var _vue2 = _interopRequireDefault(_vue);
+=======
 var createError = __webpack_require__(11);
 
 /**
@@ -12407,10 +13246,171 @@ module.exports = function settle(resolve, reject, response) {
 /***/ }),
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
-"use strict";
+var _utils = __webpack_require__(9);
 
+var _TableCell = __webpack_require__(42);
 
+var _TableCell2 = _interopRequireDefault(_TableCell);
+
+__webpack_require__(20);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+<<<<<<< HEAD
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "Table",
+    data: function data() {
+        return {
+            currentContext: this.context,
+            currentPageSize: this.pageSize,
+            currentPageIndex: this.pageIndex,
+            currentRows: this.rows,
+            counter: 0
+        };
+    },
+
+    computed: {
+        tableId: function tableId() {
+            return this.id || "table-" + (0, _utils.newGuid)();
+        },
+
+        paginationId: function paginationId() {
+            return this.tableId + "-pagination";
+        },
+        pageUrl: function pageUrl() {
+            return this.url + "/pageindex/" + this.currentPageIndex + "/pagesize/" + this.currentPageSize;
+        }
+    },
+    props: {
+        id: String,
+        url: {
+            type: String
+        },
+        pageSize: {
+            //type: Number,
+            default: 20
+        },
+        pageIndex: {
+            //type: Number,
+            default: 0
+        },
+        columns: {
+            type: Array,
+            require: true,
+            default: function _default() {
+                return [];
+            }
+        },
+        rows: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        },
+        context: {
+            type: Object
+        }
+
+    },
+    methods: {
+        load: function load() {
+            if (!this.url) {
+                console.warn("未指定table组件url");
+                return;
+            }
+            var $pagination = $("#" + this.paginationId);
+            $pagination.pagination({
+                items: 0,
+                itemsOnPage: this.currentPageSize,
+                currentPage: this.currentPageIndex,
+                cssStyle: 'light-theme',
+                onPageClick: function onPageClick(pageNumber) {
+                    that.currentPageIndex = pageNumber - 1;
+                    send();
+                }
+            });
+            var that = this;
+            function send() {
+                that.$http.get("" + that.pageUrl).then(function (response) {
+                    var data = response.data;
+                    that.currentRows = data.items;
+                    $pagination.pagination("updateItems", data.total || 0);
+                    that.updateCounter();
+                });
+            }
+            send();
+        },
+
+        updateCounter: function updateCounter() {
+            this.counter++;
+        }
+    },
+
+    created: function created() {
+        if (!this.context) this.currentContext = this.$parent;
+        var that = this;
+        var $slots = this.$slots.default;
+        $slots.forEach(function (slot) {
+            if (slot.tag === "ss-col") {
+                var column = {};
+                if (slot.data && slot.data.attrs) {
+                    column = slot.data.attrs;
+                }
+                if (slot.staticClass) {
+                    column.class = slot.staticClass;
+                }
+                if (slot.children) {
+                    column.template = (0, _utils.vNodesToHtml)(slot.children);
+                }
+                that.columns.push(column);
+            }
+        });
+    },
+
+    watch: {},
+    mounted: function mounted() {
+        this.load();
+    },
+
+    components: {
+        TableCell: _TableCell2.default
+    }
+=======
 var utils = __webpack_require__(1);
 
 /**
@@ -12428,17 +13428,196 @@ module.exports = function transformData(data, headers, fns) {
   });
 
   return data;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 };
 
 
 /***/ }),
 /* 29 */
+<<<<<<< HEAD
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(1);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _utils = __webpack_require__(9);
+
+var utils = _interopRequireWildcard(_utils);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+
+exports.default = {
+    name: "TableCell",
+    props: {
+        column: Object,
+        row: Object,
+        counter: {
+            type: Number
+        }
+    },
+    data: function data() {
+        return {
+            context: this.$parent.currentContext
+        };
+    },
+
+    methods: {
+        compile: function compile() {
+            var $parent = this.context;
+            if (this.column.template) {
+                var methods = {};
+                var cell = document.createElement('div');
+                Object.keys($parent).forEach(function (key) {
+                    var func = $parent[key];
+                    if (typeof func === 'function' && (func.name === 'boundFn' || func.name === 'n')) {
+                        methods[key] = func;
+                    }
+                });
+                this.$el.innerHTML = '';
+                cell.innerHTML = this.column.template;
+                var res = _vue2.default.compile(cell.outerHTML);
+                var component = new _vue2.default({
+                    render: res.render,
+                    staticRenderFns: res.staticRenderFns,
+                    methods: methods,
+                    data: function data() {
+                        return $parent._data;
+                    }
+                });
+                component.row = this.row;
+                component.column = this.column;
+                this.$refs.cell.appendChild(component.$mount().$el);
+            } else {
+                this.$refs.cell.innerHTML = this.row[this.column.name];
+            }
+        },
+        destroy: function destroy() {}
+    }, beforeDestroy: function beforeDestroy() {
+        this.destroy();
+    },
+
+    watch: {
+        counter: function counter(curVal, oldVal) {
+            this.destroy();
+            this.compile();
+        }
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$nextTick(function () {
+            _this.compile();
+        });
+    }
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _TableAPI = __webpack_require__(18);
+
+var _TableAPI2 = _interopRequireDefault(_TableAPI);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    data: function data() {
+        return {
+            rows: [],
+            visible: false
+        };
+    },
+
+
+    methods: {
+        editRow: function editRow(row) {
+            layer.open({
+                //type:0,
+                title: "\u6B63\u5728\u7F16\u8F91'" + row.Title + "'",
+                shadeClose: false,
+                shade: [0.5, '#808080'],
+                maxmin: true,
+                area: ["90%", "90%"],
+                content: "表单还没弄...",
+                resize: false
+            });
+        },
+        deleteRow: function deleteRow(id) {
+            _TableAPI2.default.deleteRow({
+                url: "/xxx",
+                params: "id=" + id,
+                confirm: "是否删除记录",
+                confirmTitle: "删除提示"
+            });
+        },
+
+        show: function show() {}
+
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 31 */
+=======
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+<<<<<<< HEAD
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _menus = __webpack_require__(23);
+=======
 // btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
@@ -12475,7 +13654,11 @@ module.exports = btoa;
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 32 */
+=======
 /* 30 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12550,6 +13733,16 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = {
+  XmlEntities: __webpack_require__(35),
+  Html4Entities: __webpack_require__(34),
+  Html5Entities: __webpack_require__(10),
+  AllHtmlEntities: __webpack_require__(10)
+=======
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12565,14 +13758,23 @@ module.exports = function buildURL(url, params, paramsSerializer) {
  */
 module.exports = function combineURLs(baseURL, relativeURL) {
   return baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '');
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 };
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 34 */
+/***/ (function(module, exports) {
+
+var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
+var HTML_CODES = [39, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 34, 38, 60, 62, 338, 339, 352, 353, 376, 710, 732, 8194, 8195, 8201, 8204, 8205, 8206, 8207, 8211, 8212, 8216, 8217, 8218, 8220, 8221, 8222, 8224, 8225, 8240, 8249, 8250, 8364, 402, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 931, 932, 933, 934, 935, 936, 937, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 977, 978, 982, 8226, 8230, 8242, 8243, 8254, 8260, 8472, 8465, 8476, 8482, 8501, 8592, 8593, 8594, 8595, 8596, 8629, 8656, 8657, 8658, 8659, 8660, 8704, 8706, 8707, 8709, 8711, 8712, 8713, 8715, 8719, 8721, 8722, 8727, 8730, 8733, 8734, 8736, 8743, 8744, 8745, 8746, 8747, 8756, 8764, 8773, 8776, 8800, 8801, 8804, 8805, 8834, 8835, 8836, 8838, 8839, 8853, 8855, 8869, 8901, 8968, 8969, 8970, 8971, 9001, 9002, 9674, 9824, 9827, 9829, 9830];
+=======
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 
 var utils = __webpack_require__(1);
@@ -12580,12 +13782,29 @@ var utils = __webpack_require__(1);
 module.exports = (
   utils.isStandardBrowserEnv() ?
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+Html4Entities.prototype.decode = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    return str.replace(/&(#?[\w\d]+);?/g, function(s, entity) {
+        var chr;
+        if (entity.charAt(0) === "#") {
+            var code = entity.charAt(1).toLowerCase() === 'x' ?
+                parseInt(entity.substr(2), 16) :
+                parseInt(entity.substr(1));
+=======
   // Standard browser envs support document.cookie
   (function standardBrowserEnv() {
     return {
       write: function write(name, value, expires, path, domain, secure) {
         var cookie = [];
         cookie.push(name + '=' + encodeURIComponent(value));
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
         if (utils.isNumber(expires)) {
           cookie.push('expires=' + new Date(expires).toGMTString());
@@ -12648,6 +13867,23 @@ module.exports = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 };
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+Html4Entities.prototype.encode = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    var strLength = str.length;
+    var result = '';
+    var i = 0;
+    while (i < strLength) {
+        var alpha = numIndex[str.charCodeAt(i)];
+        result += alpha ? "&" + alpha + ";" : str.charAt(i);
+        i++;
+=======
 
 /***/ }),
 /* 34 */
@@ -12738,6 +13974,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
     if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
       headers[normalizedName] = value;
       delete headers[name];
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
     }
   });
 };
@@ -12765,6 +14002,26 @@ var utils = __webpack_require__(1);
  * @param {String} headers Headers needing to be parsed
  * @returns {Object} Headers parsed into an object
  */
+<<<<<<< HEAD
+Html4Entities.prototype.encodeNonUTF = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    var strLength = str.length;
+    var result = '';
+    var i = 0;
+    while (i < strLength) {
+        var cc = str.charCodeAt(i);
+        var alpha = numIndex[cc];
+        if (alpha) {
+            result += "&" + alpha + ";";
+        } else if (cc < 32 || cc > 126) {
+            result += "&#" + cc + ";";
+        } else {
+            result += str.charAt(i);
+        }
+        i++;
+=======
 module.exports = function parseHeaders(headers) {
   var parsed = {};
   var key;
@@ -12780,6 +14037,7 @@ module.exports = function parseHeaders(headers) {
 
     if (key) {
       parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
     }
   });
 
@@ -12820,6 +14078,39 @@ module.exports = function spread(callback) {
   };
 };
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+Html4Entities.prototype.encodeNonASCII = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    var strLength = str.length;
+    var result = '';
+    var i = 0;
+    while (i < strLength) {
+        var c = str.charCodeAt(i);
+        if (c <= 255) {
+            result += str[i++];
+            continue;
+        }
+        result += '&#' + c + ';';
+        i++;
+    }
+    return result;
+};
+
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+Html4Entities.encodeNonASCII = function(str) {
+    return new Html4Entities().encodeNonASCII(str);
+};
+=======
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /***/ }),
 /* 38 */
@@ -12827,6 +14118,12 @@ module.exports = function spread(callback) {
 
 "use strict";
 
+<<<<<<< HEAD
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+=======
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -12839,10 +14136,40 @@ var _Home2 = _interopRequireDefault(_Home);
 
 var _News = __webpack_require__(60);
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+XmlEntities.prototype.encode = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    return str.replace(/<|>|"|'|&/g, function(s) {
+        return CHAR_S_INDEX[s];
+    });
+};
+=======
 var _News2 = _interopRequireDefault(_News);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+XmlEntities.prototype.decode = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    return str.replace(/&#?[0-9a-zA-Z]+;?/g, function(s) {
+        if (s.charAt(1) === '#') {
+            var code = s.charAt(2).toLowerCase() === 'x' ?
+                parseInt(s.substr(3), 16) :
+                parseInt(s.substr(2));
+=======
 var routes = exports.routes = [{
     name: 'home',
     path: '/home',
@@ -12852,6 +14179,7 @@ var routes = exports.routes = [{
     path: '/news',
     component: _News2.default
 }];
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /***/ }),
 /* 39 */
@@ -12859,12 +14187,68 @@ var routes = exports.routes = [{
 
 "use strict";
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+XmlEntities.prototype.encodeNonUTF = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    var strLength = str.length;
+    var result = '';
+    var i = 0;
+    while (i < strLength) {
+        var c = str.charCodeAt(i);
+        var alpha = CHAR_INDEX[c];
+        if (alpha) {
+            result += "&" + alpha + ";";
+            i++;
+            continue;
+        }
+        if (c < 32 || c > 126) {
+            result += '&#' + c + ';';
+        } else {
+            result += str.charAt(i);
+        }
+        i++;
+    }
+    return result;
+};
+=======
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+<<<<<<< HEAD
+/**
+ * @param {String} str
+ * @returns {String}
+ */
+XmlEntities.prototype.encodeNonASCII = function(str) {
+    if (!str || !str.length) {
+        return '';
+    }
+    var strLenght = str.length;
+    var result = '';
+    var i = 0;
+    while (i < strLenght) {
+        var c = str.charCodeAt(i);
+        if (c <= 255) {
+            result += str[i++];
+            continue;
+        }
+        result += '&#' + c + ';';
+        i++;
+    }
+    return result;
+};
+=======
 var _SidebarMenu = __webpack_require__(65);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _SidebarMenu2 = _interopRequireDefault(_SidebarMenu);
 
@@ -12872,7 +14256,13 @@ var _Sidebar = __webpack_require__(64);
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
+<<<<<<< HEAD
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 var _ControlSidebar = __webpack_require__(61);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _ControlSidebar2 = _interopRequireDefault(_ControlSidebar);
 
@@ -12947,7 +14337,11 @@ exports.default = (_USER_SIGNIN$USER_SIG = {}, _defineProperty(_USER_SIGNIN$USER
 }), _USER_SIGNIN$USER_SIG);
 
 /***/ }),
+<<<<<<< HEAD
+/* 37 */
+=======
 /* 42 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12999,35 +14393,79 @@ exports.default = (_USER_SIGNIN$USER_SIG = {}, _defineProperty(_USER_SIGNIN$USER
 }), _USER_SIGNIN$USER_SIG);
 
 /***/ }),
+<<<<<<< HEAD
+/* 38 */
+=======
 /* 44 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+<<<<<<< HEAD
+exports.decode = exports.parse = __webpack_require__(36);
+exports.encode = exports.stringify = __webpack_require__(37);
+=======
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _vue = __webpack_require__(2);
 
+<<<<<<< HEAD
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 var _vue2 = _interopRequireDefault(_vue);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _vuex = __webpack_require__(78);
 
+<<<<<<< HEAD
+var ansiRegex = __webpack_require__(16)();
+=======
 var _vuex2 = _interopRequireDefault(_vuex);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _mutations = __webpack_require__(43);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
+<<<<<<< HEAD
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 var _actions = __webpack_require__(41);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _actions2 = _interopRequireDefault(_actions);
 
+<<<<<<< HEAD
+/* styles */
+__webpack_require__(63)
+
+var Component = __webpack_require__(2)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(53),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\app.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
+=======
 var _getters = __webpack_require__(42);
 
 var _getters2 = _interopRequireDefault(_getters);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13044,10 +14482,101 @@ exports.default = new _vuex2.default.Store({
 });
 
 /***/ }),
+<<<<<<< HEAD
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(64)
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(28),
+  /* template */
+  __webpack_require__(57),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\components\\table\\Table.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Table.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (true) {(function () {
+  var hotAPI = __webpack_require__(0)
+  hotAPI.install(__webpack_require__(1), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a7486fe6", Component.options)
+  } else {
+    hotAPI.reload("data-v-a7486fe6", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(29),
+  /* template */
+  __webpack_require__(51),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\components\\table\\TableCell.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] TableCell.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (true) {(function () {
+  var hotAPI = __webpack_require__(0)
+  hotAPI.install(__webpack_require__(1), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-05891be2", Component.options)
+  } else {
+    hotAPI.reload("data-v-05891be2", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(50),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\Home.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
+=======
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 
 //
@@ -13061,27 +14590,98 @@ module.exports = {
         return {};
     }
 };
+
+/***/ }),
+<<<<<<< HEAD
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(30),
+  /* template */
+  __webpack_require__(56),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\News.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] News.vue: functional components are not supported with templates, they should use render functions.")}
+=======
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
+
+
+//
+//
+//
+//
+//
+
+module.exports = {
+    data: function data() {
+        return {};
+    }
+};
+
+/***/ }),
+<<<<<<< HEAD
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(58),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\shared\\ControlSidebar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] ControlSidebar.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (true) {(function () {
+  var hotAPI = __webpack_require__(0)
+  hotAPI.install(__webpack_require__(1), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ca3d9442", Component.options)
+  } else {
+    hotAPI.reload("data-v-ca3d9442", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-//
-//
-//
-//
-//
-
-module.exports = {
-    data: function data() {
-        return {};
-    }
-};
-
-/***/ }),
+var Component = __webpack_require__(2)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(55),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\shared\\Footer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Footer.vue: functional components are not supported with templates, they should use render functions.")}
+=======
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13093,6 +14693,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _menus = __webpack_require__(40);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var _menus2 = _interopRequireDefault(_menus);
 
@@ -13141,10 +14742,29 @@ exports.default = {
 //
 
 /***/ }),
+<<<<<<< HEAD
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(59),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\shared\\Header.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Header.vue: functional components are not supported with templates, they should use render functions.")}
+=======
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -13183,6 +14803,62 @@ exports.default = {
 };
 
 /***/ }),
+<<<<<<< HEAD
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(60)
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(31),
+  /* template */
+  __webpack_require__(54),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\shared\\Sidebar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Sidebar.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (true) {(function () {
+  var hotAPI = __webpack_require__(0)
+  hotAPI.install(__webpack_require__(1), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-51c16d28", Component.options)
+  } else {
+    hotAPI.reload("data-v-51c16d28", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(32),
+  /* template */
+  __webpack_require__(52),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Projects\\LuckyCodeVue\\src\\LuckyCode.WebSite\\client\\views\\shared\\SidebarMenu.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] SidebarMenu.vue: functional components are not supported with templates, they should use render functions.")}
+=======
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13197,6 +14873,7 @@ module.exports = {
 /***/ }),
 /* 50 */
 /***/ (function(module, exports) {
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
 var HTML_CODES = [39, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 34, 38, 60, 62, 338, 339, 352, 353, 376, 710, 732, 8194, 8195, 8201, 8204, 8205, 8206, 8207, 8211, 8212, 8216, 8217, 8218, 8220, 8221, 8222, 8224, 8225, 8240, 8249, 8250, 8364, 402, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 931, 932, 933, 934, 935, 936, 937, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 977, 978, 982, 8226, 8230, 8242, 8243, 8254, 8260, 8472, 8465, 8476, 8482, 8501, 8592, 8593, 8594, 8595, 8596, 8629, 8656, 8657, 8658, 8659, 8660, 8704, 8706, 8707, 8709, 8711, 8712, 8713, 8715, 8719, 8721, 8722, 8727, 8730, 8733, 8734, 8736, 8743, 8744, 8745, 8746, 8747, 8756, 8764, 8773, 8776, 8800, 8801, 8804, 8805, 8834, 8835, 8836, 8838, 8839, 8853, 8855, 8869, 8901, 8968, 8969, 8970, 8971, 9001, 9002, 9674, 9824, 9827, 9829, 9830];
@@ -13214,6 +14891,43 @@ while (i < length) {
     i++;
 }
 
+<<<<<<< HEAD
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_vm._v("\n    首页123123\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-0541e6d9", module.exports)
+  }
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', {
+    ref: "cell"
+  })
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-05891be2", module.exports)
+  }
+}
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 /**
  * @constructor
  */
@@ -13233,6 +14947,7 @@ Html4Entities.prototype.decode = function(str) {
             var code = entity.charAt(1).toLowerCase() === 'x' ?
                 parseInt(entity.substr(2), 16) :
                 parseInt(entity.substr(1));
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
             if (!(isNaN(code) || code < -32768 || code > 65535)) {
                 chr = String.fromCharCode(code);
@@ -13240,6 +14955,55 @@ Html4Entities.prototype.decode = function(str) {
         } else {
             chr = alphaIndex[entity];
         }
+<<<<<<< HEAD
+      }
+    }, [(menu.icon) ? _c('i', {
+      class: menu.icon
+    }) : _vm._e(), _vm._v(" "), _c('span', [_vm._v(_vm._s(menu.title))]), _vm._v(" "), (menu.children) ? _c('span', {
+      staticClass: "pull-right-container"
+    }, [_c('i', {
+      staticClass: "fa fa-angle-left pull-right"
+    })]) : _vm._e()]), _vm._v(" "), (menu.children) ? _c('sidebar-menu', {
+      attrs: {
+        "model": menu.children,
+        "node-class": "treeview-menu"
+      }
+    }) : _vm._e()], 1)
+  }))
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-4045716b", module.exports)
+  }
+}
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper"
+  }, [_c('ss-header'), _vm._v(" "), _c('ss-sidebar'), _vm._v(" "), _c('div', {
+    staticClass: "content-wrapper"
+  }, [_c('router-view')], 1), _vm._v(" "), _c('ss-footer'), _vm._v(" "), _c('ss-control-sidebar'), _vm._v(" "), _c('div', {
+    staticClass: "control-sidebar-bg"
+  })], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-4e5369d0", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
         return chr || s;
     });
 };
@@ -13251,6 +15015,7 @@ Html4Entities.prototype.decode = function(str) {
 Html4Entities.decode = function(str) {
     return new Html4Entities().decode(str);
 };
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /**
  * @param {String} str
@@ -13336,6 +15101,11 @@ Html4Entities.prototype.encodeNonASCII = function(str) {
     return result;
 };
 
+<<<<<<< HEAD
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 /**
  * @param {String} str
  * @returns {String}
@@ -13345,9 +15115,132 @@ Html4Entities.encodeNonASCII = function(str) {
 };
 
 module.exports = Html4Entities;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('ss-table', {
+    attrs: {
+      "id": "table1",
+      "url": "/api/NewsArticle",
+      "pageSize": 10
+    }
+  }, [_c('ss-col', {
+    attrs: {
+      "name": "ArticleId",
+      "title": "ArticleId"
+    }
+  }), _vm._v(" "), _c('ss-col', {
+    attrs: {
+      "name": "Title",
+      "title": "Title"
+    }
+  }), _vm._v(" "), _c('ss-col', {
+    attrs: {
+      "name": "CreateDate",
+      "title": "CreateDate"
+    }
+  }), _vm._v(" "), _c('ss-col', {
+    attrs: {
+      "title": "操作",
+      "width": "130px"
+    }
+  }, [_c('a', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "$@click": "editRow(row)"
+    }
+  }, [_vm._v("\n                编辑\n                "), _c('i', {
+    staticClass: "fa fa-edit"
+  })]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-danger",
+    attrs: {
+      "$@click": "deleteRow(row.ArticleId)"
+    }
+  }, [_vm._v("\n                删除\n                "), _c('i', {
+    staticClass: "fa fa-trash"
+  })])])], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-756062cd", module.exports)
+  }
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "ss-table ss-table-fixed",
+    attrs: {
+      "id": _vm.tableId
+    }
+  }, [_c('div', {
+    staticClass: "ss-table-header"
+  }, [_c('table', {
+    staticClass: "table table-bordered"
+  }, [_c('colgroup', _vm._l((_vm.columns), function(column) {
+    return _c('col', {
+      attrs: {
+        "width": column.width || 'auto'
+      }
+    })
+  })), _vm._v(" "), _c('thead', [_c('tr', _vm._l((_vm.columns), function(column) {
+    return _c('th', {
+      domProps: {
+        "textContent": _vm._s(column.title)
+      }
+    })
+  }))])])]), _vm._v(" "), _c('div', {
+    staticClass: "ss-table-content"
+  }, [_c('table', {
+    staticClass: "table table-bordered table-striped table-hover"
+  }, [_c('colgroup', _vm._l((_vm.columns), function(column) {
+    return _c('col', {
+      attrs: {
+        "width": column.width || 'auto'
+      }
+    })
+  })), _vm._v(" "), _c('tbody', _vm._l((_vm.currentRows), function(row, index) {
+    return _c('tr', _vm._l((_vm.columns), function(column) {
+      return _c('table-cell', {
+        attrs: {
+          "column": column,
+          "row": row,
+          "counter": _vm.counter
+        }
+      })
+    }))
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "ss-table-paging"
+  }, [_c('div', {
+    staticClass: "simple-pagination",
+    attrs: {
+      "id": _vm.paginationId
+    }
+  })])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (true) {
+  module.hot.accept()
+  if (module.hot.data) {
+     __webpack_require__(0).rerender("data-v-a7486fe6", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 /* 51 */
 /***/ (function(module, exports) {
 
@@ -13371,6 +15264,7 @@ var CHAR_INDEX = {
     39: 'apos',
     38: 'amp'
 };
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 var CHAR_S_INDEX = {
     '<': '&lt;',
@@ -13695,7 +15589,11 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 59 */
+=======
 /* 53 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17755,13 +19653,324 @@ Store.prototype.subscribe = function subscribe (fn) {
   }
 };
 
+<<<<<<< HEAD
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(7);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(61)("05a4d070", content, false);
+// Hot Module Replacement
+if(true) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept(7, function() {
+     var newContent = __webpack_require__(7);
+     if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(62)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 Store.prototype.watch = function watch (getter, cb, options) {
     var this$1 = this;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
   assert(typeof getter === 'function', "store.watch only accepts a function.");
   return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
 };
 
+<<<<<<< HEAD
+// load the styles
+var content = __webpack_require__(5);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(11)("64ffb0f3", content, false);
+// Hot Module Replacement
+if(true) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept(5, function() {
+     var newContent = __webpack_require__(5);
+     if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 Store.prototype.replaceState = function replaceState (state) {
     var this$1 = this;
 
@@ -17769,6 +19978,7 @@ Store.prototype.replaceState = function replaceState (state) {
     this$1._vm._data.$$state = state;
   });
 };
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 Store.prototype.registerModule = function registerModule (path, rawModule) {
   if (typeof path === 'string') { path = [path]; }
@@ -17779,6 +19989,31 @@ Store.prototype.registerModule = function registerModule (path, rawModule) {
   resetStoreVM(this, this.state);
 };
 
+<<<<<<< HEAD
+// load the styles
+var content = __webpack_require__(6);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(11)("4c81caec", content, false);
+// Hot Module Replacement
+if(true) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept(6, function() {
+     var newContent = __webpack_require__(6);
+     if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+=======
 Store.prototype.unregisterModule = function unregisterModule (path) {
     var this$1 = this;
 
@@ -17903,6 +20138,7 @@ function installModule (store, rootState, path, module, hot) {
     installModule(store, rootState, path.concat(key), child, hot);
   });
 }
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 /**
  * make localized dispatch, commit, getters and state
@@ -18203,7 +20439,11 @@ var index_esm = {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 66 */
+=======
 /* 79 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -18232,7 +20472,11 @@ for (var key in styles) {
   clientOverlay.style[key] = styles[key];
 }
 
+<<<<<<< HEAD
+var ansiHTML = __webpack_require__(15);
+=======
 var ansiHTML = __webpack_require__(18);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 var colors = {
   reset: ['transparent', 'transparent'],
   black: '181818',
@@ -18247,7 +20491,11 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
+<<<<<<< HEAD
+var Entities = __webpack_require__(33).AllHtmlEntities;
+=======
 var Entities = __webpack_require__(49).AllHtmlEntities;
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 var entities = new Entities();
 
 exports.showProblems =
@@ -18288,7 +20536,11 @@ function problemType (type) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 67 */
+=======
 /* 80 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18426,6 +20678,9 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 68 */
+=======
 /* 81 */
 /***/ (function(module, exports) {
 
@@ -18454,6 +20709,7 @@ module.exports = g;
 
 /***/ }),
 /* 82 */
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18481,11 +20737,43 @@ module.exports = function(module) {
 
 
 /***/ }),
+<<<<<<< HEAD
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(3))(11)
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(3))(30)
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(3))(8)
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(3))(9)
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(14);
+module.exports = __webpack_require__(13);
+=======
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
 module.exports = __webpack_require__(16);
+>>>>>>> 8eecf6bc05ec08eaa0706b3762ebb25234bc49b9
 
 
 /***/ })
