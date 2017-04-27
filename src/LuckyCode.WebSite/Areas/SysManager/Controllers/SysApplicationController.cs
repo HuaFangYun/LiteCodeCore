@@ -21,9 +21,9 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             return View();
         }
 
-        public async Task<JsonResult> GetListViewModel()
+        public async Task<JsonResult> GetListViewModel(int pageIndex, int pageSize)
         {
-            PagedList<SysApplicationViewModel> paged =await _sysApplicationService.GetPagedList();
+            PagedList<SysApplicationViewModel> paged =await _sysApplicationService.GetPagedList(pageIndex,pageSize);
             return this.Json(new { total = paged.TotalCount, rows = paged });
         }
         public ActionResult Create()

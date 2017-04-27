@@ -46,9 +46,9 @@ namespace LuckyCode.Service
             return model;
         }
 
-        public async Task<PagedList<SysApplicationViewModel>> GetPagedList()
+        public async Task<PagedList<SysApplicationViewModel>> GetPagedList(int pageIndex, int pageSize)
         {
-            return await _repository.Query().ProjectTo<SysApplicationViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToPagedListAsync(1, 20);
+            return await _repository.Query().ProjectTo<SysApplicationViewModel>(AutoMapperConfiguration.MapperConfiguration).OrderByDescending(a => a.CreateTime).ToPagedListAsync(pageIndex, pageSize);
         }
 
         public async Task<SysApplicationViewModel> SaveSysApplication(SysApplicationViewModel model)

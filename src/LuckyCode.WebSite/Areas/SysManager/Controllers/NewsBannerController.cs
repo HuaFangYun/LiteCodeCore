@@ -40,7 +40,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(NewsBannerViewModel model)
+        public ActionResult Create([FromBody]NewsBannerViewModel model)
         {
             
             if (ModelState.IsValid)
@@ -49,14 +49,14 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
                 try
                 {
                     _bannerService.SaveNewsBanner(model);
-                    return Redirect(indexUrl);
+                    return Json(true);
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex.Message);
                 }
             }
-            return View(model);
+            return Json(false);
         }
 
         public async Task<IActionResult> Edit(Guid id)
@@ -65,21 +65,21 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Edit(NewsBannerViewModel model)
+        public ActionResult Edit([FromBody]NewsBannerViewModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
                     _bannerService.UpdateNewsBanner(model);
-                    return Redirect(indexUrl);
+                    return Json(true);
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex.Message);
                 }
             }
-            return View();
+            return Json(false);
         }
 
         public ActionResult Delete(string id)
