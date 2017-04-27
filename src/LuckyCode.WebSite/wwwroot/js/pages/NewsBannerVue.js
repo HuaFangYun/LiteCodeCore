@@ -1,11 +1,18 @@
 // var moment = require('moment');
+Vue.component('uploadFile',{
+    template:'<span><button type="button" class="btn btn-flat btn-xs btn-info">上传文件</button></span>',
+    data:function(){
+        return {}
+    }
+});
+
 Vue.component('switchCheckbox',{
     template:
     '<div v-on:click="onClick" style="width:80px;height:30px" >'+
-    '<div v-bind:style="!checked?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{checked?"":"否"}}</div>'+
-    '<div v-bind:style="!checked?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{checked?"是":""}}</div>'+
-    '</div></span>',
-    props:['checked'],
+    '<div v-bind:style="!value?uncheckedStyleLeft:checkedStyleLeft" style="width:40px;height:30px;float:left;text-align: center; padding-top: 4px;">{{value?"":"否"}}</div>'+
+    '<div v-bind:style="!value?uncheckedStyleRight:checkedStyleRight" style="width:40px;height:30px;float:right;text-align: center; padding-top: 4px;">{{value?"是":""}}</div>'+
+    '</div>',
+    props:['value'],
 
     data:function(){
         return {
@@ -29,8 +36,11 @@ Vue.component('switchCheckbox',{
     },
     methods:{
         onClick:function(){
-            this.checked = !this.checked;
-            this.$emit('change',this.checked);
+            this.value = !this.value;
+            this.$emit('input',this.value);
+        },
+        updateValue:function(){
+            console.log('switchCheckbox value change',this.value);
         }
     }
 });
