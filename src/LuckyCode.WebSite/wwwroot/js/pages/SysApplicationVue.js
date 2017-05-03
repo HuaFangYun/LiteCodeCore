@@ -29,7 +29,7 @@
                 _: Date.parse(new Date())
             }
             axios.get('GetListViewModel', { params: params }).then(function (res) {
-                console.log(res);
+               
                 self.applications = res.data.rows;
                 self.totalRowCount = res.data.total;
                 self.total = res.data.total;
@@ -40,14 +40,8 @@
         pageChange:function(pageIndex) {
             this.currentPageIndex = pageIndex;
             this.currentIndex = pageIndex;
-            console.log(this.currentIndex);
             this.initTable();
         }
-    },
-    events: {
-        pagechange: function (p) {
-            console.log('pagechange', p);
-        }
     }
-   
+    
 });

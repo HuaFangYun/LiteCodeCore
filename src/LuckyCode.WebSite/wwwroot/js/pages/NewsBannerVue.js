@@ -1,4 +1,5 @@
 // var moment = require('moment');
+/*
 Vue.component('uploadFile', {
     template: '<span><button type="button" class="btn btn-default" v-on:click="selectFile">{{buttonTitle}}</button><input type="file" style="display:none" v-on:change="fileChange"/></span>',
     data: function () {
@@ -42,7 +43,7 @@ Vue.component('uploadFile', {
         }
     }
 });
-
+*/
 Vue.component('switchCheckbox', {
     template:
     '<div v-on:click="onClick" style="width:80px;height:30px" >' +
@@ -150,6 +151,7 @@ Vue.component('pagebar', {
 
 var vm = new Vue({
     el: '#bannerApp',
+    
     data: {
         banners: [],
         totalItems: 0,

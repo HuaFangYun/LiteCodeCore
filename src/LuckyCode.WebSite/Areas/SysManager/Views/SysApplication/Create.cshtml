@@ -22,16 +22,28 @@
             <div class="col-md-12">
                 <div class="box box-success">
                     <div class="box-header"></div>
-                    <form class="form-horizontal" method="post" action="~/SysManager/SysApplication/Create">
+                    <form id="applicationAppForm" class="form-horizontal" method="post" action="">
                         <div class="box-body">
-                           @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true)
-                            @Html.Partial("_CreateOrEdit",Model)
-
+                            @Html.AntiForgeryToken()
+                            @*@Html.ValidationSummary(true)*@
+                            @*@Html.Partial("_CreateOrEdit",Model)*@
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">名称</label>
+                                <div class="col-sm-10 ">
+                                   <input name="ApplicationName" class="form-control"/>
+                                    @*@Html.ValidationMessageFor(a => a.ApplicationName)*@
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">应用地址</label>
+                                <div class="col-sm-10 ">
+                                    @Html.TextBoxFor(a => a.ApplicationUrl, new { @class = "form-control" })
+                                </div>
+                            </div>
                         </div>
                         <div class="box-footer">
                             <div class="col-md-offset-3">
-                                <button type="submit" class="btn btn-flat bg-maroon btn-padding">保存</button>
+                                <button id="applicationbutton" type="submit" class="btn btn-flat bg-maroon btn-padding">保存</button>
                             </div>
                         </div>
                     </form>
@@ -41,3 +53,63 @@
     </section>
     <!-- /.content -->
 </div>
+@section scripts{
+    <script type="text/javascript">
+        //$(document).ready(function() {
+        //    //$(document).on('click',
+        //    //    '#applicationbutton',
+        //    //    function() {
+        //    //        console.log('button');
+        //    //        var data = $("form").serialize();
+        //    //        $.ajax({
+        //    //            url: '/SysManager/SysApplication/Create',
+        //    //            data: data,
+        //    //            success: function(res) {
+        //    //                console.log(res);
+        //    //            },
+        //    //            dataType: 'json',
+        //    //            type: "POST"
+        //    //        });
+        //    //    });
+        //    $(document).on('click', '#applicationbutton', function () {
+        //        console.log('button');
+        //        $('#applicationAppForm').submit();
+
+        //});
+        $(document).ready(function() {
+            //$(document).on('click', '#applicationbutton', function () {
+              //  console.log('button');
+            $("#applicationAppForm").validate({
+                        onsubmit: true, // 是否在提交是验证
+                        onfocusout: false, // 是否在获取焦点时验证
+                        onkeyup: false, // 是否在敲击键盘时验证
+
+                        rules: { //规则
+                            ApplicationName: { //要对应相对应的input中的name属性
+                                required: true
+                            }
+                        },
+                        messages: { //验证错误信息
+                            ApplicationName: {
+                                required: "请输入名称"
+                            }
+                        },
+                        submitHandler: function(form) { //通过之后回调
+//进行ajax传值
+                            console.log('submit');
+                            $.ajax({
+                                url: "/SysManager/SysApplication/Create",
+                                type: "post",
+                                dataType: "json",
+                                data: $("form").serialize(),
+                                success: function(msg) {
+                                    //要执行的代码
+                                }
+                            });
+                        },
+                        invalidHandler: function(form, validator) { return false; }
+                    });
+              //  });
+        });
+    </script>
+    }

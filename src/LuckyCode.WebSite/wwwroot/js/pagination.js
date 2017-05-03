@@ -8,6 +8,7 @@
         <li v-for="p in grouplist" :class="{\'active\': currentIndex == p.val}"><a href="javascript:;" @click="setCurrent(p.val)"> {{ p.text }} </a></li>\
         <li :class="{\'disabled\': currentIndex == page}"><a href="javascript:;" @click="setCurrent(currentIndex + 1)"> 下一页</a></li>\
         <li :class="{\'disabled\': currentIndex == page}"><a href="javascript:;" @click="setCurrent(page)"> 尾页 </a></li>\
+        <li><input style="line-height:25px;margin-top:1px;width:60px;margin-left:20px;" v-model:value="currentIndex" v-on:change="inputChange()"/></li>\
         </ul>\
         <ul class="pagination pull-right">\
         <li><span> 共 {{ total }}  条 </span></li>\
@@ -65,17 +66,26 @@
                     (this.currentIndex > count + 1) && list.unshift({ text: '...', val: list[0].val - 1 });
                     (this.currentIndex < this.page - count) && list.push({ text: '...', val: list[list.length - 1].val + 1 });
                 }
-                console.log('list length'+list.length);
+               // console.log('list length'+list.length);
                 return list;
             }
         },
         methods: {
             setCurrent: function (idx) {
+                if (this.currentIndex == idx) {
+                    this.$emit('paged', this.currentIndex);
+                }
                 if (this.currentIndex != idx && idx > 0 && idx < this.page + 1) {
                     this.currentIndex = idx;
                     this.$emit('paged', this.currentIndex);
-                    console.log('currentIndex' + this.currentIndex);
+                    //console.log('currentIndex' + this.currentIndex);
                 }
+            },
+            inputChange:function() {
+                if (this.currentIndex > this.page||this.currentIndex<1) {
+                    return;
+                }
+                this.$emit('paged', this.currentIndex);
             }
         }
     })
