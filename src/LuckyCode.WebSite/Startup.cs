@@ -7,6 +7,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using LiteCode.Service;
+using LiteCode.ViewModels.Mapper;
+using LuckyCode.Core.WebSocket;
+using LuckyCode.Core.WebSocketChat;
 using LuckyCode.Core.Data;
 using LuckyCode.Core.Data.DapperExtensions;
 using LuckyCode.Core.Filtes;
@@ -74,8 +78,8 @@ namespace LuckyCode.WebSite
             services.AddSingleton<IAuthorizationHandler, ResourceHandler>();
             
             services.AddService();
-
-           // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
+            services.AddWebSocketManager();
+            // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
@@ -85,7 +89,7 @@ namespace LuckyCode.WebSite
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -118,7 +122,9 @@ namespace LuckyCode.WebSite
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseWebSockets();
 
+            app.MapWebSocketManager("/LiveChat", serviceProvider.GetService<ChartHandler>());
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
