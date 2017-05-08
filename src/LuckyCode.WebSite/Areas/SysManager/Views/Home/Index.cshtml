@@ -218,7 +218,8 @@
         ws.onmessage = function (result) {
             console.log(result.data);
             var ul = $("#LiveChat ul");
-            ul.append('<li>' + result.data+'</li>');
+            ul.append('<li>' + result.data + '</li>');
+            layer.alert('见到你真的很高兴', { icon: 6 });
         }
         $("#send_message").click(function () {
             var mes = $("#message").val();
