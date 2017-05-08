@@ -37,7 +37,7 @@ namespace LuckyCode.Core.WebSocketChat
                 var sendMessage = JsonConvert.SerializeObject(new SendMessage
                 {
                     Sender = NickName,
-                    Message = "Can not seed to " + receiveMessage.Receiver
+                    Message = receiveMessage.Message
                 });
 
                 await SendMessageAsync(sendMessage);

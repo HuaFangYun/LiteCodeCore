@@ -162,25 +162,71 @@
         <!-- Your Page Content Here -->
         <div class="row">
             <div class="col-md-12">
-               <textarea name="ArticleText"></textarea>
+                <textarea name="ArticleText"></textarea>
             </div>
         </div>
+        <div id="LiveChat">
+            <input id="message" class="form-control"/>
+            <button id="send_message" class="btn btn-default">发送</button>
+            <ul>
+                
+            </ul>
+        </div>
+        
     </section>
     <!-- /.content -->
 </div>
 @section scripts{
-<script src="~/lib/kindeditor/kindeditor-all-min.js"></script>
-    
-<script type="text/javascript">
-    var editor;
-    KindEditor.ready(function (K) {
-        editor = K.create('textarea[name="ArticleText"]', {
-            width: '690px',
-            height: '400px',
-            allowFileManager: true,
-            uploadJson: 'Home/UploadImages',
-            fileManagerJson: 'Home/ProcessRequest'
+    <script src="~/lib/kindeditor/kindeditor-all-min.js"></script>
+
+    <script src="~/lib/ReconnectingWebSocket.js"></script>
+    <script type="text/javascript">
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="ArticleText"]',
+                {
+                    width: '690px',
+                    height: '400px',
+                    allowFileManager: true,
+                    uploadJson: 'Home/UploadImages',
+                    fileManagerJson: 'Home/ProcessRequest'
+                });
         });
-    });
-</script>
+        //var uri = "ws://" + location.host + "/LiveChat?Name=luckearth";
+        //var socket = new WebSocket(uri);
+
+        //socket.onopen = function(data) {
+        //    console.log(data);
+        //};
+        //socket.onmessage = function (result) {
+        //    console.log(result.data);
+        //    var ul = $("#LiveChat ul");
+        //    ul.append('<li>'+result.data+'</li>');
+        //}
+        //$("#send_message").click(function () {
+        //    var mes = $("#message").val();
+        //    //发送信息
+        //    socket.send(JSON.stringify({
+        //        Receiver: '123',
+        //        Message:mes
+        //    }));
+        //});
+        var ws = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth");
+
+        
+        //接收信息
+        ws.onmessage = function (result) {
+            console.log(result.data);
+            var ul = $("#LiveChat ul");
+            ul.append('<li>' + result.data+'</li>');
+        }
+        $("#send_message").click(function () {
+            var mes = $("#message").val();
+            //发送信息
+            ws.send(JSON.stringify({
+                        Receiver: '123',
+                        Message:mes
+                    }));
+        });
+    </script>
 }

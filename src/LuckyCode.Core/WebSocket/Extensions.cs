@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using LuckyCode.Core.WebSocketChat;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +20,7 @@ namespace LuckyCode.Core.WebSocket
         {
             var handlerBaseType = typeof(WebSocketHandler);
 
-            foreach (var type in Assembly.GetEntryAssembly().ExportedTypes)
+            foreach (var type in Assembly.Load(new AssemblyName("LuckyCode.Core")).ExportedTypes)
             {
                 if (type.GetTypeInfo().BaseType == handlerBaseType)
                 {
