@@ -30,7 +30,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
         {
             _modulesService = modulesService;
             _environment = environment;
-            _redisClient = redisClient;//RedisClientSingleton.GetInstance(config);
+            _redisClient = redisClient;
             _config = config;
         }
         // GET: Home
