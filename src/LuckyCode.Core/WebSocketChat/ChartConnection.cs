@@ -13,7 +13,7 @@ namespace LuckyCode.Core.WebSocketChat
         public ChartConnection(WebSocketHandler handler) : base(handler)
         {
         }
-
+        public Guid Id { get; set; }
         public string NickName { get; set; }
 
         public override async Task ReceiveAsync(string message)
@@ -39,8 +39,11 @@ namespace LuckyCode.Core.WebSocketChat
                     Sender = NickName,
                     Message = receiveMessage.Message
                 });
-
-                await SendMessageAsync(sendMessage);
+                foreach (var conn in Handler.Connections)
+                {
+                    await conn.SendMessageAsync(sendMessage);
+                }
+                
             }
         }
 

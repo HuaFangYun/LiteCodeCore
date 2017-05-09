@@ -6,17 +6,17 @@
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
 
-      "wwwroot/font-awesome/css/font-awesome.min.css",
-      "wwwroot/bootstrap/css/bootstrap.min.css",
-      "wwwroot/css/ionicons.min.css",
-      "wwwroot/css/AdminLTE.min.css",
-      "wwwroot/lib/bootstraptable/dist/bootstrap-table.min.css",
-      "wwwroot/css/skins/skin-blue.min.css",
+      "wwwroot/css/font-awesome.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/css/ionicons.css",
+      "wwwroot/css/AdminLTE.css",
+      "wwwroot/lib/bootstraptable/dist/bootstrap-table.css",
+      "wwwroot/css/skins/skin-blue.css",
       "wwwroot/fonts/iconfont.css",
-      
+
       "wwwroot/css/LuckyStyle.css",
       "wwwroot/css/fine-uploader.css"
-      
+
     ]
   },
   {

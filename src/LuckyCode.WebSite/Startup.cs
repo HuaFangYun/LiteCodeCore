@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,12 +14,17 @@ using LuckyCode.Core.WebSocketChat;
 using LuckyCode.Core.Data;
 using LuckyCode.Core.Data.DapperExtensions;
 using LuckyCode.Core.Filtes;
+using LuckyCode.Core.Middleware;
+using LuckyCode.Core.Redis;
 using LuckyCode.Data;
 using LuckyCode.Entity.IdentityEntity;
 using LuckyCode.Service;
 using LuckyCode.ViewModels.Mapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using NLog.Extensions.Logging;
+using NLog.LayoutRenderers;
+using NLog.Web;
 using HttpContext = LuckyCode.Core.Utility.HttpContext;
 
 namespace LuckyCode.WebSite
@@ -42,7 +48,7 @@ namespace LuckyCode.WebSite
         {
             services.AddDbContext<LiteCodeContext>(options =>
                    options.UseMySql(Configuration.GetConnectionString("mySqlConnection")));
-
+            services.AddSingleton(Configuration);
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
@@ -67,6 +73,7 @@ namespace LuckyCode.WebSite
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
             services.AddScoped<IDapperContext,DapperContext>();
             // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
+            services.AddSingleton<RedisClient>();
 
             services.AddAuthorization(options =>
             {
@@ -90,8 +97,15 @@ namespace LuckyCode.WebSite
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            loggerFactory.AddNLog();
+
+            app.AddNLogWeb();
+            //注册根目录地址
+            LayoutRenderer.Register("basedir", (logEvent) => env.ContentRootPath);
 
             HttpContext.Configure(app.ApplicationServices.
                 GetRequiredService<Microsoft.AspNetCore.Http.IHttpContextAccessor>()
@@ -121,11 +135,12 @@ namespace LuckyCode.WebSite
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseWebSockets();
+            //
 
+            app.UseWebSockets();
             app.MapWebSocketManager("/LiveChat", serviceProvider.GetService<ChartHandler>());
             app.UseStaticFiles();
-
+            app.UseMiddleware<LoggerMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");

@@ -9,11 +9,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core.Redis;
 using LuckyCode.IService;
 using LuckyCode.WebFrameWork;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
@@ -22,16 +24,20 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
     {
         private IHostingEnvironment _environment;
         private ISysModulesService _modulesService;
-        public HomeController(ISysModulesService modulesService,IHostingEnvironment environment)
+        private RedisClient _redisClient;
+        private IConfigurationRoot _config;
+        public HomeController(IConfigurationRoot config, ISysModulesService modulesService,IHostingEnvironment environment, RedisClient redisClient)
         {
             _modulesService = modulesService;
             _environment = environment;
+            _redisClient = redisClient;//RedisClientSingleton.GetInstance(config);
+            _config = config;
         }
         // GET: Home
         public ActionResult Index()
         {
             StringBuilder sb = new StringBuilder();
-            
+            _redisClient.GetDatabase().StringSet("Test", "Hello!");
             return View();
         }
        
