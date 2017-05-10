@@ -6,11 +6,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace LuckyCode.Core.WebSocket
 {
     public abstract class WebSocketHandler
     {
+        private ILogger _logger;
+        public WebSocketHandler(ILogger<WebSocketHandler> logger)
+        {
+            _logger = logger;
+        }
         protected abstract int BufferSize { get; }
 
         private List<WebSocketConnection> _connections = new List<WebSocketConnection>();
@@ -23,37 +29,47 @@ namespace LuckyCode.Core.WebSocket
 
             while (connection.WebSocket.State == WebSocketState.Open)
             {
-               
-                ArraySegment<Byte> buffer = new ArraySegment<byte>(new Byte[1024 * 4]);
-                string serializedInvocationDescriptor = null;
-                WebSocketReceiveResult result = null;
-                using (var ms = new MemoryStream())
+                try
                 {
-                    do
+                    ArraySegment<Byte> buffer = new ArraySegment<byte>(new Byte[1024 * 4]);
+                    string serializedInvocationDescriptor = null;
+                    WebSocketReceiveResult result = null;
+                    using (var ms = new MemoryStream())
                     {
-                        result = await connection.WebSocket.ReceiveAsync(buffer, CancellationToken.None).ConfigureAwait(false);
-                        ms.Write(buffer.Array, buffer.Offset, result.Count);
+                        do
+                        {
+                            result = await connection.WebSocket.ReceiveAsync(buffer, CancellationToken.None).ConfigureAwait(false);
+                            ms.Write(buffer.Array, buffer.Offset, result.Count);
+                        }
+                        while (!result.EndOfMessage);
+
+                        ms.Seek(0, SeekOrigin.Begin);
+
+                        using (var reader = new StreamReader(ms, Encoding.UTF8))
+                        {
+                            serializedInvocationDescriptor = await reader.ReadToEndAsync().ConfigureAwait(false);
+                        }
                     }
-                    while (!result.EndOfMessage);
 
-                    ms.Seek(0, SeekOrigin.Begin);
-
-                    using (var reader = new StreamReader(ms, Encoding.UTF8))
+                    if (result.MessageType == WebSocketMessageType.Text)
                     {
-                        serializedInvocationDescriptor = await reader.ReadToEndAsync().ConfigureAwait(false);
+                        var message = serializedInvocationDescriptor;//Encoding.UTF8.GetString(buffer, 0, result.Count);
+
+                        await connection.ReceiveAsync(message);
+                    }
+                    else if (result.MessageType == WebSocketMessageType.Close)
+                    {
+                        await OnDisconnected(connection);
                     }
                 }
-
-                if (result.MessageType == WebSocketMessageType.Text)
+                catch (Exception e)
                 {
-                    var message = serializedInvocationDescriptor;//Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    Console.WriteLine(e);
+                    _logger.LogDebug(e.Message);
+                    _logger.LogDebug(e.Source);
+                    _logger.LogDebug(e.StackTrace);
+                }
 
-                    await connection.ReceiveAsync(message);
-                }
-                else if (result.MessageType == WebSocketMessageType.Close)
-                {
-                    await OnDisconnected(connection);
-                }
             }
         }
 

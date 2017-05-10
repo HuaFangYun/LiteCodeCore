@@ -5,11 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using LuckyCode.Core.WebSocket;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace LuckyCode.Core.WebSocketChat
 {
     public class ChartHandler : WebSocketHandler
     {
+        private ILogger _logger;
+        public ChartHandler(ILogger<WebSocketHandler> logger) : base(logger)
+        {
+            _logger = logger;
+        }
+
         protected override int BufferSize { get => 1024 * 4; }
 
         public override async Task<WebSocketConnection> OnConnected(HttpContext context)

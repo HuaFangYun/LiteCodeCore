@@ -40,8 +40,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
         public ActionResult Index()
         {
             StringBuilder sb = new StringBuilder();
-            _client.Add("Test1", "ABBB");
-            string s = _client.Get<string>("Test1");
+            
             return View();
         }
        

@@ -143,7 +143,7 @@ namespace LuckyCode.WebSite
             app.UseWebSockets();
             app.MapWebSocketManager("/LiveChat", serviceProvider.GetService<ChartHandler>());
             app.UseStaticFiles();
-            app.UseMiddleware<LoggerMiddleware>();
+            //app.UseMiddleware<LoggerMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
