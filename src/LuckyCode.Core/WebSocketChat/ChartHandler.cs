@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using LuckyCode.Core.WebSocket;
 using Microsoft.AspNetCore.Http;
@@ -29,7 +31,7 @@ namespace LuckyCode.Core.WebSocketChat
                 if (connection == null)
                 {
                     var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-
+                    await webSocket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, CancellationToken.None);
                     connection = new ChartConnection(this)
                     {
                         NickName = name,
