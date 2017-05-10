@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
@@ -24,20 +25,23 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
     {
         private IHostingEnvironment _environment;
         private ISysModulesService _modulesService;
-        private RedisClient _redisClient;
-        private IConfigurationRoot _config;
-        public HomeController(IConfigurationRoot config, ISysModulesService modulesService,IHostingEnvironment environment, RedisClient redisClient)
+        private RedisClientManager _redisClient;
+        private ICacheClient _client;
+
+        public HomeController(ICacheClient client, ISysModulesService modulesService,IHostingEnvironment environment, RedisClientManager redisClient)
         {
             _modulesService = modulesService;
             _environment = environment;
             _redisClient = redisClient;
-            _config = config;
+            _client = client;
+
         }
         // GET: Home
         public ActionResult Index()
         {
             StringBuilder sb = new StringBuilder();
-            _redisClient.GetDatabase().StringSet("Test", "Hello!");
+            _client.Add("Test1", "ABBB");
+            string s = _client.Get<string>("Test1");
             return View();
         }
        

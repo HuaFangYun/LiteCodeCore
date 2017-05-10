@@ -48,7 +48,8 @@ namespace LuckyCode.WebSite
         {
             services.AddDbContext<LiteCodeContext>(options =>
                    options.UseMySql(Configuration.GetConnectionString("mySqlConnection")));
-            services.AddSingleton(Configuration);
+            //services.AddSingleton(Configuration);
+            services.AddOptions();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
@@ -73,8 +74,10 @@ namespace LuckyCode.WebSite
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
             services.AddScoped<IDapperContext,DapperContext>();
             // services.AddScoped<IDatabase>(x => new Database(Configuration.GetConnectionString("mySqlConnection"), DatabaseType.MySQL, Pomelo.Data.MySql.MySqlClientFactory.Instance));
-            services.AddSingleton<RedisClient>();
+            services.Configure<RedisConnection>(Configuration.GetSection("RedisConfig:DefaultConnection"));
 
+            services.AddSingleton<RedisClientManager>();
+            services.AddSingleton<ICacheClient, RedisCacheClient>();
             services.AddAuthorization(options =>
             {
                 options.AddPolicy(Policies.CanViewUsers,
