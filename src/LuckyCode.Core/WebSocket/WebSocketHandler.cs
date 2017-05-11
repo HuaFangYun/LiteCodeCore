@@ -62,12 +62,13 @@ namespace LuckyCode.Core.WebSocket
                         await OnDisconnected(connection);
                     }
                 }
-                catch (Exception e)
+                catch (WebSocketException e)
                 {
                     Console.WriteLine(e);
                     _logger.LogDebug(e.Message);
                     _logger.LogDebug(e.Source);
                     _logger.LogDebug(e.StackTrace);
+                    await OnDisconnected(connection);
                 }
 
             }
@@ -78,11 +79,11 @@ namespace LuckyCode.Core.WebSocket
             if (connection != null)
             {
                 _connections.Remove(connection);
-
-                await connection.WebSocket.CloseAsync(
-                    closeStatus: WebSocketCloseStatus.NormalClosure,
-                    statusDescription: "Closed by the WebSocketHandler",
-                    cancellationToken: CancellationToken.None);
+                await connection.WebSocket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, CancellationToken.None);
+                //await connection.WebSocket.CloseAsync(
+                //    closeStatus: WebSocketCloseStatus.NormalClosure,
+                //    statusDescription: "Closed by the WebSocketHandler",
+                //    cancellationToken: CancellationToken.None);
             }
         }
 
