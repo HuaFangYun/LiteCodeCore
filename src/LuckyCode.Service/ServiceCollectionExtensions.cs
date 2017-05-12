@@ -10,7 +10,7 @@ namespace LuckyCode.Service
     {
         public static IServiceCollection AddService(this IServiceCollection services)
         {
-            services.AddScoped<ISignal, Signal>();
+            services.AddSingleton<ISignal, Signal>();
             services.AddScoped<ISysUserService, SysUserService>();
             services.AddScoped<ISysModulesService, SysModulesService>();
             services.AddScoped<ISysApplicationService, SysApplicationService>();
