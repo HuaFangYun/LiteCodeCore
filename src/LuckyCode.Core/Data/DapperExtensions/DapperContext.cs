@@ -41,11 +41,9 @@ namespace LuckyCode.Core.Data.DapperExtensions
         IDbConnection Connection { get; }
 
         int Execute(CommandDefinition definition);
-        bool ExecBlukCopy(DbDataReader reader, string tablename);
+        
         IEnumerable<T> Query<T>(CommandDefinition definition);
-        int? Insert<T>(dynamic data);
-        int Update<T>(dynamic data);
-        bool Delete<T>(object id);
+        
         IEnumerable<TReturn> Query<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null, int? commandTimeout = 0);
         IEnumerable<TReturn> Query<TFirst, TSecond, TThird, TReturn>(string sql, Func<TFirst, TSecond, TThird, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null, int? commandTimeout = 0);
         IEnumerable<TReturn> Query<TFirst, TSecond, TThird, TFourth, TReturn>(string sql, Func<TFirst, TSecond, TThird, TFourth, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null, int? commandTimeout = 0);
@@ -155,33 +153,7 @@ namespace LuckyCode.Core.Data.DapperExtensions
                 return _connection.Execute(command);
             }
            
-            public bool ExecBlukCopy(DbDataReader reader, string tablename)
-            {
-
-                using (SqlConnection conn = (SqlConnection)_connection)
-                {
-                    conn.Open();
-                    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
-                    {
-                        bulkCopy.BatchSize = 5000;
-                        bulkCopy.DestinationTableName = tablename;
-                        try
-                        {
-                            bulkCopy.WriteToServer(reader);
-                        }
-                        catch (Exception)
-                        {
-                            return false;
-                        }
-                        finally
-                        {
-                            bulkCopy.Close();
-                            conn.Close();
-                        }
-                    }
-                }
-                return true;
-            }
+            
             /// <summary>
             /// Insert a row into the db
             /// </summary>
