@@ -64,39 +64,36 @@ namespace LuckyCode.Core.Data.DapperExtensions
         {
             _context = context;
         }
+
         public void Batch(Action<ISession> action)
         {
-            using (var conn=_context.Database.GetDbConnection())
+            var conn = _context.Database.GetDbConnection();
+            try
             {
-                try
-                {
-                    if(conn.State!=ConnectionState.Open)
-                        conn.Open();
-                    action(new Session(conn,_context));
-                }
-                finally
-                {
-                    if(conn.State!=ConnectionState.Closed)
-                        conn.Close();
-                }
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                action(new Session(conn, _context));
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
 
         public TResult Batch<TResult>(Func<ISession, TResult> func)
         {
-            using (var conn = _context.Database.GetDbConnection())
+            var conn = _context.Database.GetDbConnection();
+            try
             {
-                try
-                {
-                    if (conn.State != ConnectionState.Open)
-                        conn.Open();
-                    return func(new Session(conn,_context));
-                }
-                finally
-                {
-                    if (conn.State != ConnectionState.Closed)
-                        conn.Close();
-                }
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                return func(new Session(conn, _context));
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
 
