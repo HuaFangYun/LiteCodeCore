@@ -29,7 +29,7 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
             AddPreviousPage(output);
             AddPageNodes(output);
             AddNextPage(output);
-            
+         
             output.PreElement.SetHtmlContent($"<ul class='pagination pull-right'><li><span> 共 {TotalCount}  条 </span></li> <li><span> 每页 {PageSize} 条 </span></li> <li><span> 共 {PageCount} 页 </span></li> <li><span> 当前第 {PageIndex} 页 </span></li></ul>");
             
         }
