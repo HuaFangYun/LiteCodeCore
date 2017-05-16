@@ -51,7 +51,7 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
             return new PreviousPage
             {
                 Display = display,
-                PageNumber = display ? _pages.First(x => x.IsCurrent).PageNumber - 1 : 1
+                PageNumber = display ? _pages.First(x => x.IsCurrent).PageNumber  : 1
             };
         }
 

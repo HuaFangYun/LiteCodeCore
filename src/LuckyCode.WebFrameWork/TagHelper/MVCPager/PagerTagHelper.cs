@@ -13,7 +13,10 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
         /// Paginated Meta data
         /// </summary>
         public PagerMetaModel Info { get; set; }
-
+        public int TotalCount { get; set; }
+        public int PageSize { get; set; }
+        private int PageCount { get; set; } 
+        private int PageIndex { get; set; }
         /// <summary>
         /// Base route minus page value
         /// </summary>
@@ -21,12 +24,13 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            PageCount = Info.Pages.Count;
             BuildParent(output);
             AddPreviousPage(output);
             AddPageNodes(output);
             AddNextPage(output);
             
-            output.PreElement.SetHtmlContent($"<ul class='pagination pull-right'><li><span> 共 {Info.Pages.Count}  条 </span></li> <li><span> 每页 2  条 </span></li> <li><span> 共 8 页 </span></li> <li><span> 当前第 1 页 </span></li></ul>");
+            output.PreElement.SetHtmlContent($"<ul class='pagination pull-right'><li><span> 共 {TotalCount}  条 </span></li> <li><span> 每页 {PageSize} 条 </span></li> <li><span> 共 {PageCount} 页 </span></li> <li><span> 当前第 {PageIndex} 页 </span></li></ul>");
             
         }
 
@@ -49,18 +53,13 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
         private void AddPreviousPage(TagHelperOutput output)
         {
             string html = "";
-            if (Info.PreviousPage.Display)
+            if (Info.PreviousPage.PageNumber >1)
             {
-                html =
-                    $@"<li >
-    <a href=""{Route}/?pageIndex={Info.PreviousPage.PageNumber}"" aria-label=""上一页"">上一页 <span class=""show-for-sr""></span></a>
-</li>";
+                html = $@"<li><a href=""{Route}/?pageIndex={Info.PreviousPage.PageNumber-1}"" aria-label=""上一页"">上一页 <span class=""show-for-sr""></span></a></li>";
             }
             else
             {
-                html = $@"<li class='disabled'>
-    <a   class='disabled'>上一页 </a>
-</li>";
+                html = $@"<li class='disabled'><a   class='disabled'>上一页 </a></li>";
             }
             output.Content.SetHtmlContent(output.Content.GetContent() + html);
         }
@@ -71,18 +70,13 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
         private void AddNextPage(TagHelperOutput output)
         {
             string html = "";
-            if (Info.PreviousPage.Display)
+            if (PageIndex<PageCount)
             {
-                html =
-                    $@"<li >
-    <a href=""{Route}/?pageIndex={Info.NextPage.PageNumber}"" >下一页 </a>
-</li>";
+                html = $@"<li ><a href=""{Route}/?pageIndex={PageIndex+1}"" >下一页 </a></li>";
             }
             else
             {
-                html = $@"<li class='disabled'>
-    <a class='disabled'>下一页 </a>
-</li>";
+                html = $@"<li class='disabled'><a class='disabled'>下一页 </a></li>";
             }
             output.Content.SetHtmlContent(output.Content.GetContent() + html);
         }
@@ -94,6 +88,7 @@ namespace LuckyCode.WebFrameWork.TagHelper.MVCPager
                 string html;
                 if (infoPage.IsCurrent)
                 {
+                    PageIndex = infoPage.PageNumber;
                     html = $@"<li class=""active""><a> {infoPage.PageNumber}</a></li>";
                     output.Content.SetHtmlContent(output.Content.GetContent() + html);
                     continue;
