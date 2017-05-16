@@ -20,6 +20,7 @@ using LuckyCode.Data;
 using LuckyCode.Entity.IdentityEntity;
 using LuckyCode.Service;
 using LuckyCode.ViewModels.Mapper;
+using LuckyCode.WebFrameWork.TagHelper.MVCPager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using NLog.Extensions.Logging;
@@ -85,7 +86,7 @@ namespace LuckyCode.WebSite
             });
 
             services.AddSingleton<IAuthorizationHandler, ResourceHandler>();
-            
+            services.AddTransient<IPagerdMetaService, PagerdMetaService>();
             services.AddService();
             services.AddWebSocketManager();
             // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
