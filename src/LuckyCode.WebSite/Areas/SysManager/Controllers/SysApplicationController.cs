@@ -3,6 +3,7 @@ using LiteCode.WebSite.Areas.SysManager;
 using LuckyCode.Core;
 using LuckyCode.IService;
 using LuckyCode.ViewModels.SiteManager;
+using LuckyCode.WebFrameWork.TagHelper.MVCPager;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
@@ -10,10 +11,12 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 
     public class SysApplicationController : BaseController
     {
+        private IPagerdMetaService _metaService;
         private ISysApplicationService _sysApplicationService;
-        public SysApplicationController(ISysApplicationService sysApplicationService)
+        public SysApplicationController(ISysApplicationService sysApplicationService, IPagerdMetaService metaService)
         {
             _sysApplicationService = sysApplicationService;
+            _metaService = metaService;
         }
         // GET: SysApplication
         public ActionResult Index()
@@ -25,6 +28,13 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
         {
             PagedList<SysApplicationViewModel> paged =await _sysApplicationService.GetPagedList(pageIndex,pageSize);
             return this.Json(new { total = paged.TotalCount, rows = paged });
+        }
+
+        public async Task<IActionResult> TestPager(int pageIndex)
+        {
+            PagedList<SysApplicationViewModel> paged = await _sysApplicationService.GetPagedList(pageIndex, 5);
+            ViewBag.Full = _metaService.GetMetaData(paged.TotalCount, pageIndex, 4);
+            return View(paged);
         }
         public ActionResult Create()
         {

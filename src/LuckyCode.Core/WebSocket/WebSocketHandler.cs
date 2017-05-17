@@ -62,12 +62,13 @@ namespace LuckyCode.Core.WebSocket
                         await OnDisconnected(connection);
                     }
                 }
-                catch (Exception e)
+                catch (WebSocketException e)
                 {
                     Console.WriteLine(e);
                     _logger.LogDebug(e.Message);
                     _logger.LogDebug(e.Source);
                     _logger.LogDebug(e.StackTrace);
+                    await OnDisconnected(connection);
                 }
 
             }

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "72cfcc020f5e77a9f352"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bf05502a9f08dd21197f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -13458,7 +13458,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\app.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\app.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13496,7 +13496,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\components\\table\\Table.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\components\\table\\Table.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Table.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13530,7 +13530,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\components\\table\\TableCell.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\components\\table\\TableCell.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TableCell.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13564,7 +13564,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\Home.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\Home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13598,7 +13598,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\News.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\News.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] News.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13632,7 +13632,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\ControlSidebar.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\ControlSidebar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ControlSidebar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13666,7 +13666,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Footer.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Footer.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Footer.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13700,7 +13700,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Header.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Header.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Header.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13738,7 +13738,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Sidebar.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\Sidebar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Sidebar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13772,7 +13772,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\SidebarMenu.vue"
+Component.options.__file = "G:\\Project\\LuckyCode\\src\\LuckyCode.WebSite\\client\\views\\shared\\SidebarMenu.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SidebarMenu.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13797,8 +13797,18 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n    首页123123\n")])
-},staticRenderFns: []}
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticStyle: {
+      "padding": "20px"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "/Home/Test"
+    }
+  }, [_c('h2', [_vm._v("前往TagHelper测试页面")])])])
+}]}
 module.exports.render._withStripped = true
 if (true) {
   module.hot.accept()
