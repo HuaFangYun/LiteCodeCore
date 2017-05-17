@@ -31,7 +31,7 @@ namespace LuckyCode.Core.WebSocketChat
                 if (connection == null)
                 {
                     var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                    await webSocket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, CancellationToken.None);
+                   // await webSocket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, CancellationToken.None);
                     connection = new ChartConnection(this)
                     {
                         NickName = name,

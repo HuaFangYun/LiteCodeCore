@@ -23,7 +23,7 @@ using StackExchange.Redis;
 
 namespace LuckyCode.Core.Redis
 {
-    public class RedisClientManager : IDisposable
+    public class RedisClientManager 
     {
         private RedisConnection _config;
         private ConcurrentDictionary<string, ConnectionMultiplexer> _connections;

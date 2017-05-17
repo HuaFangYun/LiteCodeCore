@@ -78,11 +78,11 @@ namespace LuckyCode.Core.WebSocket
             if (connection != null)
             {
                 _connections.Remove(connection);
-
-                await connection.WebSocket.CloseAsync(
-                    closeStatus: WebSocketCloseStatus.NormalClosure,
-                    statusDescription: "Closed by the WebSocketHandler",
-                    cancellationToken: CancellationToken.None);
+                await connection.WebSocket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, null, CancellationToken.None);
+                //await connection.WebSocket.CloseAsync(
+                //    closeStatus: WebSocketCloseStatus.NormalClosure,
+                //    statusDescription: "Closed by the WebSocketHandler",
+                //    cancellationToken: CancellationToken.None);
             }
         }
 
