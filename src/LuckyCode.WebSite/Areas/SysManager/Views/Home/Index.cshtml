@@ -84,32 +84,32 @@
                         <div class="table-responsive">
                             <table class="table no-margin">
                                 <thead>
-                                    <tr>
-                                        <th>订单号</th>
-                                        <th>商品名称</th>
-                                        <th>订单状态</th>
-                                        <th>下单时间</th>
-                                    </tr>
+                                <tr>
+                                    <th>订单号</th>
+                                    <th>商品名称</th>
+                                    <th>订单状态</th>
+                                    <th>下单时间</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -125,39 +125,42 @@
                         <div class="table-responsive">
                             <table class="table no-margin">
                                 <thead>
-                                    <tr>
-                                        <th>订单号</th>
-                                        <th>商品名称</th>
-                                        <th>订单状态</th>
-                                        <th>下单时间</th>
-                                    </tr>
+                                <tr>
+                                    <th>订单号</th>
+                                    <th>商品名称</th>
+                                    <th>订单状态</th>
+                                    <th>下单时间</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FT001</td>
-                                        <td>苹果手机6Plus</td>
-                                        <td>发货</td>
-                                        <td>2016-12-6</td>
-                                    </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
+                                <tr>
+                                    <td>FT001</td>
+                                    <td>苹果手机6Plus</td>
+                                    <td>发货</td>
+                                    <td>2016-12-6</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
-                        </div>
-
                     </div>
+
+                </div>
             </div>
+        </div>
+        <div id="test_01">
+            <img id="_captcha" src="/____Capcha"/>
         </div>
         <!-- Your Page Content Here -->
         <div class="row">
@@ -181,6 +184,14 @@
 
     <script src="~/lib/ReconnectingWebSocket.js"></script>
     <script type="text/javascript">
+        $("#test_01").click(function () {
+            var self = this;
+            $.get("/____Capcha",
+                function(data) {
+                    self.src = data;
+                    console.log(data);
+                });
+        })
         var editor;
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="ArticleText"]',
@@ -211,23 +222,23 @@
         //        Message:mes
         //    }));
         //});
-        var ws = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth"+Math.random());
+        var ws = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth" + Math.random());
 
-        
+
         //接收信息
-        ws.onmessage = function (result) {
+        ws.onmessage = function(result) {
             console.log(result.data);
             var ul = $("#LiveChat ul");
             ul.append('<li>' + result.data + '</li>');
             layer.alert('见到你真的很高兴', { icon: 6 });
         }
-        $("#send_message").click(function () {
+        $("#send_message").click(function() {
             var mes = $("#message").val();
             //发送信息
             ws.send(JSON.stringify({
-                        Receiver: '123',
-                        Message:mes
-                    }));
+                Receiver: '123',
+                Message: mes
+            }));
         });
     </script>
 }

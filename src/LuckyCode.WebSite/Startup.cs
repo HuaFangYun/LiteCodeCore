@@ -20,6 +20,7 @@ using LuckyCode.Data;
 using LuckyCode.Entity.IdentityEntity;
 using LuckyCode.Service;
 using LuckyCode.ViewModels.Mapper;
+using LuckyCode.WebFrameWork.MvcCaptcha;
 using LuckyCode.WebFrameWork.TagHelper.MVCPager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -140,7 +141,7 @@ namespace LuckyCode.WebSite
                 app.UseExceptionHandler("/Home/Error");
             }
             //
-
+            app.UseMiddleware<CaptchaMiddleware>();
             app.UseWebSockets();
             app.MapWebSocketManager("/LiveChat", serviceProvider.GetService<ChartHandler>());
             app.UseStaticFiles();
