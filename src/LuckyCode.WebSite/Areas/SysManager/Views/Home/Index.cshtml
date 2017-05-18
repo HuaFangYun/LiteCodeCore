@@ -160,7 +160,7 @@
             </div>
         </div>
         <div id="test_01">
-            <img id="_captcha" src="/____Capcha"/>
+            <img id="_captcha" src="/____Capcha" onclick="this.src=this.src.split('?')[0]+'?'+Math.random()" />
         </div>
         <!-- Your Page Content Here -->
         <div class="row">
@@ -184,14 +184,7 @@
 
     <script src="~/lib/ReconnectingWebSocket.js"></script>
     <script type="text/javascript">
-        $("#test_01").click(function () {
-            var self = this;
-            $.get("/____Capcha",
-                function(data) {
-                    self.src = data;
-                    console.log(data);
-                });
-        })
+        
         var editor;
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="ArticleText"]',
