@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.DrawingCore.Imaging;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -13,11 +14,14 @@ namespace LuckyCode.WebFrameWork.MvcCaptcha
     public class CaptchaMiddleware
     {
         public string captchadata = "/____Capcha";
+        public const string ValidCaptcha = "/____ValidCaptcha____";
         private readonly RequestDelegate _next;
+        private ICaptchaValidManager _captcha;
 
-        public CaptchaMiddleware(RequestDelegate next)
+        public CaptchaMiddleware(RequestDelegate next, ICaptchaValidManager captcha)
         {
             _next = next;
+            _captcha = captcha;
         }
 
         public async Task Invoke(HttpContext context)
@@ -25,19 +29,20 @@ namespace LuckyCode.WebFrameWork.MvcCaptcha
             if (context.Request.Path.Value == captchadata)
             {
                 string guid = Guid.NewGuid().ToString();
-                var options = new MvcCaptchaOptions();
-                options.TextLength = 6;
-                var ci = new MvcCaptchaImage(options);
-                ci.ResetText();
-                using (var b = ci.RenderImage())
+                var key = context.Request.Query["key"];
+                if (!string.IsNullOrEmpty(key))
                 {
-                    var mem = new MemoryStream();
-
-                    b.Save(mem, ImageFormat.Gif);
-                    var ar = mem.ToArray();
+                    var ar=_captcha.CreateCaptcha(key);
                     context.Response.ContentType = "image/gif";
                     await context.Response.Body.WriteAsync(ar, 0, ar.Length);
                 }
+                
+            }
+            else if (context.Request.Path.Value == ValidCaptcha)
+            {
+                var code = context.Request.Query[context.Request.Query.Keys.FirstOrDefault()];
+                var key = context.Request.Query[context.Request.Query.Keys.LastOrDefault()];
+                await context.Response.WriteAsync(_captcha.IsValid(key, code).ToString().ToLower());
             }
             else
             {

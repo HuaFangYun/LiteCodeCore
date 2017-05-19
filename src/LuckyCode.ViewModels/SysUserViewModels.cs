@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using LuckyCode.Core.Utility;
+using LuckyCode.WebFrameWork.MvcCaptcha;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LuckyCode.ViewModels
@@ -72,5 +73,8 @@ namespace LuckyCode.ViewModels
         public string Password { get; set; }
         public bool Rememberme { get; set; }
         public string ReturnUrl { get; set; }
+        [Required(ErrorMessage = "验证码必填")]
+        [CaptchaRemote("Code",AdditionalFields = "Code,key",ErrorMessage = "验证码错误")]
+        public string Code { get; set; }
     }
 }

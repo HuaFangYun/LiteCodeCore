@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LuckyCode.Entity\LuckyCode.Entity.csproj" />
+    <ProjectReference Include="..\LuckyCode.WebFrameWork\LuckyCode.WebFrameWork.csproj" />
   </ItemGroup>
 
   <ItemGroup>

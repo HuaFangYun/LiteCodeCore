@@ -52,7 +52,7 @@ namespace LuckyCode.WebSite
                    options.UseMySql(Configuration.GetConnectionString("mySqlConnection")));
             //services.AddSingleton(Configuration);
             services.AddOptions();
-
+            services.AddSession();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
             services.AddIdentity<SysUsers, SysRoles>()
@@ -90,6 +90,7 @@ namespace LuckyCode.WebSite
             services.AddTransient<IPagerdMetaService, PagerdMetaService>();
             services.AddService();
             services.AddWebSocketManager();
+            services.AddScoped<ICaptchaValidManager, CaptchaValidManager>();
             // services.AddScoped<IStartupFilter>(x=>new Hotlinking());
             services.AddMvc().AddJsonOptions(options =>
             {
@@ -107,7 +108,7 @@ namespace LuckyCode.WebSite
             loggerFactory.AddDebug();
 
             loggerFactory.AddNLog();
-
+            app.UseSession();
             app.AddNLogWeb();
             //注册根目录地址
             LayoutRenderer.Register("basedir", (logEvent) => env.ContentRootPath);
