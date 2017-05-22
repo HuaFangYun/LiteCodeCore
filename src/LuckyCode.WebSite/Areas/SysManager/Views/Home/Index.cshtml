@@ -190,7 +190,9 @@
         $('#LiveChat').on('pasteImage', function (ev, data) {
             var blobUrl = URL.createObjectURL(data.blob);
             $("#image_test").attr('src', data.dataURL);
-
+            $.post('SysManager/Home/Base64Upload', { imagestr: data.dataURL }, function() {
+                
+            });
         });
         var editor;
         KindEditor.ready(function(K) {

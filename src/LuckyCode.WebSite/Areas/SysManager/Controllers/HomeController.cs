@@ -59,7 +59,31 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             
             return PartialView("_SiteManagerLeft",model);
         }
-       
+        [HttpPost]
+        public async Task<IActionResult> Base64Upload(string imagestr)
+        {
+            string saveUrl = "/Uploads/";
+            string dirPath = _environment.WebRootPath + saveUrl;
+            string fileExt = ".png";
+            string newFileName = Guid.NewGuid().ToString("N") + fileExt;
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+            var filePath = Path.Combine(dirPath, newFileName);
+            var reg = new Regex("data:image/(.*);base64,");
+            imagestr = reg.Replace(imagestr, "");
+            byte[] imageBytes = Convert.FromBase64String(imagestr);
+            // Convert byte[] to Image
+            using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                using (var files = new FileStream(filePath, FileMode.CreateNew))
+                {
+                    await ms.CopyToAsync(files);
+                }
+            }
+            return Json(new {url = ""});
+        }
        /// <summary>
        /// FineUpload 文件上传
        /// </summary>
