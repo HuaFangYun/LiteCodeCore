@@ -43,7 +43,7 @@ namespace LuckyCode.Core.WebSocketChat
                 {
                     await conn.SendMessageAsync(sendMessage);
                 }
-                
+
             }
         }
 
