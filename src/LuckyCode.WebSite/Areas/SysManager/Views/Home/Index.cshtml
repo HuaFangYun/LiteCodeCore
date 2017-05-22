@@ -172,7 +172,7 @@
             <input id="message" class="form-control"/>
             <button id="send_message" class="btn btn-default">发送</button>
             <ul>
-                
+                <li><img id="image_test" class="display-none"/></li>
             </ul>
         </div>
         
@@ -182,9 +182,16 @@
 @section scripts{
     <script src="~/lib/kindeditor/kindeditor-all-min.js"></script>
 
-    <script src="~/lib/ReconnectingWebSocket.js"></script>
+    <script src="~/lib/ReconnectingWebSocket.js" asp-append-version="true"></script>
+<script src="~/lib/paste.js"></script>
     <script type="text/javascript">
-        
+        $("#message").pastableTextarea();//文本框
+        //粘贴图片事件
+        $('#LiveChat').on('pasteImage', function (ev, data) {
+            var blobUrl = URL.createObjectURL(data.blob);
+            $("#image_test").attr('src', data.dataURL);
+
+        });
         var editor;
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="ArticleText"]',
