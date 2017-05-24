@@ -38,7 +38,7 @@ namespace LuckyCode.Core.WebSocket
                     {
                         do
                         {
-                            result = await connection.WebSocket.ReceiveAsync(buffer, CancellationToken.None).ConfigureAwait(false);
+                            result = await connection.WebSocket.ReceiveAsync(buffer, CancellationToken.None);
                             ms.Write(buffer.Array, buffer.Offset, result.Count);
                         }
                         while (!result.EndOfMessage);
@@ -47,7 +47,7 @@ namespace LuckyCode.Core.WebSocket
 
                         using (var reader = new StreamReader(ms, Encoding.UTF8))
                         {
-                            serializedInvocationDescriptor = await reader.ReadToEndAsync().ConfigureAwait(false);
+                            serializedInvocationDescriptor = await reader.ReadToEndAsync();
                         }
                     }
 

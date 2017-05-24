@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using LuckyCode.Core.WebSocket;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace LuckyCode.Core.WebSocketChat
 {
@@ -40,7 +41,14 @@ namespace LuckyCode.Core.WebSocketChat
 
                     Connections.Add(connection);
                 }
-
+                foreach (var conn in Connections)
+                {
+                    await conn.SendMessageAsync(JsonConvert.SerializeObject(new 
+                    {
+                        Sender = name,
+                        Message = "上线了"
+                    }));
+                }
                 return connection;
             }
 

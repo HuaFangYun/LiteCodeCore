@@ -34,7 +34,7 @@ namespace LuckyCode.WebFrameWork.MvcCaptcha
         {
              byte[] ar;
             var options = new MvcCaptchaOptions();
-            options.TextLength = 6;
+            options.TextLength = 4;
             var ci = new MvcCaptchaImage(options);
             ci.ResetText();
             using (var b = ci.RenderImage())

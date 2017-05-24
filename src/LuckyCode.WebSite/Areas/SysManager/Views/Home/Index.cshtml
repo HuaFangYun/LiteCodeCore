@@ -224,23 +224,41 @@
         //        Message:mes
         //    }));
         //});
-        var ws = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth" + Math.random());
+        var websocket = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth" + Math.random());
 
-
+        //连接发生错误的回调方法
+        websocket.onerror = function () {
+            console.log("websocket.error");
+        };
+        websocket.onopen = function (event) {
+            console.log("onopen");
+        }
         //接收信息
-        ws.onmessage = function(result) {
+        websocket.onmessage = function(result) {
             console.log(result.data);
             var ul = $("#LiveChat ul");
             ul.append('<li>' + result.data + '</li>');
-            layer.alert('见到你真的很高兴', { icon: 6 });
+           // layer.alert('见到你真的很高兴', { icon: 6 });
+        }
+        
+        //连接关闭的回调方法
+        websocket.onclose = function () {
+            websocket.close();
+            console.log("websocket.onclose");
+        }
+
+        //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+        window.onbeforeunload = function () {
+            websocket.close();
         }
         $("#send_message").click(function() {
             var mes = $("#message").val();
             //发送信息
-            ws.send(JSON.stringify({
+            websocket.send(JSON.stringify({
                 Receiver: '123',
                 Message: mes
             }));
+            $("#message").val("");
         });
     </script>
 }
