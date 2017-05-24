@@ -20,6 +20,10 @@ using Microsoft.Extensions.Options;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
+    public class Base64Upload
+    {
+        public string ImageString { get; set; }
+    }
 
     public class HomeController : BaseController
     {
@@ -60,7 +64,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             return PartialView("_SiteManagerLeft",model);
         }
         [HttpPost]
-        public async Task<IActionResult> Base64Upload(string imagestr)
+        public async Task<IActionResult> Base64Upload(Base64Upload imagestr)
         {
             string saveUrl = "/Uploads/";
             string dirPath = _environment.WebRootPath + saveUrl;
@@ -72,8 +76,8 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             var filePath = Path.Combine(dirPath, newFileName);
             var reg = new Regex("data:image/(.*);base64,");
-            imagestr = reg.Replace(imagestr, "");
-            byte[] imageBytes = Convert.FromBase64String(imagestr);
+            imagestr.ImageString = reg.Replace(imagestr.ImageString, "");
+            byte[] imageBytes = Convert.FromBase64String(imagestr.ImageString);
             // Convert byte[] to Image
             using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
             {

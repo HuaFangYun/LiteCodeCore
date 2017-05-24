@@ -188,11 +188,26 @@
         $("#message").pastableTextarea();//文本框
         //粘贴图片事件
         $('#LiveChat').on('pasteImage', function (ev, data) {
-            var blobUrl = URL.createObjectURL(data.blob);
-            $("#image_test").attr('src', data.dataURL);
-            $.post('SysManager/Home/Base64Upload', { imagestr: data.dataURL }, function() {
-                
+            
+            console.log(ev);
+            console.log(data);
+            var formData = new FormData();
+            var image = data.dataURL;
+            formData.append('ImageString', image);
+            $.ajax({
+                url: '/SysManager/Home/Base64Upload',
+                method: 'POST',
+                data: formData ,
+                contentType: false, // 注意这里应设为false
+                processData: false,
+                cache: false,
+                success: function(data) {
+                },
+                error: function(jqXHR) {
+                    console.log(JSON.stringify(jqXHR));
+                }
             });
+            $("#image_test").attr('src', data.dataURL);
         });
         var editor;
         KindEditor.ready(function(K) {
