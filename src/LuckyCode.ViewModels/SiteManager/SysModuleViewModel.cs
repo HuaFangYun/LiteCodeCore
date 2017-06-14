@@ -44,7 +44,7 @@ namespace LuckyCode.ViewModels.SiteManager
         [Display(Name = "控制器")]
         public string ControllerName { get; set; }
         [Display(Name = "操作")]
-        [Remote("ValidateActionName", "SysModules", "SiteManager", AdditionalFields = "Id,ControllerName,ActionName")]
+        [Remote("ValidateActionName", "SysModules", "SysManager", AdditionalFields = "Id,ControllerName,ActionName")]
         public string ActionName { get; set; }
         [Display(Name = "模块类型")]
         [UIHint("_EnumRadio")]

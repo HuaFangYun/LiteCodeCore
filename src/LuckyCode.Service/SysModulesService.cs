@@ -92,9 +92,11 @@ namespace LuckyCode.Service
             entity.Sort = 0;
             entity.PurviewNum = model.ControllerName == "" ? 0 : pnum + 1;
             entity.PurviewSum = model.ControllerName == "" ? 0 : 2L << pnum;
+            entity.Application = null;
             try
             {
                 await _repository.AddAsync(entity);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
