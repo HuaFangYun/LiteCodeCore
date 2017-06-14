@@ -120,7 +120,8 @@ namespace LuckyCode.Core.Data
             //标记更改过的属性
             foreach (var expression in expressions)
             {
-                dbContext?.Entry(entity).Property(expression);
+                var p=dbContext?.Entry(entity).Property(expression);
+                p.IsModified = true;
             }
             return entity;
         }

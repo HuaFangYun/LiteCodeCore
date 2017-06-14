@@ -27,23 +27,21 @@ namespace LuckyCode.Core.WebSocketChat
             var name = context.Request.Query["Name"];
             if (!string.IsNullOrEmpty(name))
             {
-                var connection = Connections.FirstOrDefault(m => ((ChartConnection)m).NickName == name);
-
-                if (connection == null)
+                var connection = Connections.FirstOrDefault(m => ((ChartConnection) m).NickName == name);
+                if (connection != null)
                 {
-                    var webSocket = await context.WebSockets.AcceptWebSocketAsync();
-                    
-                    connection = new ChartConnection(this)
-                    {
-                        NickName = name,
-                        WebSocket = webSocket
-                    };
-
-                    Connections.Add(connection);
+                    Connections.Remove(connection);
                 }
+                var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+                connection = new ChartConnection(this)
+                {
+                    NickName = name,
+                    WebSocket = webSocket
+                };
+                Connections.Add(connection);
                 foreach (var conn in Connections)
                 {
-                    await conn.SendMessageAsync(JsonConvert.SerializeObject(new 
+                    await conn.SendMessageAsync(JsonConvert.SerializeObject(new
                     {
                         Sender = name,
                         Message = "上线了"
@@ -51,7 +49,6 @@ namespace LuckyCode.Core.WebSocketChat
                 }
                 return connection;
             }
-
             return null;
         }
     }
