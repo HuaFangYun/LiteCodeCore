@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core.Filtes;
 using LuckyCode.IService;
 using LuckyCode.ViewModels;
 using LuckyCode.ViewModels.SiteManager;
@@ -18,18 +19,18 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             _departmentService = departmentService;
         }
 
-        // GET: SysDepartment
+        [Resource("部门管理")]
         public ActionResult Index()
         {
             return View();
         }
-
+        [Resource("Ajax获取列表")]
         public async Task<IActionResult> GetListViewModel(int pageIndex, int pageSize)
         {
             var page =await _departmentService.GetPagedList(pageIndex, pageSize);
             return this.Json(new TableViewModel<SysDepartmentViewModel>() {Total = page.TotalCount,Rows = page});
         }
-
+        [Resource("添加部门")]
         public async Task<IActionResult> Create()
         {
             SysDepartmentViewModel model = new SysDepartmentViewModel();
@@ -51,7 +52,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View(model);
         }
-
+        [Resource("编辑部门")]
         public async Task<IActionResult> Edit(string id)
         {
             try
@@ -80,7 +81,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View(model);
         }
-
+        [Resource("删除部门")]
         public async Task<IActionResult> Delete(string id)
         {
             await Task.FromResult(0);

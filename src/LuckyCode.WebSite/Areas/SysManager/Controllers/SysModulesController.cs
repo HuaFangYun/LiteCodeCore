@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core.Filtes;
 using LuckyCode.IService;
 using LuckyCode.ViewModels;
 using LuckyCode.ViewModels.SiteManager;
@@ -20,18 +21,18 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             _applicationService = applicationService;
         }
 
-        // GET: SysModules
+        [Resource("系统菜单")]
         public ActionResult Index()
         {
             return View();
         }
-
+        [Resource("Ajax获取列表")]
         public async Task<IActionResult> GetListViewModel(int pageIndex, int pageSize)
         {
             var page =await _modulesService.GetPagedList(pageIndex, pageSize);
             return Json(new TableViewModel<SysModuleViewModel>() {Rows = page, Total = page.TotalCount});
         }
-
+        [Resource("添加模块")]
         public async Task<IActionResult> Create()
         {
             var model = new SysModuleViewModel();
@@ -51,7 +52,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View();
         }
-
+        [Resource("编辑模块")]
         public async Task<IActionResult> Edit(string id)
         {
             var model =await _modulesService.GetModuleViewModel(id);
@@ -70,13 +71,13 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return RedirectToAction("Edit", model.Id);
         }
-
+        [Resource("删除模块")]
         public async Task<IActionResult> Delete(string id)
         {
             await Task.FromResult(0);
             return Json(new ReturnResult() {ErrorCode = "0", Message = "成功"});
         }
-
+        [Resource("模块排序")]
         public async Task<IActionResult> ModuleSort(string id)
         {
             var model =await _modulesService.GetModuleSortViewModels(id);
@@ -97,7 +98,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return Redirect("/SysManager/SysModules/Index");
         }
-
+        [Resource("验证操作名")]
         public async Task<IActionResult> ValidateActionName(string id, string controllerName, string actionName)
         {
             bool m =await _modulesService.ValidateActionName(id, controllerName, actionName);

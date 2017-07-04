@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using LiteCode.WebSite.Areas.SysManager;
+using LuckyCode.Core.Filtes;
 using LuckyCode.Core.Utility.Sequence;
 using LuckyCode.Entity.IdentityEntity;
 using LuckyCode.IService;
@@ -24,25 +25,25 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             _userManager = userManager;
         }
 
-        // GET: SysUsers
+        [Resource("用户管理")]
         public  IActionResult Index()
         {
             return View();
         }
-
+        [Resource("Ajax获取列表")]
         public async Task<IActionResult> GetListViewModel(int pageIndex,int pageSize)
         {
             var page =await _usersService.GetPagedList(pageIndex,pageSize);
             return Json(new {total = page.TotalCount, rows = page});
         }
-
+        [Resource("添加用户")]
         public async Task<IActionResult> Create()
         {
             var model = new SysUsersCreateViewModel();
             model.RoleItemEntities =await _rolesService.GetRoleItemEntities();
             return View(model);
         }
-
+        [Resource("修改密码")]
         public async Task<IActionResult> ChangePassword(string id)
         {
             await Task.FromResult(0);
@@ -50,6 +51,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             model.Id = id;
             return View(model);
         }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
@@ -103,7 +105,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             
             return View();
         }
-        
+        [Resource("编辑用户")]
         public async Task<IActionResult> Edit(string id)
         {
             var entity =await _userManager.FindByIdAsync(id);
@@ -168,6 +170,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View(model);
         }*/
+        [Resource("验证用户名")]
         public async Task<IActionResult> ValidateUserName(string id, string userName)
         {
             bool user =await _usersService.Exits(id,userName);//_navRepository.Single(a => a.NavId != navId && a.NavName == navName);
