@@ -23,7 +23,7 @@
     {
         private I<%=GetClassName(SourceTable)%>Service _<%=GetCamelCaseName(SourceTable.Name)%>Service;
         private ILogger _logger;
-        public <%=GetClassName(SourceTable)%>Controller(I<%=GetClassName(SourceTable)%>Service <%=GetCamelCaseName(SourceTable.Name)%>Service,ILogger logger)
+        public <%=GetClassName(SourceTable)%>Controller(I<%=GetClassName(SourceTable)%>Service <%=GetCamelCaseName(SourceTable.Name)%>Service,ILogger< <%=GetClassName(SourceTable)%>Controller> logger)
         {
             _logger = logger;
             _<%=GetCamelCaseName(SourceTable.Name)%>Service = <%=GetCamelCaseName(SourceTable.Name)%>Service;
@@ -34,10 +34,10 @@
             return View();
         }
 
-        public ActionResult GetListViewModel(int pageIndex, int pageSize)
+        public async Task<IActionResult> GetListViewModel(int pageIndex, int pageSize)
         {
-            var page = _<%=GetCamelCaseName(SourceTable.Name)%>Service.GetPagedList(pageIndex,pageSize);
-            return this.JsonNet(new TableViewModel<<%=GetClassName(SourceTable)%>ViewModel>() {Rows = page,Total = page.TotalCount}, JsonRequestBehavior.AllowGet);
+            var page =await _<%=GetCamelCaseName(SourceTable.Name)%>Service.GetPagedListAsync(pageIndex,pageSize);
+            return Json(new TableViewModel<<%=GetClassName(SourceTable)%>ViewModel>() {Rows = page,Total = page.TotalCount});
         }
 
         public ActionResult Create()
@@ -52,20 +52,20 @@
             {
                 try
                 {
-                    _<%=GetCamelCaseName(SourceTable.Name)%>Service.Save<%=GetClassName(SourceTable)%>(model);
+                    _<%=GetCamelCaseName(SourceTable.Name)%>Service.AddAsync(model);
                     return Redirect("/SiteManager/<%=GetClassName(SourceTable)%>/Index");
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex.Message);
+                    _logger.LogError(ex.Message);
                 }
             }
             return View(model);
         }
 
-        public ActionResult Edit(string id)
+        public async Task<IActionResult> Edit(string id)
         {
-            var model = _<%=GetCamelCaseName(SourceTable.Name)%>Service.Get<%=GetClassName(SourceTable)%>ViewModel(id);
+            var model =await _<%=GetCamelCaseName(SourceTable.Name)%>Service.Get<%=GetClassName(SourceTable)%>ViewModelAsync(id);
             return View(model);
         }
         [HttpPost]
@@ -75,28 +75,28 @@
             {
                 try
                 {
-                    _<%=GetCamelCaseName(SourceTable.Name)%>Service.Update<%=GetClassName(SourceTable)%>(model);
+                    _<%=GetCamelCaseName(SourceTable.Name)%>Service.Update(model);
                     return Redirect("/SiteManager/<%=GetClassName(SourceTable)%>/Index");
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex.Message);
+                    _logger.LogError(ex.Message);
                 }
             }
             return View();
         }
 
-        public ActionResult Delete(string id)
+        public IActionResult Delete(string id)
         {
              try
             {
-                _<%=GetCamelCaseName(SourceTable.Name)%>Service.Delete<%=GetClassName(SourceTable)%>(id);
-                return this.JsonNet(true, JsonRequestBehavior.AllowGet);
+                _<%=GetCamelCaseName(SourceTable.Name)%>Service.Delete(id);
+                return Json(true);
             }
             catch (Exception ex)
             {
-                _logger.Error(ex.Message);
+                _logger.LogError(ex.Message);
             }
-            return this.JsonNet(false, JsonRequestBehavior.AllowGet);
+            return Json(false);
         }
     }

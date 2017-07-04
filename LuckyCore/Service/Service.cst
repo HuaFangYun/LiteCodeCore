@@ -29,10 +29,10 @@
     }
      public class <%=GetClassName(Tables[i])%>Service : I<%=GetClassName(Tables[i])%>Service
     {
-        private ILuckyContext _context;
-        private IRepository<<%=GetClassName(Tables[i])%>> _repository;
+        private ILiteCodeContext _context;
+        private IRepository<<%=GetClassName(Tables[i])%>Entity> _repository;
         private ILogger _logger;
-        public <%=GetClassName(Tables[i])%>Service(IRepository<<%=GetClassName(Tables[i])%>> repository,ILuckyContext context,ILogger<<%=GetClassName(Tables[i])%>Service> logger )
+        public <%=GetClassName(Tables[i])%>Service(IRepository<<%=GetClassName(Tables[i])%>Entity> repository,ILiteCodeContext context,ILogger<<%=GetClassName(Tables[i])%>Service> logger )
         {
             _repository = repository;
              _context = context;
