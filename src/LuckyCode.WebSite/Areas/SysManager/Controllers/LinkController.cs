@@ -6,6 +6,7 @@ using LuckyCode.ViewModels;
 using LuckyCode.ViewModels.News;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using LuckyCode.Core.Filtes;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
@@ -13,22 +14,23 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
     {
         private ILinkService _linkService;
         private ILogger _logger;
-        public LinksController(ILinkService linkService,ILogger<LinksController> logger)
+        public LinksController(ILinkService linkService, ILogger<LinksController> logger)
         {
             _linkService = linkService;
             _logger = logger;
         }
-        // GET: Link
+        [Resource("友情链接")]
         public ActionResult Index()
         {
             return View();
         }
+        [Resource("Ajax获取列表")]
         public ActionResult GetListViewModel(int pageIndex, int pageSize)
         {
             var page = _linkService.GetPagedList(pageIndex, pageSize);
             return Json(new TableViewModel<LinkViewModel>() { Rows = page, Total = page.TotalCount });
         }
-
+        [Resource("链接添加")]
         public ActionResult Create()
         {
             var model = new LinkViewModel();
@@ -51,7 +53,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View(model);
         }
-
+        [Resource("链接编辑")]
         public async Task<ActionResult> Edit(string id)
         {
             var model = await _linkService.GetLinkViewModel(id);
@@ -74,7 +76,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View();
         }
-
+        [Resource("删除链接")]
         public ActionResult Delete(string id)
         {
             try

@@ -1,9 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "应用程序管理";
+    
 }
 
-<div class="content-wrapper" id="applicationApp">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -18,32 +19,12 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="box box-success">
+                <div class="box box-primary">
                     <div class="box-header btn-group">
-                        <a href="/SysManager/SysApplication/Create" class="btn bg-maroon btn-sm btn-flat "><i class="glyphicon glyphicon-plus"></i>添加</a>
+                        <a href="/SysManager/SysApplication/Create" class="btn btn-success btn-sm btn-flat "><i class="glyphicon glyphicon-plus"></i>添加</a>
                     </div>
                     <div class="box-body">
-                        <table id="Sys_DataGrid" class="table table-hover table-striped table-bordered">
-                            <tr>
-                                <th>应用名称</th>
-                                <th>链接</th>
-                                <th>创建时间</th>
-                                <th>操作</th>
-                            </tr>
-                            <tr v-for='item in applications'>
-                                <td>{{item.ApplicationName}}</td>
-                                <td>{{item.ApplicationUrl}}</td>
-                                <td>{{item.CreateTime|dateFormat('YYYY-MM-DD HH:mm')}}</td>
-                                <td>
-                                    <a v-bind:href="'Edit/'+item.Id" class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑</a>
-                                    <a  class='btn btn-flat btn-xs btn-warning'><i class='glyphicon glyphicon-remove'></i>删除</a>
-                                </td>
-                            </tr>
-                        </table>
-                       @* <pagebar v-bind:current-page-index="currentPageIndex" v-bind:total-row-count="totalRowCount" v-bind:page-size="pageSize" v-on:paged="pageChange"></pagebar>*@
-                        
-                            <pagination v-bind:total="total" v-on:paged="pageChange" v-bind:current-index="currentIndex"></pagination>
-                        
+                        <table id="SysApplicationTable"></table>
                     </div>
                 </div>
             </div>
@@ -51,29 +32,8 @@
     </section>
     <!-- /.content -->
 </div>
+
 @section scripts{
 
-<script src="~/js/pagination.js"></script>
-    <script src="~/js/pages/SysApplicationVue.js" type="text/javascript"></script>
-<script src="~/lib/ReconnectingWebSocket.js"></script>
-    <script>
-        var ws = new ReconnectingWebSocket("ws://" + location.host + "/LiveChat?Name=luckearth"+Math.random());
-
-        
-        //接收信息
-        ws.onmessage = function (result) {
-            console.log(result.data);
-            var ul = $("#LiveChat ul");
-            ul.append('<li>' + result.data + '</li>');
-            layer.alert('见到你真的很高兴', { icon: 6 });
-        }
-        $("#send_message").click(function () {
-            var mes = $("#message").val();
-            //发送信息
-            ws.send(JSON.stringify({
-                Receiver: '123',
-                Message:mes
-            }));
-        });
-    </script>
+    <script src="~/js/pages/SysApplication.js" type="text/javascript"></script>
 }

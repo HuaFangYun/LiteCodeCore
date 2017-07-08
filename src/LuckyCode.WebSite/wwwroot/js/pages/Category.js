@@ -31,7 +31,7 @@
 
                         title: '操作',
                         formatter: function (value, row, index) {
-                            return "<a href='Edit/" + row.CategoryId + "' class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.CategoryId + "  class='btn btn-flat btn-xs btn-warning'><i class='glyphicon glyphicon-remove'></i>删除</a>";
+                            return "<a href='Edit/" + row.CategoryId + "' class='btn btn-flat btn-xs btn-white'><i class='text-green glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.CategoryId + "  class='btn btn-flat btn-xs btn-white'><i class='text-red glyphicon glyphicon-remove'></i>删除</a>";
                         }
                     }
                 ]

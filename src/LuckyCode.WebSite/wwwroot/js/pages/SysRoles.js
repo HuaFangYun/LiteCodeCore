@@ -32,7 +32,7 @@
                         title: '能否删除',
                         formatter: function (value, row, index) {
                             console.log(value);
-                            return value == true ? '<i class=\"glyphicon glyphicon-ok\"></i>' : '<i class=\"glyphicon glyphicon-ban-circle\"></i>';
+                            return value == true ? '<i class=\" glyphicon glyphicon-ok\"></i>' : '<i class=\"glyphicon glyphicon-ban-circle\"></i>';
                         }
                     }, {
                         field: 'CreateTime',
@@ -42,7 +42,7 @@
 
                         title: '操作',
                         formatter: function (value, row, index) {
-                            return "<a href='Edit/" + row.Id + "' class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-flat btn-xs btn-warning'><i class='glyphicon glyphicon-remove'></i>删除</a><a href='EditPurview/" + row.Id + "' class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑权限</a>";
+                            return "<a href='Edit/" + row.Id + "' class='btn btn-flat btn-xs btn-white'><i class='text-green glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-flat btn-xs btn-white'><i class='text-red glyphicon glyphicon-remove'></i>删除</a><a href='EditPurview/" + row.Id + "' class='btn btn-flat btn-xs btn-white'><i class='text-green glyphicon glyphicon-pencil'></i>编辑权限</a>";
                         }
                     }
                 ]

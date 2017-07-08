@@ -14,12 +14,21 @@
             .dataGrid({
                 url: '/SysManager/SysModules/GetListViewModel', //请求后台的URL（*）
                 queryParams: t.queryParams, //传递参数（*）
+                rowStyle: function (row, index) {
+                    
+                    if (row.PurviewSum == 0) {
+                        console.log(row.PurviewSum);
+                        return { classes: 'text-red' };
+                    } else
+                        return "";
+                },
                 columns: [
                     {
                         checkbox: true
                     }, {
                         field: 'ModuleName',
                         title: '模块名称'
+                        
                     }, {
                         field: 'AreaName',
                         title: '区名称'
@@ -39,7 +48,7 @@
 
                         title: '操作',
                         formatter: function (value, row, index) {
-                            var str = "<a href='Edit/" + row.Id + "' class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-flat btn-xs btn-warning'><i class='glyphicon glyphicon-remove'></i>删除</a>";
+                            var str = "<a href='Edit/" + row.Id + "' class='btn btn-flat btn-xs btn-white'><i class='text-green glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-flat btn-xs btn-white'><i class='text-red glyphicon glyphicon-remove'></i>删除</a>";
                             if (row.ParentId == "0")
                                 str = str + "<a href='ModuleSort/" + row.Id + "' class='btn btn-flat btn-xs bg-olive'><i class='glyphicon glyphicon-pencil'></i>菜单排序</a>";
                             return str;
@@ -62,7 +71,7 @@ $(document).ready(function () {
             btn: ['确定', '取消'] //按钮
         }, function (index, layero) {
 
-            $.get("/SysModule/Delete/", { Id: id }, function () {
+            $.get("/SysModules/Delete/", { Id: id }, function () {
                 $("#SysApplicationTable").bootstrapTable('refresh');
             });
 
@@ -70,6 +79,12 @@ $(document).ready(function () {
         }, function (index, layero) {
 
             layer.close(index);
+        });
+    });
+    //添加新的模块资源
+    $(document).on("click", "#send_express_notice", function() {
+        $.get("/SysManager/SysModules/AutoSaveRescoure", function(data) {
+            layer.alert("成功");
         });
     });
 });

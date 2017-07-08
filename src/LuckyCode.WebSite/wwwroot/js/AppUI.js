@@ -1,6 +1,6 @@
 ﻿;(function(AppUI,$) {
     AppUI.dataGridActionFormat = function (value, row, index) {
-        return "<a href='Edit/" + row.Id + "' class='btn btn-flat btn-xs btn-info'><i class='glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-flat btn-xs btn-warning'><i class='glyphicon glyphicon-remove'></i>删除</a>";
+        return "<a href='Edit/" + row.Id + "' class='btn btn-white btn-sm'><i class='text-green glyphicon glyphicon-pencil'></i>编辑</a><a data-delete=1 data-id=" + row.Id + "  class='btn btn-white btn-sm'><i class='text-red glyphicon glyphicon-remove'></i>删除</a>";
     }
     //时间格式化
     AppUI.dateTimeFormat=function(value, row, index) {

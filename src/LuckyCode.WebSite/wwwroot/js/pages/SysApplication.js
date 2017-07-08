@@ -3,7 +3,7 @@
     t.queryParams = function (params) {
         var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
             pageSize: params.limit, //页面大小
-            pageIndex: (params.offset == 0) ? 1 : (params.offset / params.limit) + 1, //页码
+            pageIndex: (params.offset === 0) ? 1 : (params.offset / params.limit) + 1, //页码
             //username: $("#txt_search_username").val()
         };
         return temp;
@@ -49,7 +49,7 @@ $(document).ready(function () {
                     btn: ['确定', '取消'] //按钮
                 }, function (index, layero) {
                     
-                    $.get("/SysApplication/Delete/", { Id: id }, function () {
+                    $.get("/SysManager/SysApplication/Delete/", { Id: id }, function () {
                         $("#SysApplicationTable").bootstrapTable('refresh');
                     });
 

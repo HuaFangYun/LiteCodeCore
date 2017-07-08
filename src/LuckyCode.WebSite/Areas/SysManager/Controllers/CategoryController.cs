@@ -6,6 +6,7 @@ using LuckyCode.ViewModels;
 using LuckyCode.ViewModels.News;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using LuckyCode.Core.Filtes;
 
 namespace LuckyCode.WebSite.Areas.SysManager.Controllers
 {
@@ -20,19 +21,19 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             _categoryService = categoryService;
         }
 
-        // GET: Category
+        [Resource("资讯分类")]
         public ActionResult Index()
         {
             return View();
         }
-
+        [Resource("Ajax获取列表")]
         public async Task<IActionResult> GetListViewModel(int pageIndex, int pageSize)
         {
-            var page =await _categoryService.GetPagedList(pageIndex, pageSize);
-            return Json(new TableViewModel<CategoryViewModel>() {Rows = page, Total = page.TotalCount}
-                );
+            var page = await _categoryService.GetPagedList(pageIndex, pageSize);
+            return Json(new TableViewModel<CategoryViewModel>() { Rows = page, Total = page.TotalCount }
+            );
         }
-
+        [Resource("资讯分类添加")]
         public ActionResult Create()
         {
             var model = new CategoryViewModel();
@@ -56,7 +57,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View(model);
         }
-
+        [Resource("资讯分类编辑")]
         public async Task<ActionResult> Edit(string id)
         {
             var model = await _categoryService.GetCategoryViewModel(id);
@@ -80,7 +81,7 @@ namespace LuckyCode.WebSite.Areas.SysManager.Controllers
             }
             return View();
         }
-
+        [Resource("资讯分类删除")]
         public ActionResult Delete(string id)
         {
             try
