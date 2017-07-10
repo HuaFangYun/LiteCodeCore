@@ -460,24 +460,26 @@ table tr td i.fa-toggle-off {
     background: url(../lib/iCheck/flat/20170707111253.png) no-repeat 0 0;
     background-size: contain;
 }
-.skip-00{
+.skip-00 {
     line-height: 35px;
     margin: 0 10px;
+    color: #428bca;
 }
-.skip-01{
+
+.skip-01 {
     display: inline-block;
     padding: 6px;
-    height: 28px;
-    width: 28px;
-    border-radius: 0px 4px 4px 0px;
-}
-.skip-02{
-    margin-left: 10px;
-    /* padding: 6px 4px; */
     height: 30px;
-    width: 30px;
-    line-height: 25px;
-    /* background-color: gray; */
-    display: inline-block;
-    border-radius: 4px;
+    width: 38px;
+    border: 1px solid #367fa9;
+    border-radius: 0px 4px 4px 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.skip-02 {
+    margin-top: -2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 30px;
 }
